@@ -11,6 +11,9 @@ namespace Loging
     /// </summary>
     public class Loging
     {
+        public bool loging = false;
+        public Dictionary<string, bool[]> Log=new Dictionary<string, bool[]>();
+        public bool WasErr=false;
         /// <summary>
         /// Определение инетерфейса для работы с логом
         /// </summary>
@@ -47,7 +50,7 @@ namespace Loging
         /// <summary>
         /// далее реализационные методы
         /// </summary>
-        public static Loging _instance = new Loging();
+        public static Loging _instance = null;
         public static void Init()
         {
             if(_instance== null)
