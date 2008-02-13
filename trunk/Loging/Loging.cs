@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Loging
 {
@@ -11,9 +12,6 @@ namespace Loging
     /// </summary>
     public class Loging
     {
-        public bool loging = false;
-        public Dictionary<string, bool[]> Log=new Dictionary<string, bool[]>();
-        public bool WasErr=false;
         /// <summary>
         /// Определение инетерфейса для работы с логом
         /// </summary>
@@ -51,6 +49,11 @@ namespace Loging
         /// далее реализационные методы
         /// </summary>
         public static Loging _instance = null;
+        
+        public bool loging = false;
+        public Dictionary<string, bool[]> Log = new Dictionary<string, bool[]>();
+        public bool WasErr = false;
+        
         public static void Init()
         {
             if(_instance== null)
@@ -62,7 +65,11 @@ namespace Loging
         /// </summary>
         public void _StartLog()
         {
-
+            ///
+            /// 
+            Log.Clear();
+            loging = true;
+            WasErr = false;
         }
         /// <summary>
         /// Закрывает процес ведения лога. После этого вызова добавлять 
@@ -70,7 +77,9 @@ namespace Loging
         /// </summary>
         public void _EndLog()
         {
-
+            ///
+            /// 
+            loging = false;
         }
         /// <summary>
         /// Добавляет запись в лог
@@ -80,6 +89,15 @@ namespace Loging
         /// <param name="IsReport">if set to <c>true</c> [признак того что запись должна включаться в отчет].</param>
         public void _WriteLog(string Message, bool IsError, bool IsReport)
         {
+            bool[] flag=new bool[]{IsError,IsReport};
+            if(loging.Equals(true))
+            {
+               if(IsError.Equals(true))
+               {
+                   WasErr = true;
+               }
+                Log.Add(Message,flag);
+            }
 
         }
         /// <summary>
@@ -88,14 +106,43 @@ namespace Loging
         /// <returns></returns>
         public string[] _GetLog()
         {
-            throw new NotImplementedException();
+            string[] fields = new string[Log.Count];
+            int i = 0;
+            foreach (KeyValuePair<string, bool[]> pair in Log)
+            {
+                if(pair.Value[0].Equals(false))
+                {
+                    fields[i] = DateTime.Now.ToString()+": "+pair.Key;
+                }
+                else fields[i] = DateTime.Now.ToString() + " Ошибка: " + pair.Key;
+                i++;
+            }
+            return fields;
         }
         /// <summary>
         /// Отображает ворму просмотра лога - в форме отображаються записи у которых isReport == true
         /// </summary>
         public void _ShowLog()
         {
-
+            LogView form=new LogView();
+            ListBox lb=new ListBox();
+            foreach (KeyValuePair<string, bool[]> pair in Log)
+            {
+                if (pair.Value[1].Equals(true))
+                {
+                    if (pair.Value[0].Equals(false))
+                    {
+                        lb.Items.Add(DateTime.Now.ToString() + ": " + pair.Key);
+                        
+                    }
+                    else lb.Items.Add(DateTime.Now.ToString() + " Ошибка: " + pair.Key);
+                }
+                
+            }
+            lb.Dock = DockStyle.Fill;       
+            form.Controls.Add(lb);
+            form.ShowDialog();
+            
         }
         /// <summary>
         /// Возвращает признак того была ли хоть одна запись с isError == true
@@ -103,7 +150,7 @@ namespace Loging
         /// <returns></returns>
         public bool _WasError()
         {
-            throw new NotImplementedException();
+            return WasErr;
         }
     }
 }
