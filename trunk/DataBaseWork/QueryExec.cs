@@ -26,12 +26,14 @@ namespace DataBaseWork
         {
             get { return pErrorMsg; }
         }
-        public QueryExec Create(BaseType baseType)
+        public static QueryExec Create(BaseType baseType)
         {
             switch (baseType)
             {
                 case BaseType.PDA:
                     return new QueryExecPDA();
+                case BaseType.Oracle:
+                    return new QueryExecOracle();
             }
             throw new ArgumentException("Base not implemented");
         } 

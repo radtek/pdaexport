@@ -1,6 +1,6 @@
-namespace Belmost2PDA
+namespace Loging
 {
-    partial class Form1
+    partial class LogView
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@ namespace Belmost2PDA
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // LogView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(413, 260);
-            this.Name = "Form1";
-            this.Text = "Ёкспорт данных в  ѕ ";
+            this.ClientSize = new System.Drawing.Size(403, 315);
+            this.Name = "LogView";
+            this.Text = "LogView";
             this.ResumeLayout(false);
 
         }
@@ -44,4 +44,3 @@ namespace Belmost2PDA
         #endregion
     }
 }
-
