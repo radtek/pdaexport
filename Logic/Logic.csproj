@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</ProjectGuid>
+    <ProjectGuid>{9D9DE158-C9EB-43D8-8FB9-8C62B1358A18}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataBaseWork</RootNamespace>
-    <AssemblyName>DataBaseWork</AssemblyName>
+    <RootNamespace>Logic</RootNamespace>
+    <AssemblyName>Logic</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,25 +30,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft Visual Studio 8\SmartDevices\SDK\\SQL Server\Mobile\v3.0\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseType.cs" />
-    <Compile Include="DataBaseOracle.cs" />
-    <Compile Include="DataBasePDA.cs" />
-    <Compile Include="DataField.cs" />
-    <Compile Include="DataRows.cs" />
+    <Compile Include="Coordinator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryExec.cs" />
-    <Compile Include="QueryExecOracle.cs" />
-    <Compile Include="QueryExecPDA.cs" />
-    <Compile Include="QuerySelect.cs" />
-    <Compile Include="QuerySelectOracle.cs" />
-    <Compile Include="QuerySelectPDA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

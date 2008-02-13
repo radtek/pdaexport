@@ -33,12 +33,14 @@ namespace DataBaseWork
         }
 
         public abstract bool Select(string SQL);
-        public QuerySelect Create(BaseType baseType)
+        public static QuerySelect Create(BaseType baseType)
         {
             switch(baseType)
             {
                 case BaseType.PDA:
                     return new QuerySelectPDA();
+                case BaseType.Oracle:
+                    return new QuerySelectOracle();
             }
             throw new ArgumentException("Base not implemented");
         }

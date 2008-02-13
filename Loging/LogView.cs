@@ -6,11 +6,11 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Belmost2PDA
+namespace Loging
 {
-    public partial class Form1 : Form
+    public partial class LogView : Form
     {
-        public Form1()
+        public LogView()
         {
             InitializeComponent();
         }
