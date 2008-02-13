@@ -90,7 +90,7 @@ namespace Loging.Test
             Log._WriteLog("два месага", false, true);
             repository.VerifyAll();
             Assert.AreEqual(true, Log._WasError());
-
+            
         }
         [Test]
         public void WasErrorTestFalse()
