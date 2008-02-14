@@ -86,6 +86,7 @@ namespace Loging.Test
             Log._StartLog();
             Log._WriteLog("раз месага", true, true);
             Log._WriteLog("два месага", false, true);
+            Log._ShowLog();
             repository.VerifyAll();
             Assert.AreEqual(true, Log._WasError());
             
