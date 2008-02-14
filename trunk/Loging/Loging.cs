@@ -124,7 +124,11 @@ namespace Loging
         public void _ShowLog()
         {
             LogView form=new LogView();
-            ListBox lb=new ListBox();
+            ListBox lb = form.listBox1;
+            Button btn =new Button();
+            form.CancelButton = btn;
+            btn.Anchor = AnchorStyles.Bottom|AnchorStyles.Right;
+            btn.DialogResult = DialogResult.Cancel;
             foreach (KeyValuePair<string, bool[]> pair in Log)
             {
                 if (pair.Value[1].Equals(true))
@@ -138,11 +142,11 @@ namespace Loging
                 }
                 
             }
-            lb.Dock = DockStyle.Fill;       
-            form.Controls.Add(lb);
+            form.Controls.Add(btn);
             form.ShowDialog();
             
         }
+               
         /// <summary>
         /// ¬озвращает признак того была ли хоть одна запись с isError == true
         /// </summary>
