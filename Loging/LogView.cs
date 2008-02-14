@@ -14,5 +14,16 @@ namespace Loging
         {
             InitializeComponent();
         }
+
+        private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          if(e.KeyChar==27) Close();
+        }
+
+       
+
+ 
+
+       
     }
 }
