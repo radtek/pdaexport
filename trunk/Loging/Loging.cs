@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Loging
@@ -20,11 +19,13 @@ namespace Loging
             Init();
             _instance._StartLog();
         }
+        
         public static void EndLog()
         {
             Init();
             _instance._EndLog();
         }
+       
         public static void WriteLog(string Message, bool IsError, bool IsReport)
         {
             Init();
@@ -77,8 +78,6 @@ namespace Loging
         /// </summary>
         public void _EndLog()
         {
-            ///
-            /// 
             loging = false;
         }
         /// <summary>
@@ -112,9 +111,9 @@ namespace Loging
             {
                 if(pair.Value[0].Equals(false))
                 {
-                    fields[i] = DateTime.Now.ToString()+": "+pair.Key;
+                    fields[i] = DateTime.Now+" : "+pair.Key;
                 }
-                else fields[i] = DateTime.Now.ToString() + " Ошибка: " + pair.Key;
+                else fields[i] = DateTime.Now + " Ошибка : " + pair.Key;
                 i++;
             }
             return fields;
@@ -132,10 +131,10 @@ namespace Loging
                 {
                     if (pair.Value[0].Equals(false))
                     {
-                        lb.Items.Add(DateTime.Now.ToString() + ": " + pair.Key);
+                        lb.Items.Add(DateTime.Now + " : " + pair.Key);
                         
                     }
-                    else lb.Items.Add(DateTime.Now.ToString() + " Ошибка: " + pair.Key);
+                    else lb.Items.Add(DateTime.Now + " Ошибка : " + pair.Key);
                 }
                 
             }

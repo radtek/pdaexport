@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data.OracleClient;
 using System.Text;
 
 namespace DataBaseWork
@@ -8,7 +9,16 @@ namespace DataBaseWork
     {
         public override bool Execute(string SQL)
         {
-            throw new NotImplementedException();
+            OracleCommand command = new OracleCommand(SQL, DataBaseOracle.Get());
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+            return true;
         }
     }
 }

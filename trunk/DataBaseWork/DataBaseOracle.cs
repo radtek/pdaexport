@@ -3,10 +3,7 @@
 // unciomment if you build application for using on PDA and SqlServerCe is referenced ( off for unittesting)
 //#define BaseOn
 using System;
-
-
-using System;
-using System.Data.OleDb;
+using System.Data.OracleClient;
 
 
 namespace DataBaseWork
@@ -15,10 +12,10 @@ namespace DataBaseWork
     public class DataBaseOracle
     {
 
-        private OleDbConnection Connection = null;
+        private OracleConnection Connection = null;
         private DataBaseOracle()
         {
-            Connection = new OleDbConnection();
+            Connection = new OracleConnection();
         }
 
         private static DataBaseOracle _instance = null;
@@ -31,7 +28,7 @@ namespace DataBaseWork
                 _instance.ConnectToBase(ConnectionString);
             }            
         }
-        public static OleDbConnection Get()
+        public static OracleConnection Get()
         {
             Create();
             return _instance.GetConnection();
@@ -56,10 +53,10 @@ namespace DataBaseWork
 
         private void ConnectToBase(string _string)
         {
-            Connection = new OleDbConnection(_string);
+            Connection = new OracleConnection(_string);
             Connection.Open();
         }
-        private OleDbConnection GetConnection()
+        private OracleConnection GetConnection()
         {
             return Connection;
         }
