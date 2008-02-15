@@ -2,9 +2,8 @@
 
 // unciomment if you build application for using on PDA and SqlServerCe is referenced ( off for unittesting)
 //#define BaseOn
-using System;
+using System.Data;
 using System.Data.OracleClient;
-
 
 namespace DataBaseWork
 {
@@ -19,7 +18,7 @@ namespace DataBaseWork
         }
 
         private static DataBaseOracle _instance = null;
-        public static string ConnectionString = "Provider=OraOLEDB.Oracle.1;Data Source=BM;Persist Security Info=True;Password=bmcl3isd;User ID=BMCLIENT";
+        public static string ConnectionString = "Data Source=BM;Persist Security Info=True;Password=bmcl3isd;User ID=BMCLIENT";
         private static void Create()
         {
             if (_instance == null)
@@ -42,13 +41,7 @@ namespace DataBaseWork
 
         private void DisconnectFromBase()
         {
-            try
-            {
-                Connection.Close();
-            }
-            catch
-            {
-            }
+          if(Connection.State==ConnectionState.Open) Connection.Close();
         }
 
         private void ConnectToBase(string _string)
