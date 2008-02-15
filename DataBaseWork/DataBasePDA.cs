@@ -2,12 +2,9 @@
 
 // unciomment if you build application for using on PDA and SqlServerCe is referenced ( off for unittesting)
 //#define BaseOn
-using System;
 
 
-using System;
 using System.Data.SqlServerCe;
-
 
 namespace DataBaseWork
 {

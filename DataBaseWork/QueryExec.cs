@@ -1,9 +1,5 @@
 using System;
 
-using System.Collections.Generic;
-using System.Data.SqlServerCe;
-
-
 namespace DataBaseWork
 {
     public abstract class QueryExec
