@@ -33,6 +33,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractAction.cs" />
+    <Compile Include="ActionDeploy.cs" />
+    <Compile Include="ActionFinishExportScripts.cs" />
+    <Compile Include="ActionOracleToPDATransfer.cs" />
+    <Compile Include="ActionPrepExportScripts.cs" />
+    <Compile Include="ActionSetBrReadOnly.cs" />
+    <Compile Include="ActionToTempTransferScripts.cs" />
     <Compile Include="Coordinator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

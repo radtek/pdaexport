@@ -27,7 +27,7 @@ namespace DataBaseWork
         }
 
         protected List<DataRows> Rows = null;
-        public List<DataRows> GetRows()
+        public virtual List<DataRows> GetRows()
         {
             return Rows;
         }

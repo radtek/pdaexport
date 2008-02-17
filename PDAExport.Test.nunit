@@ -1,0 +1,9 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="Loging.Test\bin\Debug\Loging.Test.dll" />
+    <assembly path="DAO.Bridges.Test\bin\Debug\DAO.Bridges.Test.dll" />
+    <assembly path="Logic.Test\bin\Debug\Logic.Test.dll" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>
