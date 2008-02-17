@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</ProjectGuid>
+    <ProjectGuid>{28538381-CA52-455E-930E-A4E08475C496}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataBaseWork</RootNamespace>
-    <AssemblyName>DataBaseWork</AssemblyName>
+    <RootNamespace>Logic.Test</RootNamespace>
+    <AssemblyName>Logic.Test</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,29 +28,20 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.OracleClient" />
-    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\SqlServer\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BaseType.cs" />
-    <Compile Include="ConnectionSettings.cs" />
-    <Compile Include="DataBaseOracle.cs" />
-    <Compile Include="DataBasePDA.cs" />
-    <Compile Include="DataField.cs" />
-    <Compile Include="DataRows.cs" />
+    <Compile Include="ActionDeployTest.cs" />
+    <Compile Include="ActionFinishExportScriptsTest.cs" />
+    <Compile Include="ActionOracleToPDATransferTest.cs" />
+    <Compile Include="ActionPrepExportScriptsTest.cs" />
+    <Compile Include="ActionSetBrReadOnlyTest.cs" />
+    <Compile Include="ActionToTempTransferScriptsTest.cs" />
+    <Compile Include="CoordinatorTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryExec.cs" />
-    <Compile Include="QueryExecOracle.cs" />
-    <Compile Include="QueryExecPDA.cs" />
-    <Compile Include="QuerySelect.cs" />
-    <Compile Include="QuerySelectOracle.cs" />
-    <Compile Include="QuerySelectPDA.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

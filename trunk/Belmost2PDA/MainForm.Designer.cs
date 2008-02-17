@@ -42,15 +42,15 @@ namespace Belmost2PDA
             this.panel1 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cbBrType = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvBridges = new System.Windows.Forms.TreeView();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.treeView2 = new System.Windows.Forms.TreeView();
+            this.tvSelBridges = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -86,12 +86,15 @@ namespace Belmost2PDA
             this.óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem.Name = "óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem";
             this.óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem.Text = "Óñòàíîâêà ñîåäèíåíèåÿ";
+            this.óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem.Click += new System.EventHandler(this.óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem_Click);
             // 
             // ýêñïîðòToolStripMenuItem1
             // 
+            this.ýêñïîðòToolStripMenuItem1.Enabled = false;
             this.ýêñïîðòToolStripMenuItem1.Name = "ýêñïîðòToolStripMenuItem1";
             this.ýêñïîðòToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
             this.ýêñïîðòToolStripMenuItem1.Text = "Ýêñïîðò";
+            this.ýêñïîðòToolStripMenuItem1.Click += new System.EventHandler(this.button4_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -103,6 +106,7 @@ namespace Belmost2PDA
             this.âûõîäToolStripMenuItem.Name = "âûõîäToolStripMenuItem";
             this.âûõîäToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
             this.âûõîäToolStripMenuItem.Text = "Âûõîä";
+            this.âûõîäToolStripMenuItem.Click += new System.EventHandler(this.âûõîäToolStripMenuItem_Click);
             // 
             // íàñòðîéêèToolStripMenuItem
             // 
@@ -112,24 +116,28 @@ namespace Belmost2PDA
             this.íàñòðîéêèToolStripMenuItem.Name = "íàñòðîéêèToolStripMenuItem";
             this.íàñòðîéêèToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.íàñòðîéêèToolStripMenuItem.Text = "Íàñòðîéêè";
+            this.íàñòðîéêèToolStripMenuItem.Visible = false;
             // 
             // ñîåäèíåíèåÑOracleToolStripMenuItem
             // 
             this.ñîåäèíåíèåÑOracleToolStripMenuItem.Name = "ñîåäèíåíèåÑOracleToolStripMenuItem";
             this.ñîåäèíåíèåÑOracleToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.ñîåäèíåíèåÑOracleToolStripMenuItem.Text = "Ñîåäèíåíèå ñ Oracle";
+            this.ñîåäèíåíèåÑOracleToolStripMenuItem.Click += new System.EventHandler(this.ñîåäèíåíèåÑOracleToolStripMenuItem_Click);
             // 
             // ñîåäèíåíèåÑÊÏÊToolStripMenuItem
             // 
             this.ñîåäèíåíèåÑÊÏÊToolStripMenuItem.Name = "ñîåäèíåíèåÑÊÏÊToolStripMenuItem";
             this.ñîåäèíåíèåÑÊÏÊToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
             this.ñîåäèíåíèåÑÊÏÊToolStripMenuItem.Text = "Ñîåäèíåíèå ñ ÊÏÊ";
+            this.ñîåäèíåíèåÑÊÏÊToolStripMenuItem.Click += new System.EventHandler(this.ñîåäèíåíèåÑÊÏÊToolStripMenuItem_Click);
             // 
             // îÏðîãðàììåToolStripMenuItem
             // 
             this.îÏðîãðàììåToolStripMenuItem.Name = "îÏðîãðàììåToolStripMenuItem";
             this.îÏðîãðàììåToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.îÏðîãðàììåToolStripMenuItem.Text = "Î ïðîãðàììå";
+            this.îÏðîãðàììåToolStripMenuItem.Click += new System.EventHandler(this.îÏðîãðàììåToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -142,6 +150,7 @@ namespace Belmost2PDA
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(562, 375);
             this.panel1.TabIndex = 1;
+            this.panel1.Visible = false;
             // 
             // button4
             // 
@@ -154,6 +163,7 @@ namespace Belmost2PDA
             this.button4.Text = "Ýêñïîðò";
             this.toolTip1.SetToolTip(this.button4, "Ýêñïîðò");
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // splitContainer1
             // 
@@ -166,20 +176,35 @@ namespace Belmost2PDA
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.cbBrType);
             this.splitContainer1.Panel1.Controls.Add(this.button1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.treeView1);
+            this.splitContainer1.Panel1.Controls.Add(this.tvBridges);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button3);
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Panel2.Controls.Add(this.treeView2);
+            this.splitContainer1.Panel2.Controls.Add(this.tvSelBridges);
             this.splitContainer1.Size = new System.Drawing.Size(556, 312);
             this.splitContainer1.SplitterDistance = 268;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // cbBrType
+            // 
+            this.cbBrType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbBrType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbBrType.FormattingEnabled = true;
+            this.cbBrType.Items.AddRange(new object[] {
+            "Ïî íåñóùèì",
+            "Ïî ïðèïèñûâàåìûì"});
+            this.cbBrType.Location = new System.Drawing.Point(6, 283);
+            this.cbBrType.Name = "cbBrType";
+            this.cbBrType.Size = new System.Drawing.Size(173, 24);
+            this.cbBrType.TabIndex = 3;
+            this.cbBrType.SelectedIndexChanged += new System.EventHandler(this.cbBrType_SelectedIndexChanged);
             // 
             // button1
             // 
@@ -192,6 +217,7 @@ namespace Belmost2PDA
             this.button1.Text = "-->";
             this.toolTip1.SetToolTip(this.button1, "Âûáðàòü");
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -202,16 +228,17 @@ namespace Belmost2PDA
             this.label1.TabIndex = 1;
             this.label1.Text = "Ìîñòû";
             // 
-            // treeView1
+            // tvBridges
             // 
-            this.treeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tvBridges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeView1.Location = new System.Drawing.Point(6, 29);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(254, 235);
-            this.treeView1.TabIndex = 0;
+            this.tvBridges.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tvBridges.Location = new System.Drawing.Point(9, 29);
+            this.tvBridges.Name = "tvBridges";
+            this.tvBridges.Size = new System.Drawing.Size(254, 235);
+            this.tvBridges.TabIndex = 0;
+            this.tvBridges.DoubleClick += new System.EventHandler(this.button1_Click);
             // 
             // button3
             // 
@@ -224,6 +251,7 @@ namespace Belmost2PDA
             this.button3.Text = "<<---";
             this.toolTip1.SetToolTip(this.button3, "Óáðàòü âñå");
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -236,6 +264,7 @@ namespace Belmost2PDA
             this.button2.Text = "<--";
             this.toolTip1.SetToolTip(this.button2, "Óáðàòü");
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label2
             // 
@@ -246,30 +275,17 @@ namespace Belmost2PDA
             this.label2.TabIndex = 2;
             this.label2.Text = "Ìîñòû âûáðàííûå";
             // 
-            // treeView2
+            // tvSelBridges
             // 
-            this.treeView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.tvSelBridges.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.treeView2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.treeView2.Location = new System.Drawing.Point(7, 29);
-            this.treeView2.Name = "treeView2";
-            this.treeView2.Size = new System.Drawing.Size(268, 235);
-            this.treeView2.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Ïî íåñóùèì",
-            "Ïî ïðèïèñûâàåìûì"});
-            this.comboBox1.Location = new System.Drawing.Point(6, 283);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 24);
-            this.comboBox1.TabIndex = 3;
+            this.tvSelBridges.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tvSelBridges.Location = new System.Drawing.Point(7, 29);
+            this.tvSelBridges.Name = "tvSelBridges";
+            this.tvSelBridges.Size = new System.Drawing.Size(268, 235);
+            this.tvSelBridges.TabIndex = 1;
+            this.tvSelBridges.DoubleClick += new System.EventHandler(this.button2_Click);
             // 
             // MainForm
             // 
@@ -308,17 +324,17 @@ namespace Belmost2PDA
         private System.Windows.Forms.ToolStripMenuItem îÏðîãðàììåToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem óñòàíîâêàÑîåäèíåíèåÿToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvBridges;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView tvSelBridges;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbBrType;
     }
 }
 

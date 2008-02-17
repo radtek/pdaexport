@@ -18,6 +18,7 @@ namespace DataBaseWork
         }
 
         private static DataBaseOracle _instance = null;
+        public static readonly string ConnectionStringTmp = "Data Source={0};Persist Security Info=True;Password=bmcl3isd;User ID=BMCLIENT";
         public static string ConnectionString = "Data Source=BM;Persist Security Info=True;Password=bmcl3isd;User ID=BMCLIENT";
         private static void Create()
         {
@@ -34,9 +35,11 @@ namespace DataBaseWork
         }
         public static void Disconnect()
         {
-            Create();
-            _instance.DisconnectFromBase();
-            _instance = null;
+            if (_instance != null)
+            {
+                _instance.DisconnectFromBase();
+                _instance = null;
+            }
         }
 
         private void DisconnectFromBase()

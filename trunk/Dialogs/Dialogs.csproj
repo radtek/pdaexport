@@ -4,11 +4,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</ProjectGuid>
+    <ProjectGuid>{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Loging</RootNamespace>
-    <AssemblyName>Loging</AssemblyName>
+    <RootNamespace>Dialogs</RootNamespace>
+    <AssemblyName>Dialogs</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,25 +30,56 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Loging.cs" />
-    <Compile Include="LogView.cs">
+    <Compile Include="dlgOracleSetup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogView.Designer.cs">
-      <DependentUpon>LogView.cs</DependentUpon>
+    <Compile Include="dlgOracleSetup.Designer.cs">
+      <DependentUpon>dlgOracleSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgPDASetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgPDASetup.Designer.cs">
+      <DependentUpon>dlgPDASetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dlgRunning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgRunning.Designer.cs">
+      <DependentUpon>dlgRunning.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="LogView.resx">
+    <EmbeddedResource Include="dlgOracleSetup.resx">
+      <DependentUpon>dlgOracleSetup.cs</DependentUpon>
       <SubType>Designer</SubType>
-      <DependentUpon>LogView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dlgRunning.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgRunning.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
+      <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
+      <Name>DataBaseWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{9D9DE158-C9EB-43D8-8FB9-8C62B1358A18}</Project>
+      <Name>Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loging\Loging.csproj">
+      <Project>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</Project>
+      <Name>Loging</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

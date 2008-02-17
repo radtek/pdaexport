@@ -35,9 +35,11 @@ namespace DataBaseWork
         }
         public static void Disconnect()
         {
-            Create();
-            _instance.DisconnectFromBase();
-            _instance = null;
+            if (_instance != null)
+            {
+                _instance.DisconnectFromBase();
+                _instance = null;
+            }
         }
 
         private void DisconnectFromBase()
