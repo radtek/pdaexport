@@ -241,7 +241,7 @@ namespace Belmost2PDA
             this.tvBridges.DoubleClick += new System.EventHandler(this.button1_Click);
             // 
             // button3
-            //падла закинься 
+            // 
             //
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

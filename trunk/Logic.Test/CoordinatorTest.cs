@@ -56,6 +56,7 @@ namespace Logic.Test
             Coordinator coord = new Coordinator();
             Expect.Call(act.Name()).Return("Тест");
             repository.ReplayAll();
+            coord.AddAction(act);
             string[] str = coord.GetActions();
             repository.VerifyAll();
             Assert.AreEqual("Тест", str[0]);
