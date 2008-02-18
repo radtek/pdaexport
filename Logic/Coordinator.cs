@@ -24,8 +24,8 @@ namespace Logic
             public int Maximum;
             public AbstractAction runningAction;
         }
-        private readonly List<AbstractAction>  runningActions = new List<AbstractAction>();
-        private bool Canceled = false;
+        public readonly List<AbstractAction>  runningActions = new List<AbstractAction>();
+        public bool Canceled = false;
 
         public void AddAction(AbstractAction newAction)
         {
@@ -42,7 +42,7 @@ namespace Logic
             }
         }
 
-        private AbstractAction currAction = null;
+        public AbstractAction currAction = null;
         public void Run()
         {
             Canceled = false;
