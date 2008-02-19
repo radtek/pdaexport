@@ -9,6 +9,7 @@ namespace DataBaseWork
     {
         public string OracleConnectionString = "";
         public string PDAConnectionString = "";
+        public string PDAConString = ""; //Base on PDA
         private static ConnectionSettings _instance = null;
         private static string Filename = "";
         public static void Load(string FileName)
