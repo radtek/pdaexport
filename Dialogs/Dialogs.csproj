@@ -30,7 +30,7 @@
   <ItemGroup>
     <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2956.30840, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\FMPDA\FM\FM\bin\Debug\OpenNETCF.Desktop.Communication.dll</HintPath>
+      <HintPath>..\OpenNETCF\OpenNETCF.Desktop.Communication.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
