@@ -148,7 +148,7 @@ namespace Trnsfer
                 SQL = "delete from QryClear where idQryClear={1}";
                 qry.Execute(string.Format(SQL, ClearText.Text, rows[0].FieldByName("idQryClear")));
 
-                SQL = "delete from  QryInsert where idQryinsert={1}";
+                SQL = "delete from  QryInsert  where idQryinsert={1}";
                 qry.Execute(string.Format(SQL, ClearText.Text, rows[0].FieldByName("idQryInsert")));
 
                 
