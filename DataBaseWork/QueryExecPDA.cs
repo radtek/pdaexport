@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DataBaseWork
 {
-    class QueryExecPDA:QueryExec
+   public class QueryExecPDA:QueryExec
     {
         public override bool Execute(string SQL)
         {

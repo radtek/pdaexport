@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Test", "Logic.Test\Lo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dialogs", "Dialogs\Dialogs.csproj", "{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trnsfer", "Trnsfer\Trnsfer.csproj", "{3D816798-DF91-4E2A-AD59-AACD128597EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
