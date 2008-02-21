@@ -69,8 +69,6 @@ namespace Dialogs
         {
             // Perform the copy.
             string name = textBox1.Text;
-            //string CopyDestination = "\\Program Files\\Belmost4pda.Forms" +
-            //                                      name.Substring(name.LastIndexOf("\\"), name.Length - name.LastIndexOf("\\"));
             string CopyDestination = textBox2.Text;
             try
             {
