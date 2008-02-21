@@ -59,19 +59,5 @@ namespace Trnsfer.Properties {
                 resourceCulture = value;
             }
         }
-        
-        internal static System.Drawing.Bitmap _5149773f {
-            get {
-                object obj = ResourceManager.GetObject("5149773f", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        internal static System.Drawing.Bitmap Зима {
-            get {
-                object obj = ResourceManager.GetObject("Зима", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
