@@ -38,6 +38,7 @@ namespace Dialogs
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -81,7 +82,7 @@ namespace Dialogs
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(2, 11);
+            this.label1.Location = new System.Drawing.Point(9, 11);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(151, 13);
@@ -90,7 +91,7 @@ namespace Dialogs
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(103, 60);
+            this.button6.Location = new System.Drawing.Point(110, 60);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 23);
             this.button6.TabIndex = 10;
@@ -115,7 +116,7 @@ namespace Dialogs
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(5, 60);
+            this.button5.Location = new System.Drawing.Point(12, 60);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(92, 23);
             this.button5.TabIndex = 9;
@@ -127,14 +128,25 @@ namespace Dialogs
             // 
             this.textBox2.Location = new System.Drawing.Point(161, 34);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(129, 20);
+            this.textBox2.Size = new System.Drawing.Size(242, 20);
             this.textBox2.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 37);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "ѕуть к базе на  ѕ :";
             // 
             // dlgPDASetup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 115);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
@@ -163,5 +175,6 @@ namespace Dialogs
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label2;
     }
 }

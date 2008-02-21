@@ -37,11 +37,11 @@ namespace Dialogs
             try
             {
                 DataBaseOracle.Get();
-                MessageBox.Show("Соединение установленно");
+                MessageBox.Show("Соединение установлено");
             }
             catch(OracleException ex)
             {
-                MessageBox.Show("Соединение не установленно:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Соединение не установлено:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             DataBaseOracle.Disconnect();
             // set old value
