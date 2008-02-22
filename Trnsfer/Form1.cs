@@ -122,6 +122,8 @@ namespace Trnsfer
                 qry.Execute(String.Format(SQL, idClear));
                 SQL = "insert into QryInsert values ({0},null)";
                 qry.Execute(String.Format(SQL, idInsert));
+                PDAFields.Items.Clear();
+                OraFields.Items.Clear();
                 button1_Click(sender, e);
             }
         }
@@ -246,10 +248,10 @@ namespace Trnsfer
             QuerySelectOracle OraQuery = new QuerySelectOracle();
             OraQuery.Select(String.Format(SQL, OraTables.SelectedItem));
             List<DataRows> rows = OraQuery.GetRows();
-            OraFields.Items.Clear();
+            FieldList.Items.Clear();
             foreach (DataRows row in rows)
             {
-                OraFields.Items.Add(row.FieldByName("Column_Name"));
+                FieldList.Items.Add(row.FieldByName("Column_Name"));
             }
         }
 
