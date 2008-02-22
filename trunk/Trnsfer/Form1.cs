@@ -10,6 +10,7 @@ namespace Trnsfer
         public Form1()
         {
             InitializeComponent();
+            button1_Click(new object(), new EventArgs());
         }
 
         private void button1_Click(object sender, EventArgs e)
