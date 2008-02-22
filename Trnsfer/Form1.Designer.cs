@@ -90,13 +90,13 @@ namespace Trnsfer
             this.OraTables.FormattingEnabled = true;
             this.OraTables.Location = new System.Drawing.Point(158, 38);
             this.OraTables.Name = "OraTables";
-            this.OraTables.Size = new System.Drawing.Size(136, 368);
+            this.OraTables.Size = new System.Drawing.Size(136, 537);
             this.OraTables.TabIndex = 2;
             this.OraTables.SelectedIndexChanged += new System.EventHandler(this.OraTables_SelectedIndexChanged);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(106, 51);
+            this.button2.Location = new System.Drawing.Point(106, 38);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(46, 23);
             this.button2.TabIndex = 3;
@@ -106,7 +106,7 @@ namespace Trnsfer
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(161, 51);
+            this.button3.Location = new System.Drawing.Point(161, 38);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(43, 23);
             this.button3.TabIndex = 4;
@@ -117,17 +117,17 @@ namespace Trnsfer
             // PDAFields
             // 
             this.PDAFields.FormattingEnabled = true;
-            this.PDAFields.Location = new System.Drawing.Point(158, 142);
+            this.PDAFields.Location = new System.Drawing.Point(158, 103);
             this.PDAFields.Name = "PDAFields";
-            this.PDAFields.Size = new System.Drawing.Size(143, 264);
+            this.PDAFields.Size = new System.Drawing.Size(143, 303);
             this.PDAFields.TabIndex = 5;
             // 
             // OraFields
             // 
             this.OraFields.FormattingEnabled = true;
-            this.OraFields.Location = new System.Drawing.Point(307, 142);
+            this.OraFields.Location = new System.Drawing.Point(307, 103);
             this.OraFields.Name = "OraFields";
-            this.OraFields.Size = new System.Drawing.Size(149, 264);
+            this.OraFields.Size = new System.Drawing.Size(149, 303);
             this.OraFields.TabIndex = 6;
             // 
             // checkBox1
@@ -251,7 +251,7 @@ namespace Trnsfer
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(216, 554);
+            this.button6.Location = new System.Drawing.Point(377, 15);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(78, 22);
             this.button6.TabIndex = 22;
@@ -262,16 +262,16 @@ namespace Trnsfer
             // FieldList
             // 
             this.FieldList.FormattingEnabled = true;
-            this.FieldList.Location = new System.Drawing.Point(10, 142);
+            this.FieldList.Location = new System.Drawing.Point(22, 103);
             this.FieldList.Name = "FieldList";
             this.FieldList.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.FieldList.Size = new System.Drawing.Size(130, 264);
+            this.FieldList.Size = new System.Drawing.Size(130, 472);
             this.FieldList.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(158, 118);
+            this.label1.Location = new System.Drawing.Point(158, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(105, 13);
             this.label1.TabIndex = 24;
@@ -280,7 +280,7 @@ namespace Trnsfer
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(304, 118);
+            this.label6.Location = new System.Drawing.Point(304, 77);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(91, 13);
             this.label6.TabIndex = 25;
@@ -289,7 +289,7 @@ namespace Trnsfer
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 118);
+            this.label7.Location = new System.Drawing.Point(19, 77);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(113, 13);
             this.label7.TabIndex = 26;
@@ -347,6 +347,7 @@ namespace Trnsfer
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.PDATables);
+            this.panel2.Controls.Add(this.button6);
             this.panel2.Controls.Add(this.PDAFields);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.button3);
@@ -367,12 +368,11 @@ namespace Trnsfer
             this.panel3.Controls.Add(this.FieldList);
             this.panel3.Controls.Add(this.OraTables);
             this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.button2);
             this.panel3.Location = new System.Drawing.Point(492, 12);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(303, 585);
+            this.panel3.Size = new System.Drawing.Size(306, 585);
             this.panel3.TabIndex = 32;
             // 
             // Form1
