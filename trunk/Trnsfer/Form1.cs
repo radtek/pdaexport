@@ -56,7 +56,7 @@ namespace Trnsfer
                 {
                     id = 1;
                 }
-                idquery = "select MAX(iqQrySelect) as ID from QrySelect";
+                idquery = "select MAX(idQrySelect) as ID from QrySelect";
                 
                 query.Select(idquery);
                  rows = query.GetRows();
@@ -71,7 +71,7 @@ namespace Trnsfer
                 }
                 int idSelectPDA = idSelectBM + 1;
 
-                idquery = "select MAX(iqQryDelete) as ID from QryDelete";
+                idquery = "select MAX(idQryDelete) as ID from QryDelete";
                 query.Select(idquery);
                 rows = query.GetRows();
                 int idDelete;
@@ -139,14 +139,14 @@ namespace Trnsfer
                 List<DataRows> rows = query.GetRows();
                 QueryExecPDA qry = new QueryExecPDA();
 
-                SQL = "delete from QrySelect where iqQrySelect={1}";
-                qry.Execute(string.Format(SQL, SelectText.Text, rows[0].FieldByName("iqQrySelectBM")));
+                SQL = "delete from QrySelect where idQrySelect={1}";
+                qry.Execute(string.Format(SQL, SelectText.Text, rows[0].FieldByName("idQrySelectBM")));
 
-                SQL = "delete from QrySelect where iqQrySelect={1}";
-                qry.Execute(string.Format(SQL, SelectPDAText.Text, rows[0].FieldByName("iqQrySelectPDA")));
+                SQL = "delete from QrySelect where idQrySelect={1}";
+                qry.Execute(string.Format(SQL, SelectPDAText.Text, rows[0].FieldByName("idQrySelectPDA")));
 
-                SQL = "delete from QryDelete  where iqQryDelete={1}";
-                qry.Execute(string.Format(SQL, DeleteText.Text, rows[0].FieldByName("iqQryDelete")));
+                SQL = "delete from QryDelete  where idQryDelete={1}";
+                qry.Execute(string.Format(SQL, DeleteText.Text, rows[0].FieldByName("idQryDelete")));
 
                 SQL = "delete from QryClear where idQryClear={1}";
                 qry.Execute(string.Format(SQL, ClearText.Text, rows[0].FieldByName("idQryClear")));
@@ -189,18 +189,18 @@ namespace Trnsfer
 
                 /// запросы
                 /// 
-                SQL = "select text from QrySelect where iqQrySelect={0}";
-                query.Select(String.Format(SQL, rows[0].FieldByName("iqQrySelectBM")));
+                SQL = "select text from QrySelect where idQrySelect={0}";
+                query.Select(String.Format(SQL, rows[0].FieldByName("idQrySelectBM")));
                 rows1 = query.GetRows();
                 SelectText.Text = rows1[0].FieldByName("text");
 
-                SQL = "select text from QrySelect where iqQrySelect={0}";
-                query.Select(String.Format(SQL, rows[0].FieldByName("iqQrySelectPDA")));
+                SQL = "select text from QrySelect where idQrySelect={0}";
+                query.Select(String.Format(SQL, rows[0].FieldByName("idQrySelectPDA")));
                 rows1 = query.GetRows();
                 SelectPDAText.Text = rows1[0].FieldByName("text");
 
-                SQL = "select text from QryDelete where iqQryDelete={0}";
-                query.Select(String.Format(SQL, rows[0].FieldByName("iqQryDelete")));
+                SQL = "select text from QryDelete where idQryDelete={0}";
+                query.Select(String.Format(SQL, rows[0].FieldByName("idQryDelete")));
                 rows1 = query.GetRows();
                 DeleteText.Text = rows1[0].FieldByName("text");
 
@@ -307,20 +307,20 @@ namespace Trnsfer
                 query.Select(String.Format(SQL, PDATables.SelectedItem));
                 List<DataRows> rows = query.GetRows();
              
-                SQL = "update QrySelect set text='{0}' where iqQrySelect={1}";
-                qry.Execute(string.Format(SQL, SelectText.Text, rows[0].FieldByName("iqQrySelectBM")));
+                SQL = "update QrySelect set text='{0}' where idQrySelect={1}";
+                qry.Execute(string.Format(SQL, SelectText.Text, rows[0].FieldByName("idQrySelectBM")));
 
-                SQL = "update QrySelect set text='{0}' where iqQrySelect={1}";
-                qry.Execute(string.Format(SQL, SelectPDAText.Text, rows[0].FieldByName("iqQrySelectPDA")));
+                SQL = "update QrySelect set text='{0}' where idQrySelect={1}";
+                qry.Execute(string.Format(SQL, SelectPDAText.Text, rows[0].FieldByName("idQrySelectPDA")));
 
-                SQL = "update QryDelete set text='{0}' where iqQryDelete={1}";
-                qry.Execute(string.Format(SQL, DeleteText.Text, rows[0].FieldByName("iqQryDelete")));
+                SQL = "update QryDelete set text='{0}' where idQryDelete={1}";
+                qry.Execute(string.Format(SQL, DeleteText.Text, rows[0].FieldByName("idQryDelete")));
 
                 SQL = "update QryClear set text='{0}' where idQryClear={1}";
                 qry.Execute(string.Format(SQL, ClearText.Text, rows[0].FieldByName("idQryClear")));
                
-                SQL = "update QryInsert set text='{0}' where idQryinsert={1}";
-                qry.Execute(string.Format(SQL, ClearText.Text, rows[0].FieldByName("idQryInsert")));
+                SQL = "update QryInsert set text='{0}' where idQryInsert={1}";
+                qry.Execute(string.Format(SQL, InsertText.Text, rows[0].FieldByName("idQryInsert")));
                 
             }
         }
