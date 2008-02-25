@@ -261,8 +261,8 @@ namespace Trnsfer
             if (PDAFields.SelectedItem != null)
             {
                 QueryExecPDA qry = new QueryExecPDA();
-                string SQL = "delete from TransferFields where fieldName='{0}'";
-                qry.Execute(String.Format(SQL, PDAFields.SelectedItem));
+                string SQL = "delete from TransferFields where fieldName='{0}' and idTransferTable={1}";
+                qry.Execute(String.Format(SQL, PDAFields.SelectedItem, textBox1.Text));
                 PDATables_SelectedIndexChanged(sender, e);
             }
         }
