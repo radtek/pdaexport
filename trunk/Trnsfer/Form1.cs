@@ -324,5 +324,24 @@ namespace Trnsfer
                 
             }
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            while (OraFields.Items.Count>0)
+            {
+                OraFields.SelectedIndex = 0;
+                button5_Click(sender,e);
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+           
+                QueryExecPDA qry = new QueryExecPDA();
+                string SQL = "delete from TransferFields where idTransferTable='{0}'";
+                qry.Execute(String.Format(SQL, textBox1.Text));
+                PDATables_SelectedIndexChanged(sender, e);
+           
+        }
     }
 }
