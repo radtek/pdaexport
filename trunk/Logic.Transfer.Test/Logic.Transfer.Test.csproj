@@ -28,6 +28,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.2.8.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="Rhino.Mocks, Version=2.9.1.10183, Culture=neutral, PublicKeyToken=0b3305902db7183f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Loging\bin\Debug\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -37,6 +42,16 @@
     <Compile Include="MainParamsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableInfoTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
+      <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
+      <Name>DataBaseWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.Transfer\Logic.Transfer.csproj">
+      <Project>{471A8B0A-E63A-4D15-BA51-147C6B383D2F}</Project>
+      <Name>Logic.Transfer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

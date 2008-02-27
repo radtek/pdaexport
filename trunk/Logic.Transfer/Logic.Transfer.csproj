@@ -38,6 +38,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
+      <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
+      <Name>DataBaseWork</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
