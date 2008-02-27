@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Logic.Transfer;
 
 namespace Logic
 {
@@ -10,7 +11,7 @@ namespace Logic
     {
         public ActionToTempTransferScripts(List<int> IDBR)
         {
-            
+           
         }
         public override string Name()
         {
@@ -35,7 +36,7 @@ namespace Logic
             ///  - OnExecute после кахдой таблицы
             ///  - передавать в args кол-во таблиц и номер текущей (для прогресс бара)
             ///  - проверять Running перед каждой итерацией и если false прекращать работу
-
+           
     
         }
     }
