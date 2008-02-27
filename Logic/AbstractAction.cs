@@ -14,7 +14,7 @@ namespace Logic
         {
             Running = false;
         }
-        public event ExecuteDelegate OnExecute;
+        public  virtual event ExecuteDelegate OnExecute;
         public delegate void ExecuteDelegate(AbstractAction action, Coordinator.ExecuteDelegateArgs args);
     }
 }

@@ -12,6 +12,7 @@ namespace Logic
         private int count = 1;//номер текущей таблицы
         List<TableInfo> lst;
         private List<int> idBr;
+        public override event ExecuteDelegate OnExecute;
         public ActionToTempTransferScripts(List<int> IDBR)
         {
             idBr = IDBR;
@@ -73,20 +74,14 @@ namespace Logic
                     {
                         ins.Add("insert into BMEXPORT." + info.tableName + " " + s);
                     }
-
-                    AbstractAction action;
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
+                   
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
-                    OnExecute += new ExecuteDelegate(ActionToTempTransferScripts_OnExecute);//Не знаю как вызвать
+                    OnExecute(this, args);
                 }
                 else break;
             }
-        }
-
-        void ActionToTempTransferScripts_OnExecute(AbstractAction action, Coordinator.ExecuteDelegateArgs args)
-        {
-            throw new System.Exception("The method or operation is not implemented.");
         }
        
 
