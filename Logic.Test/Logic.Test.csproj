@@ -48,6 +48,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
+      <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
+      <Name>DataBaseWork</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logic\Logic.csproj">
       <Project>{9D9DE158-C9EB-43D8-8FB9-8C62B1358A18}</Project>
       <Name>Logic</Name>
