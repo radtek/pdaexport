@@ -43,17 +43,15 @@ namespace Logic
             if(MainParams.GetParam(MainParams.ParamName.isLight) == "0")
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.AllImport);
-                Exec(lst);
             }
             else
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
-                Exec(lst);
             }
-          
+            Exec();
         }
 
-        public void Exec(List<TableInfo> lst)
+        public void Exec()
         {
             foreach (TableInfo info in lst)
             {
