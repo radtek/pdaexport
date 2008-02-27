@@ -10,6 +10,7 @@ namespace Logic
     /// </summary>
     public class ActionPrepExportScripts:AbstractAction
     {
+        public override event ExecuteDelegate OnExecute;
         public override string Name()
         {
             return "Подготовка базы для переноса";
@@ -50,20 +51,14 @@ namespace Logic
                     QueryExecPDA qu = new QueryExecPDA();
                     q.Execute("delete from BMEXPORT." + info.tableName);
                     qu.Execute("delete from" + info.tableName);
-                    AbstractAction action;
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
-                    OnExecute += new ExecuteDelegate(ActionPrepExportScripts_OnExecute);//Не знаю как вызвать
+                    OnExecute(this, args);
                     count++;
                 }
                 else break;
             }
-        }
-
-        void ActionPrepExportScripts_OnExecute(AbstractAction action, Coordinator.ExecuteDelegateArgs args)
-        {
-            throw new System.Exception("The method or operation is not implemented.");
         }
     }
 }
