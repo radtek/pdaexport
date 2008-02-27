@@ -23,6 +23,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dialogs", "Dialogs\Dialogs.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trnsfer", "Trnsfer\Trnsfer.csproj", "{3D816798-DF91-4E2A-AD59-AACD128597EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Transfer", "Logic.Transfer\Logic.Transfer.csproj", "{471A8B0A-E63A-4D15-BA51-147C6B383D2F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic.Transfer.Test", "Logic.Transfer.Test\Logic.Transfer.Test.csproj", "{DC233D9A-F8F7-4371-85FB-63D1D451799D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,14 @@ Global
 		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D816798-DF91-4E2A-AD59-AACD128597EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{471A8B0A-E63A-4D15-BA51-147C6B383D2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{471A8B0A-E63A-4D15-BA51-147C6B383D2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{471A8B0A-E63A-4D15-BA51-147C6B383D2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{471A8B0A-E63A-4D15-BA51-147C6B383D2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC233D9A-F8F7-4371-85FB-63D1D451799D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC233D9A-F8F7-4371-85FB-63D1D451799D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC233D9A-F8F7-4371-85FB-63D1D451799D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC233D9A-F8F7-4371-85FB-63D1D451799D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
