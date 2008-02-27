@@ -51,8 +51,9 @@ namespace Logic.Transfer
                 ti.idTransferTable = Convert.ToInt32(row.FieldByName("idTransferTable"));
                 ti.tableName = row.FieldByName("tableName");
                 ti.isLight = row.FieldByName("isLight");
+                if(wayType==WayType.LightImport && ti.isLight=="0") continue;
                 ti.needExport = row.FieldByName("needExport");
-
+                if (wayType == WayType.Export && ti.needExport == "0") continue;
                 string idSelectBM=row.FieldByName("idQrySelectBM");
                 string idsql = "select text from QrySelect where idQrySelect={0}";
                 query.Select(string.Format(idsql, idSelectBM));
