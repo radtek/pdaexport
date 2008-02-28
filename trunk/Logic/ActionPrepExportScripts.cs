@@ -43,6 +43,7 @@ namespace Logic
         }
         public void Exec()
         {
+            count = 1;
             foreach (TableInfo info in lst)
             {
                 if (Running)
@@ -54,6 +55,8 @@ namespace Logic
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
+                    args.runningAction = this;
+                    args.Name = Name(); 
                     OnExecute(this, args);
                     count++;
                 }
