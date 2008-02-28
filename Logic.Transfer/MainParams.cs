@@ -36,12 +36,12 @@ namespace Logic.Transfer
             }
             q.Select(string.Format(sql, name));
             List<DataRows> rows = q.GetRows();
-            return rows[0].FieldByName(name);
+            return rows[0].FieldByNameDef(name, "");
         }
-        public static void SetParam(ParamName paramName)
+        public static void SetParam(ParamName paramName, string ParamVal)
         {
             QueryExecPDA q = new QueryExecPDA();
-            string sql = "update MainParams set {0}=null";
+            string sql = "update MainParams set {0}='{1}'";
             string name = "*";
             switch (paramName)
             {
@@ -58,7 +58,7 @@ namespace Logic.Transfer
                 case ParamName.isLight: name = "isLight";
                     break;
             }
-            q.Execute(string.Format(sql, name));
+            q.Execute(string.Format(sql, name, ParamVal));
         }
     }
 }

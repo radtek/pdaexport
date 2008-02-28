@@ -54,12 +54,13 @@ namespace Logic
 
         public void Exec()
         {
+            count = 1;
             foreach (TableInfo info in lst)
             {
                 if (Running)
                 {
-                    Dictionary<TableInfo.QryType, string> sql = info.sqlText;
-                    string select = sql[TableInfo.QryType.SelectBM];
+                    //Dictionary<TableInfo.QryType, string> sql = info.sqlText;
+                    string select = info.sqlText[TableInfo.QryType.SelectBM];
                     List<string> sel = new List<string>();
                     if (select.Contains("'{0}'"))
                     {
@@ -75,10 +76,12 @@ namespace Logic
                         ins.Add("insert into BMEXPORT." + info.tableName + " " + s);
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
-                   
+                    args.runningAction = this;
+                    args.Name = Name();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
                     OnExecute(this, args);
+                    count++;
                 }
                 else break;
             }
