@@ -28,6 +28,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2956.30840, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dialogs\bin\Debug\OpenNETCF.Desktop.Communication.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -51,6 +55,10 @@
     <ProjectReference Include="..\Logic.Transfer\Logic.Transfer.csproj">
       <Project>{471A8B0A-E63A-4D15-BA51-147C6B383D2F}</Project>
       <Name>Logic.Transfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Loging\Loging.csproj">
+      <Project>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</Project>
+      <Name>Loging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
