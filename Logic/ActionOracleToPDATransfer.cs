@@ -1,3 +1,8 @@
+using System.Collections.Generic;
+using System.Windows.Forms;
+using DataBaseWork;
+using Logic.Transfer;
+
 namespace Logic
 {
     /// <summary>
@@ -10,7 +15,9 @@ namespace Logic
         {
             return "Перенос данных на КПК";
         }
-
+        private int count = 1;
+        private List<TableInfo> lst;
+        public override event AbstractAction.ExecuteDelegate OnExecute;
         public override void Run()
         {
             /// алгоритм
@@ -25,6 +32,68 @@ namespace Logic
             ///     -   прогресс бар вести по таблицам.
             ///     -   не забыть лог
             ///     -   не забыть Running    
+            if (MainParams.GetParam(MainParams.ParamName.isLight) == "0")
+            {
+                lst = TableInfo.LoadTables(TableInfo.WayType.AllImport);
+            }
+            else
+            {
+                lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
+            }
+            Exec();
         }
+
+        public void Exec()
+        {
+            count = 1;
+            foreach (TableInfo info in lst)
+            {
+                string ins = "";
+                string temp = "";
+                List<DataRows> dr;
+                if (Running)
+                {
+                    QuerySelectOracle q = new QuerySelectOracle();
+                    QueryExecPDA qu =new QueryExecPDA();
+                    if (!q.Select("select * from BMEXPORT." + info.tableName))
+                    {
+                        Loging.Loging.WriteLog("Error Select From BMEXPORT", true, true);
+                    }
+                    else
+                    {
+                        Loging.Loging.WriteLog("Success Select From BMEXPORT", false, true);
+                        dr = q.GetRows();
+                        foreach (DataRows rows in dr)
+                        {
+                            ins = "insert into" + info.tableName + "(";
+                            foreach (FieldInfo field in info.fields) 
+                        {
+                            ins += field.fieldName + ", ";
+                            temp += rows.FieldByName(field.fieldName)+ ", ";
+                            
+                        }
+                            ins = ins.Remove(ins.LastIndexOf(','), 1);
+                            temp = temp.Remove(temp.LastIndexOf(','), 1);
+                            ins += ") values (" + temp + ")";
+                            if(!qu.Execute(ins))
+                            {
+                                Loging.Loging.WriteLog("Error insert into" + info.tableName , true,true);
+                            }
+                            else Loging.Loging.WriteLog("Success insert into" + info.tableName, false,true);
+                            
+                        }
+                    }
+                    Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
+                    args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
+                    args.Pos = count;
+                    args.runningAction = this;
+                    args.Name = Name();
+                    OnExecute(this, args);
+                    count++;
+                }
+                else break;
+            }
+        }
+        
     }
 }
