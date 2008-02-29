@@ -11,7 +11,7 @@ namespace Logic
     {
         private int count = 1;//номер текущей таблицы
         List<TableInfo> lst;
-        private List<int> idBr;
+        private readonly List<int> idBr;
         public override event ExecuteDelegate OnExecute;
         public ActionToTempTransferScripts(List<int> IDBR)
         {
