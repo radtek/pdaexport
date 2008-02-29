@@ -50,8 +50,16 @@ namespace Logic
                 {
                     QueryExecOracle q = new QueryExecOracle();
                     QueryExecPDA qu = new QueryExecPDA();
-                    q.Execute("delete from BMEXPORT." + info.tableName);
-                    qu.Execute("delete from" + info.tableName);
+                    if (!q.Execute("delete from BMEXPORT." + info.tableName))
+                    {
+                        Loging.Loging.WriteLog("Error Delete From BMEXPORT",true,true);
+                    }
+                    else Loging.Loging.WriteLog("Success Delete From BMEXPORT", false,true);
+                    if(!qu.Execute("delete from" + info.tableName))
+                    {
+                        Loging.Loging.WriteLog("Error Delete From" + info.tableName,true,true);
+                    }
+                    else Loging.Loging.WriteLog("Success Delete From" + info.tableName, false,true);
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
