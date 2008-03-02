@@ -67,22 +67,21 @@ namespace Logic
                         {
                             ins = "insert into" + info.tableName + "(";
                             foreach (FieldInfo field in info.fields) 
-                        {
-                            ins += field.fieldName + ", ";
-                            temp += rows.FieldByName(field.fieldName)+ ", ";
-                            
-                        }
+                            {
+                                ins += field.fieldName + ", ";
+                                temp += "'" + rows.FieldByName(field.fieldName) + "', ";
+                                
+                            }
                             ins = ins.Remove(ins.LastIndexOf(','), 1);
                             temp = temp.Remove(temp.LastIndexOf(','), 1);
                             ins += ") values (" + temp + ")";
                             if(!qu.Execute(ins))
                             {
-                                Loging.Loging.WriteLog("Error insert into" + info.tableName , true,true);
+                                Loging.Loging.WriteLog("Error insert into" + info.tableName, true,true);
                             }
-                            else Loging.Loging.WriteLog("Success insert into" + info.tableName, false,true);
-                            
                         }
                     }
+                    Loging.Loging.WriteLog("Done insert into" + info.tableName, false,true);
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;

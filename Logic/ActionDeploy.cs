@@ -32,7 +32,7 @@ namespace Logic
             {
                 rapi.CopyFileToDevice(ConnectionSettings.GetSettings().OracleConnectionString,
                                       ConnectionSettings.GetSettings().PDAConString);
-                Loging.Loging.WriteLog("coping complete",false,true);
+                Loging.Loging.WriteLog("Coping complete",false,true);
             }
             catch(Exception e)
             {

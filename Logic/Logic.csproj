@@ -30,7 +30,7 @@
   <ItemGroup>
     <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2956.30840, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Dialogs\bin\Debug\OpenNETCF.Desktop.Communication.dll</HintPath>
+      <HintPath>..\OpenNETCF\OpenNETCF.Desktop.Communication.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -47,12 +47,6 @@
     <Compile Include="ActionSetBrReadOnly.cs" />
     <Compile Include="ActionToTempTransferScripts.cs" />
     <Compile Include="Coordinator.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -68,12 +62,6 @@
       <Project>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</Project>
       <Name>Loging</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
