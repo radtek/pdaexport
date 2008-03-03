@@ -59,9 +59,10 @@ namespace Trnsfer
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -346,6 +347,7 @@ namespace Trnsfer
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.progressBar1);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.textBox1);
@@ -366,6 +368,26 @@ namespace Trnsfer
             this.panel2.Size = new System.Drawing.Size(474, 441);
             this.panel2.TabIndex = 31;
             // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(158, 411);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(53, 23);
+            this.button8.TabIndex = 31;
+            this.button8.Text = ">>>>";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(403, 412);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(52, 23);
+            this.button7.TabIndex = 30;
+            this.button7.Text = "<<<<";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -379,25 +401,13 @@ namespace Trnsfer
             this.panel3.Size = new System.Drawing.Size(306, 585);
             this.panel3.TabIndex = 32;
             // 
-            // button7
+            // progressBar1
             // 
-            this.button7.Location = new System.Drawing.Point(403, 412);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(52, 23);
-            this.button7.TabIndex = 30;
-            this.button7.Text = "<<<<";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(158, 411);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(53, 23);
-            this.button8.TabIndex = 31;
-            this.button8.Text = ">>>>";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.progressBar1.Location = new System.Drawing.Point(243, 38);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 32;
             // 
             // Form1
             // 
@@ -456,6 +466,7 @@ namespace Trnsfer
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

@@ -57,11 +57,11 @@ namespace Logic
                     QueryExecPDA qu =new QueryExecPDA();
                     if (!q.Select("select * from BMEXPORT." + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error Select From BMEXPORT", true, true);
+                        Loging.Loging.WriteLog("Error:select * from BMEXPORT." + info.tableName, true, false);
                     }
                     else
                     {
-                        Loging.Loging.WriteLog("Success Select From BMEXPORT", false, true);
+                        Loging.Loging.WriteLog("OK:select * from BMEXPORT." + info.tableName, false, false);
                         dr = q.GetRows();
                         foreach (DataRows rows in dr)
                         {
@@ -77,11 +77,11 @@ namespace Logic
                             ins += ") values (" + temp + ")";
                             if(!qu.Execute(ins))
                             {
-                                Loging.Loging.WriteLog("Error insert into" + info.tableName, true,true);
+                                Loging.Loging.WriteLog("Error:" + ins, true, false);
                             }
+                            else Loging.Loging.WriteLog("OK:" + ins, false, false);
                         }
                     }
-                    Loging.Loging.WriteLog("Done insert into" + info.tableName, false,true);
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
