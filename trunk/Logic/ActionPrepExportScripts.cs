@@ -52,14 +52,20 @@ namespace Logic
                     QueryExecPDA qu = new QueryExecPDA();
                     if (!q.Execute("delete from BMEXPORT." + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error Delete From BMEXPORT",true,true);
+                        Loging.Loging.WriteLog("Error:delete from BMEXPORT." + info.tableName, true, false);
                     }
-                    else Loging.Loging.WriteLog("Success Delete From BMEXPORT", false,true);
+                    else
+                    {
+                        Loging.Loging.WriteLog("OK:delete from BMEXPORT." + info.tableName, false, false);
+                    }
                     if(!qu.Execute("delete from" + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error Delete From" + info.tableName,true,true);
+                        Loging.Loging.WriteLog("Error:delete from" + info.tableName, true, false);
                     }
-                    else Loging.Loging.WriteLog("Success Delete From" + info.tableName, false,true);
+                    else
+                    {
+                        Loging.Loging.WriteLog("OK:delete from BMEXPORT." + info.tableName, false, false);
+                    }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;

@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using DataBaseWork;
 
@@ -324,15 +326,25 @@ namespace Trnsfer
                 
             }
         }
-
+       
         private void button7_Click(object sender, EventArgs e)
         {
+            progressBar1.Minimum = 1;
+            progressBar1.Maximum = OraFields.Items.Count;
+            progressBar1.Value = 1;
+            progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            int i = 1;
             while (OraFields.Items.Count>0)
             {
                 OraFields.SelectedIndex = 0;
                 button5_Click(sender,e);
+                progressBar1.Value=i;
+                i++;
             }
+          
         }
+
+        
 
         private void button8_Click(object sender, EventArgs e)
         {
