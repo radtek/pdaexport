@@ -127,12 +127,11 @@ namespace Loging
             ListBox lb = form.listBox1;
             foreach (KeyValuePair<string, bool[]> pair in Log)
             {
-                if (pair.Value[1].Equals(true))
+                if (pair.Value[1])
                 {
-                    if (pair.Value[0].Equals(false))
+                    if (!pair.Value[0])
                     {
                         lb.Items.Add(DateTime.Now + " : " + pair.Key);
-                        
                     }
                     else lb.Items.Add(DateTime.Now + " Ошибка : " + pair.Key);
                 }
