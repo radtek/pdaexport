@@ -50,7 +50,6 @@ namespace Logic
             {
                 string ins = "";
                 string temp = "";
-                List<DataRows> dr;
                 if (Running)
                 {
                     QuerySelectOracle q = new QuerySelectOracle();
@@ -62,7 +61,7 @@ namespace Logic
                     else
                     {
                         Loging.Loging.WriteLog("OK:select * from BMEXPORT." + info.tableName, false, false);
-                        dr = q.GetRows();
+                        List<DataRows> dr = q.GetRows();
                         foreach (DataRows rows in dr)
                         {
                             ins = "insert into" + info.tableName + "(";
