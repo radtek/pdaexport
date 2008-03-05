@@ -60,7 +60,6 @@ namespace Logic
             {
                 if (Running)
                 {
-                    //Dictionary<TableInfo.QryType, string> sql = info.sqlText;
                     QueryExecOracle q=new QueryExecOracle();
                     string select = info.sqlText[TableInfo.QryType.SelectBM];
                     List<string> sel = new List<string>();
@@ -81,9 +80,9 @@ namespace Logic
                     {
                         if(q.Execute(s))
                         {
-                            Loging.Loging.WriteLog("OK:" + ins, false, false);
+                            Loging.Loging.WriteLog("OK:" + s, false, false);
                         }
-                        else Loging.Loging.WriteLog("Error:" + ins, true, false);
+                        else Loging.Loging.WriteLog("Error:" + s, true, false);
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.runningAction = this;
