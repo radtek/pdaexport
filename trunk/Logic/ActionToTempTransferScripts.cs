@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DataBaseWork;
 using Logic.Transfer;
 
 namespace Logic
@@ -60,6 +61,7 @@ namespace Logic
                 if (Running)
                 {
                     //Dictionary<TableInfo.QryType, string> sql = info.sqlText;
+                    QueryExecOracle q=new QueryExecOracle();
                     string select = info.sqlText[TableInfo.QryType.SelectBM];
                     List<string> sel = new List<string>();
                     if (select.Contains("'{0}'"))
@@ -74,6 +76,14 @@ namespace Logic
                     foreach (string s in sel)
                     {
                         ins.Add("insert into BMEXPORT." + info.tableName + " " + s);
+                    }
+                    foreach (string s in ins)
+                    {
+                        if(q.Execute(s))
+                        {
+                            Loging.Loging.WriteLog("OK:" + ins, false, false);
+                        }
+                        else Loging.Loging.WriteLog("Error:" + ins, true, false);
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.runningAction = this;

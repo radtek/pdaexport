@@ -50,6 +50,7 @@ namespace DataBaseWork
         private void ConnectToBase(string _string)
         {
             Connection = new OracleConnection(_string);
+            if(Connection.State==ConnectionState.Closed)
             Connection.Open();
         }
         private OracleConnection GetConnection()
