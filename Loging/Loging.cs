@@ -89,9 +89,9 @@ namespace Loging
         public void _WriteLog(string Message, bool IsError, bool IsReport)
         {
             bool[] flag=new bool[]{IsError,IsReport};
-            if(loging.Equals(true))
+            if(loging)
             {
-               if(IsError.Equals(true))
+               if(IsError)
                {
                    WasErr = true;
                }
@@ -109,7 +109,7 @@ namespace Loging
             int i = 0;
             foreach (KeyValuePair<string, bool[]> pair in Log)
             {
-                if(pair.Value[0].Equals(false))
+                if(!pair.Value[0])
                 {
                     fields[i] = DateTime.Now+" : "+pair.Key;
                 }
