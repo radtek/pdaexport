@@ -9,9 +9,14 @@ namespace Logic
     /// </summary>
     public class ActionSetBrReadOnly:AbstractAction
     {
+        bool ReadOnly = true;
+        public ActionSetBrReadOnly(List<int> IDBR, bool ReadOnly)
+        {
+            this.ReadOnly = ReadOnly;    
+        }
         public ActionSetBrReadOnly(List<int> IDBR)
         {
-            
+
         }
         public override string Name()
         {
