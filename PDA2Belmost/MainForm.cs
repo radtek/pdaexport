@@ -77,17 +77,18 @@ namespace PDA2Belmost
  
         private void button4_Click(object sender, EventArgs e)
         {
+            // получение списка мостов
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
-            /*
-            coordinator.AddAction(new ActionPrepExportScripts());
-            coordinator.AddAction(new ActionToTempTransferScripts(SelectedID));
-            coordinator.AddAction(new ActionOracleToPDATransfer());
-            coordinator.AddAction(new ActionFinishExportScripts());
-            coordinator.AddAction(new ActionDeploy());
-            coordinator.AddAction(new ActionSetBrReadOnly(SelectedID));
-            */
+            coordinator.AddAction(new ActionDeploy(false));
+            coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
+            coordinator.AddAction(new ActionClearOracleBr(SelectedID));
+            coordinator.AddAction(new ActionPDAToOracleTransfer());
+            coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
+            coordinator.AddAction(new ActionFinishImportScripts());
+            coordinator.AddAction(new ActionSetBrReadOnly(SelectedID, false));
+            
             // make dialog
             dlgRunning dlg = new dlgRunning();
             dlg.Text = "Импорт";
