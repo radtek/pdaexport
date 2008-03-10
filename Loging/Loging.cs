@@ -141,8 +141,6 @@ namespace Loging
             
         }
 
-      
-               
         /// <summary>
         /// ¬озвращает признак того была ли хоть одна запись с isError == true
         /// </summary>

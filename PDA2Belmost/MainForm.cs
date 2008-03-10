@@ -28,7 +28,7 @@ namespace PDA2Belmost
         {
 
         }
-
+        readonly List<int> SelectedID = new List<int>();
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Программа переноса данных для СУСМ \"Белмост\" \n  из СУБД MSSQL Compact Edition в СУБД Oracle");
