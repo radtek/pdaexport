@@ -83,6 +83,7 @@ namespace Logic
                             Loging.Loging.WriteLog("OK:" + s, false, false);
                         }
                         else Loging.Loging.WriteLog("Error:" + s, true, false);
+
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.runningAction = this;
