@@ -308,7 +308,7 @@ namespace Belmost2PDA
             coordinator.AddAction(new ActionToTempTransferScripts(SelectedID));
             coordinator.AddAction(new ActionOracleToPDATransfer());
             coordinator.AddAction(new ActionFinishExportScripts());
-            coordinator.AddAction(new ActionDeploy());
+            coordinator.AddAction(new ActionDeploy(false));
             coordinator.AddAction(new ActionSetBrReadOnly(SelectedID));
             // make dialog
             dlgRunning dlg = new dlgRunning();

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
+using Logic.Transfer;
 
 namespace Logic
 {
@@ -11,7 +12,7 @@ namespace Logic
         {
             return "Завершения переноса";
         }
-
+        public override event ExecuteDelegate OnExecute;
         public override void Run()
         {
             /// алгоритм
@@ -20,7 +21,16 @@ namespace Logic
             ///     -   impState = done если нет в логе ошибок (Logging.WasError)
             /// event в самом конце (Max = 1 Pos = 1)
             /// Running не обрабатываеться
-            throw new NotImplementedException();
+            MainParams.SetParam(MainParams.ParamName.impDate, DateTime.Now.ToString());
+            if (!Loging.Loging.WasError())
+                MainParams.SetParam(MainParams.ParamName.impState, "done");
+            Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
+            args.Maximum = 1;
+            args.Pos = 1;
+            args.runningAction = this;
+            args.Name = Name();
+            Loging.Loging.WriteLog("DONE", false, true);
+            OnExecute(this, args);
         }
     }
 }

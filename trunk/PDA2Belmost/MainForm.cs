@@ -83,11 +83,11 @@ namespace PDA2Belmost
             // setup actions
             coordinator.AddAction(new ActionDeploy(false));
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
-            coordinator.AddAction(new ActionClearOracleBr(SelectedID));
+            coordinator.AddAction(new ActionClearOracleBr());
             coordinator.AddAction(new ActionPDAToOracleTransfer());
             coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
             coordinator.AddAction(new ActionFinishImportScripts());
-            coordinator.AddAction(new ActionSetBrReadOnly(SelectedID, false));
+            coordinator.AddAction(new ActionSetBrReadOnly(null, false));
             
             // make dialog
             dlgRunning dlg = new dlgRunning();

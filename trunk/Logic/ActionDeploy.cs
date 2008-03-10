@@ -18,7 +18,6 @@ namespace Logic
 
         public override event ExecuteDelegate OnExecute;
         public ActionDeploy(bool toPDA)
-            : base()
         {
             ToPDA = toPDA;
             if (!toPDA)
@@ -37,17 +36,28 @@ namespace Logic
             /// Дополнение:  если ToPDA == false то копирование идет не на КПК а из КПК
             DataBasePDA.Disconnect();
             RAPI rapi=new RAPI();
-
-            try
-            {
-                rapi.CopyFileToDevice(ConnectionSettings.GetSettings().OracleConnectionString,
-                                      ConnectionSettings.GetSettings().PDAConString);
-                Loging.Loging.WriteLog("Coping complete",false,true);
-            }
-            catch(Exception e)
-            {
-                Loging.Loging.WriteLog("Coping failed: "+e.Message, false, true);
-            }
+            if(ToPDA)
+                try
+                {
+                    rapi.CopyFileToDevice(ConnectionSettings.GetSettings().OracleConnectionString,
+                                          ConnectionSettings.GetSettings().PDAConString);
+                    Loging.Loging.WriteLog("Coping to PDA complete",false,true);
+                }
+                catch(Exception e)
+                {
+                    Loging.Loging.WriteLog("Coping  to PDA failed: "+e.Message, false, true);
+                }
+            else
+                try
+                {
+                    rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().OracleConnectionString,
+                                          ConnectionSettings.GetSettings().PDAConString);
+                    Loging.Loging.WriteLog("Coping  from PDA complete", false, true);
+                }
+                catch (Exception e)
+                {
+                    Loging.Loging.WriteLog("Coping from PDA failed: " + e.Message, false, true);
+                }
             Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
             args.Maximum = 1;
             args.Pos = 1;
