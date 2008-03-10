@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+//using System.Linq;
 using System.Text;
 
 namespace Logic
@@ -26,7 +26,11 @@ namespace Logic
             /// тригерра (учитвать порядок - ord)
             ///  -   не забыть лог
             ///  -   не забыть Running  
-            throw new NotImplementedException();
+           
+            if(Running)
+           {
+               
+           }
         }
     }
 }
