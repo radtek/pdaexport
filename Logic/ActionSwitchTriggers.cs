@@ -31,34 +31,31 @@ namespace Logic
             if(Running)
             {
                 string tr = "select * from DisTriggers order by ord";
-                string tri = "Alter trigger {0} {1}";
+                string tri="Alter trigger {0} ";
+                if(On)
+                     tri+= "Enable";
+                else tri += "Disable";
                 QuerySelectPDA q=new QuerySelectPDA();
                 QueryExecOracle qu = new QueryExecOracle();
                 if(!q.Select(tr))
-                    Loging.Loging.WriteLog("Error:"+tr,true,false);
+                {
+                     Loging.Loging.WriteLog("Error:"+tr,true,false);
+                }
                 else
                 {
                     Loging.Loging.WriteLog("OK:" + tr, false, false);
                 }
-                List<DataRows> dr=new List<DataRows>();
+                List<DataRows> dr;
                 dr = q.GetRows();
                 foreach (DataRows rows in dr)
                 {
-                    if(On)
-                    {
-                        if(!qu.Execute(String.Format(tri, rows.FieldByName("triggerName"), "Enable")))
-                            Loging.Loging.WriteLog("Error:" + String.Format(tri, rows.FieldByName("triggerName"), "Enable"), true, false);
-                        else  Loging.Loging.WriteLog(
-                            "OK:" + String.Format(tri, rows.FieldByName("triggerName"), "Enable"), false, false);
-                    }
+                    string TrName = rows.FieldByName("triggerName");
+                   
+                        if(!qu.Execute(String.Format(tri,TrName)))
+                                Loging.Loging.WriteLog("Error:" + String.Format(tri, TrName), true, false);
+                        else  
+                                Loging.Loging.WriteLog("OK:" + String.Format(tri, TrName), false, false);
                     
-                    else 
-                    {
-                        if(!qu.Execute(String.Format(tri, rows.FieldByName("triggerName"), "Disable")))
-                        Loging.Loging.WriteLog("Error:" + String.Format(tri, rows.FieldByName("triggerName"), "Disable"), true, false);
-                        else Loging.Loging.WriteLog(
-                            "OK:" + String.Format(tri, rows.FieldByName("triggerName"), "Disable"), false, false); 
-                    }
                 }
             }
 
