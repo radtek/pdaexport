@@ -329,19 +329,11 @@ namespace Trnsfer
        
         private void button7_Click(object sender, EventArgs e)
         {
-            progressBar1.Minimum = 1;
-            progressBar1.Maximum = OraFields.Items.Count;
-            progressBar1.Value = 1;
-            progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            int i = 1;
             while (OraFields.Items.Count>0)
             {
                 OraFields.SelectedIndex = 0;
                 button5_Click(sender,e);
-                progressBar1.Value=i;
-                i++;
             }
-          
         }
 
         
@@ -354,6 +346,21 @@ namespace Trnsfer
                 qry.Execute(String.Format(SQL, textBox1.Text));
                 PDATables_SelectedIndexChanged(sender, e);
            
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < PDATables.Items.Count; i++)
+            {
+                PDATables.SelectedIndex = i;
+                if (PDATables.SelectedItem.Equals("BRGEN"))
+                    SelectText.Text = "select * from BRGEN where idBr={0}";
+                else if (PDAFields.Items.Contains("IDBR"))
+                    SelectText.Text = "select * from " + PDATables.SelectedItem +
+                                      " where idBr in (select idbr from BMEXPORT.BRGEN)";
+                else SelectText.Text = "select * from " + PDATables.SelectedItem;
+                button6_Click(sender,e);
+            }
         }
     }
 }
