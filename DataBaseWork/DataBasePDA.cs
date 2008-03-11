@@ -20,6 +20,8 @@ namespace DataBaseWork
 
         private static DataBasePDA _instance = null;
         public static string ConnectionString = "Data Source = \"C:\\BelmostPDA.sdf\"; Password =\"pdabase\"";
+        public static string ConnectionStringTmp = "Data Source = \"{0}\"; Password =\"pdabase\"";
+
         private static void Create()
         {
             if (_instance == null)

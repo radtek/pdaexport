@@ -48,7 +48,8 @@ namespace DataBaseWork
         {
             DataBaseOracle.ConnectionString = 
                 string.Format(DataBaseOracle.ConnectionStringTmp, _instance.OracleConnectionString);
-            DataBasePDA.ConnectionString = _instance.PDAConnectionString;
+            DataBasePDA.ConnectionString =
+                string.Format(DataBasePDA.ConnectionStringTmp, _instance.PDAConnectionString);
         }
         public static ConnectionSettings GetSettings()
         {

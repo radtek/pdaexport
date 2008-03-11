@@ -9,7 +9,7 @@ namespace Logic.Transfer
     {
         public string fieldName;
         public  static QuerySelectPDA query=new QuerySelectPDA();
-        public static string sql = "select fieldname from TranferFields where idTransferTable={0}";
+        public static string sql = "select fieldname from TransferFields where idTransferTable={0}";
         /// <summary>
         /// Ворзвращает список полей для таблицы ( по идентификатору таблицы)
         /// </summary>

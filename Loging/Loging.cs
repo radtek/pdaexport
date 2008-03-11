@@ -52,6 +52,12 @@ namespace Loging
         public static Loging _instance = null;
         
         public bool loging = false;
+        public class LogItem
+        {
+            public string Text;
+            public bool Error;
+            public bool Report;
+        }
         public Dictionary<string, bool[]> Log = new Dictionary<string, bool[]>();
         public bool WasErr = false;
         
@@ -95,6 +101,7 @@ namespace Loging
                {
                    WasErr = true;
                }
+                if(!Log.ContainsKey(Message))
                 Log.Add(Message,flag);
             }
 
@@ -127,7 +134,7 @@ namespace Loging
             ListBox lb = form.listBox1;
             foreach (KeyValuePair<string, bool[]> pair in Log)
             {
-                if (pair.Value[1])
+                //if (pair.Value[1])
                 {
                     if (!pair.Value[0])
                     {

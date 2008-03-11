@@ -49,7 +49,7 @@ namespace Logic
             foreach (TableInfo info in lst)
             {
                 string ins = "";
-                string temp = "";
+                string temp;
                 if (Running)
                 {
                     QuerySelectOracle q = new QuerySelectOracle();
@@ -64,7 +64,8 @@ namespace Logic
                         List<DataRows> dr = q.GetRows();
                         foreach (DataRows rows in dr)
                         {
-                            ins = "insert into" + info.tableName + "(";
+                            temp = "";
+                            ins = "insert into " + info.tableName + "(";
                             foreach (FieldInfo field in info.fields) 
                             {
                                 ins += field.fieldName + ", ";
@@ -76,9 +77,9 @@ namespace Logic
                             ins += ") values (" + temp + ")";
                             if(!qu.Execute(ins))
                             {
-                                Loging.Loging.WriteLog("Error:" + ins, true, false);
+                                Loging.Loging.WriteLog("Error: " + ins, true, false);
                             }
-                            else Loging.Loging.WriteLog("OK:" + ins, false, false);
+                            else Loging.Loging.WriteLog("OK: " + ins, false, false);
                         }
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
