@@ -30,9 +30,37 @@ namespace DAO.Bridges
         {
             query = QuerySelect.Create(BaseType.PDA);
         }
-        public virtual List<BridgeData> Load(BrViewMode viewMode) // запрос на просто список мостов
+        public virtual List<BridgeData> LoadBr(BrViewMode viewMode) // запрос на просто список мостов
         {
             // Получить список мостов в базе (главное - ID)
+            switch (viewMode)
+            {
+                case BrViewMode.viewPos:
+                    query.Select(SQLSelectBridgesMode.SelectPos);
+                    break;
+                case BrViewMode.viewRel:
+                    query.Select(SQLSelectBridgesMode.SelectRel);
+                    break;
+            }
+            List<DataRows> rows = query.GetRows();
+            string LastBrId = "";
+            BridgeData bd = null;
+            List<BridgeData> Returnrows=new List<BridgeData>();
+            foreach (DataRows row in rows)
+            {
+                string BrId = row.FieldByName("ID");
+                if (LastBrId != BrId)
+                {
+                    // flush
+                    if (bd != null)
+                        Returnrows.Add(bd);
+                    // make new
+                    bd = new BridgeData(int.Parse(BrId), row.FieldByName("BRNAME"));
+                }
+            }
+            if (bd != null)
+                Returnrows.Add(bd);
+            return Returnrows;
         }
 
         /// <summary>
