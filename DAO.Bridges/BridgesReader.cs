@@ -33,13 +33,15 @@ namespace DAO.Bridges
         public virtual List<BridgeData> LoadBr(BrViewMode viewMode) // запрос на просто список мостов
         {
             // Получить список мостов в базе (главное - ID)
+            string sql =
+                "SELECT Br.idBr as ID, Br.brName AS BRNAME FROM Br ";
             switch (viewMode)
             {
                 case BrViewMode.viewPos:
-                    query.Select(SQLSelectBridgesMode.SelectPos);
+                    query.Select(sql);
                     break;
                 case BrViewMode.viewRel:
-                    query.Select(SQLSelectBridgesMode.SelectRel);
+                    query.Select(sql);
                     break;
             }
             List<DataRows> rows = query.GetRows();
