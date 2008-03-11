@@ -26,6 +26,14 @@ namespace DAO.Bridges
         {
             query = QuerySelect.Create(BaseType.Oracle);
         }
+        public BridgesReader(bool Dummy) // перегрузка чтобы создавать запрос для ПДА
+        {
+            query = QuerySelect.Create(BaseType.PDA);
+        }
+        public virtual List<BridgeData> Load(BrViewMode viewMode) // запрос на просто список мостов
+        {
+            // Получить список мостов в базе (главное - ID)
+        }
 
         /// <summary>
         /// Loads bridges for the specified view mode.
