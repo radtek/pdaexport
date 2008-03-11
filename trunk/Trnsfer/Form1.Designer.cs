@@ -62,7 +62,7 @@ namespace Trnsfer
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -347,7 +347,7 @@ namespace Trnsfer
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button7);
             this.panel2.Controls.Add(this.textBox1);
@@ -401,13 +401,15 @@ namespace Trnsfer
             this.panel3.Size = new System.Drawing.Size(306, 585);
             this.panel3.TabIndex = 32;
             // 
-            // progressBar1
+            // button9
             // 
-            this.progressBar1.Location = new System.Drawing.Point(243, 38);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.progressBar1.TabIndex = 32;
+            this.button9.Location = new System.Drawing.Point(210, 15);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(125, 23);
+            this.button9.TabIndex = 32;
+            this.button9.Text = "Вашлшэбны гузик";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -466,7 +468,7 @@ namespace Trnsfer
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Button button9;
     }
 }
 
