@@ -58,7 +58,7 @@ namespace Logic
                     {
                         Loging.Loging.WriteLog("OK:delete from BMEXPORT." + info.tableName, false, false);
                     }
-                    if(!qu.Execute("delete from" + info.tableName))
+                    if(!qu.Execute("delete from " + info.tableName))
                     {
                         Loging.Loging.WriteLog("Error:delete from" + info.tableName, true, false);
                     }

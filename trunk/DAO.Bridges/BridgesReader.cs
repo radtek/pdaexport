@@ -30,20 +30,12 @@ namespace DAO.Bridges
         {
             query = QuerySelect.Create(BaseType.PDA);
         }
-        public virtual List<BridgeData> LoadBr(BrViewMode viewMode) // запрос на просто список мостов
+        public virtual List<BridgeData> Load() // запрос на просто список мостов
         {
             // Получить список мостов в базе (главное - ID)
             string sql =
                 "SELECT Br.idBr as ID, Br.brName AS BRNAME FROM Br ";
-            switch (viewMode)
-            {
-                case BrViewMode.viewPos:
-                    query.Select(sql);
-                    break;
-                case BrViewMode.viewRel:
-                    query.Select(sql);
-                    break;
-            }
+            query.Select(sql);
             List<DataRows> rows = query.GetRows();
             string LastBrId = "";
             BridgeData bd = null;

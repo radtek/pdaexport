@@ -27,7 +27,7 @@ namespace Logic.Transfer
         // только для полного маппинга - а вдруг понадобяться:)
         public string isLight;
         public string needExport;
-        public Dictionary<QryType, string> sqlText;
+        public Dictionary<QryType, string> sqlText=new Dictionary<QryType, string>();
         public List<FieldInfo> fields;
         /// <summary>
         /// Функция считавает таблицы на основании типа.

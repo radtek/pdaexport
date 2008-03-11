@@ -36,7 +36,10 @@ namespace Logic.Transfer
             }
             q.Select(string.Format(sql, name));
             List<DataRows> rows = q.GetRows();
-            return rows[0].FieldByNameDef(name, "");
+            if (rows.Count > 0)
+                return rows[0].FieldByNameDef(name, "");
+            else
+                return "";
         }
         public static void SetParam(ParamName paramName, string ParamVal)
         {
