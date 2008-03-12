@@ -138,7 +138,7 @@ namespace Loging
             ListBox lb = form.listBox1;
             foreach (LogItem item in Log)
             {
-                if (item.Report)
+                //if (item.Report)
                 {
                     if (!item.Error)
                     {

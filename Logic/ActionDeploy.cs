@@ -33,25 +33,31 @@ namespace Logic
             /// Running не обрабатываеться    
             /// 
 
-            /// Дополнение:  если ToPDA == false то копирование идет не на КПК а из КПК
+            /// Дополнение:  если ToPDA == true то копирование идет не на КПК а из КПК
             DataBasePDA.Disconnect();
             RAPI rapi=new RAPI();
-            if(ToPDA)
-                try
-                {
-                    rapi.CopyFileToDevice(ConnectionSettings.GetSettings().OracleConnectionString,
-                                          ConnectionSettings.GetSettings().PDAConString);
-                    Loging.Loging.WriteLog("Coping to PDA complete",false,true);
-                }
-                catch(Exception e)
-                {
-                    Loging.Loging.WriteLog("Coping  to PDA failed: "+e.Message, false, true);
-                }
+            if(!ToPDA)
+               try
+                    {
+                        rapi.Connect();
+
+
+                        rapi.CopyFileToDevice(ConnectionSettings.GetSettings().PDAConnectionString,
+                                              ConnectionSettings.GetSettings().PDAConString, true);
+                        Loging.Loging.WriteLog("Coping to PDA complete", false, true);
+                        
+                    }
+                    catch (Exception e)
+                    {
+                        Loging.Loging.WriteLog("Coping  to PDA failed: " + e.Message, false, true);
+                    }
+               
             else
                 try
                 {
-                    rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().OracleConnectionString,
-                                          ConnectionSettings.GetSettings().PDAConString);
+                    rapi.Connect();
+                    rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().PDAConnectionString,
+                                          ConnectionSettings.GetSettings().PDAConString, true);
                     Loging.Loging.WriteLog("Coping  from PDA complete", false, true);
                 }
                 catch (Exception e)

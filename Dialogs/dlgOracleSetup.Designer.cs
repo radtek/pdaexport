@@ -39,9 +39,10 @@ namespace Dialogs
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(412, 84);
+            this.button1.Location = new System.Drawing.Point(289, 75);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 19);
             this.button1.TabIndex = 0;
             this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@ namespace Dialogs
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.Location = new System.Drawing.Point(12, 84);
+            this.button2.Location = new System.Drawing.Point(11, 75);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(73, 19);
             this.button2.TabIndex = 1;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
@@ -61,24 +63,27 @@ namespace Dialogs
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 27);
+            this.label1.Location = new System.Drawing.Point(9, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 17);
+            this.label1.Size = new System.Drawing.Size(154, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Сервис Oracle БД \"Белмост\"";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(222, 24);
+            this.textBox1.Location = new System.Drawing.Point(166, 20);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(148, 22);
+            this.textBox1.Size = new System.Drawing.Size(112, 20);
             this.textBox1.TabIndex = 3;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(385, 24);
+            this.button3.Location = new System.Drawing.Point(289, 20);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(102, 23);
+            this.button3.Size = new System.Drawing.Size(76, 19);
             this.button3.TabIndex = 4;
             this.button3.Text = "Тест";
             this.button3.UseVisualStyleBackColor = true;
@@ -86,10 +91,10 @@ namespace Dialogs
             // 
             // dlgOracleSetup
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button2;
-            this.ClientSize = new System.Drawing.Size(499, 119);
+            this.ClientSize = new System.Drawing.Size(375, 118);
             this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.textBox1);
@@ -97,6 +102,7 @@ namespace Dialogs
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "dlgOracleSetup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Настройка соединения с БД Oracle";

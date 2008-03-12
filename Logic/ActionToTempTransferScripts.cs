@@ -63,7 +63,7 @@ namespace Logic
                     QueryExecOracle q=new QueryExecOracle();
                     string select = info.sqlText[TableInfo.QryType.SelectBM];
                     List<string> sel = new List<string>();
-                    if (select.Contains("'{0}'"))
+                    if (select.Contains("{0}"))
                     {
                         foreach (int i in idBr)
                         {
@@ -80,9 +80,9 @@ namespace Logic
                     {
                         if(q.Execute(s))
                         {
-                            Loging.Loging.WriteLog("OK:" + s, false, false);
+                            Loging.Loging.WriteLog("OK: " + s, false, false);
                         }
-                        else Loging.Loging.WriteLog("Error:" + s, true, false);
+                        else Loging.Loging.WriteLog("Error: " + s, true, false);
 
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
