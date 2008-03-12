@@ -57,8 +57,14 @@ namespace Loging
             public string Text;
             public bool Error;
             public bool Report;
+            public LogItem(string text, bool err, bool rep)
+            {
+                Text = text;
+                Error = err;
+                Report = rep;
+            }
         }
-        public Dictionary<string, bool[]> Log = new Dictionary<string, bool[]>();
+        public List<LogItem> Log=new List<LogItem>();
         public bool WasErr = false;
         
         public static void Init()
@@ -94,15 +100,13 @@ namespace Loging
         /// <param name="IsReport">if set to <c>true</c> [признак того что запись должна включаться в отчет].</param>
         public void _WriteLog(string Message, bool IsError, bool IsReport)
         {
-            bool[] flag=new bool[]{IsError,IsReport};
             if(loging)
             {
                if(IsError)
                {
                    WasErr = true;
                }
-                if(!Log.ContainsKey(Message))
-                Log.Add(Message,flag);
+                Log.Add(new LogItem(Message,IsError,IsReport));
             }
 
         }
@@ -114,13 +118,13 @@ namespace Loging
         {
             string[] fields = new string[Log.Count];
             int i = 0;
-            foreach (KeyValuePair<string, bool[]> pair in Log)
+            foreach (LogItem item in Log)
             {
-                if(!pair.Value[0])
+                if(!item.Error)
                 {
-                    fields[i] = DateTime.Now+" : "+pair.Key;
+                    fields[i] = DateTime.Now + " : " + item.Text;
                 }
-                else fields[i] = DateTime.Now + " Ошибка : " + pair.Key;
+                else fields[i] = DateTime.Now + " Ошибка : " + item.Text;
                 i++;
             }
             return fields;
@@ -132,15 +136,15 @@ namespace Loging
         {
             LogView form=new LogView();
             ListBox lb = form.listBox1;
-            foreach (KeyValuePair<string, bool[]> pair in Log)
+            foreach (LogItem item in Log)
             {
-                //if (pair.Value[1])
+                if (item.Report)
                 {
-                    if (!pair.Value[0])
+                    if (!item.Error)
                     {
-                        lb.Items.Add(DateTime.Now + " : " + pair.Key);
+                        lb.Items.Add(DateTime.Now + " : " + item.Text);
                     }
-                    else lb.Items.Add(DateTime.Now + " Ошибка : " + pair.Key);
+                    else lb.Items.Add(DateTime.Now + " Ошибка : " + item.Text);
                 }
                 
             }
