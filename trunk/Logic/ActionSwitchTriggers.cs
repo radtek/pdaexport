@@ -39,11 +39,11 @@ namespace Logic
                 QueryExecOracle qu = new QueryExecOracle();
                 if(!q.Select(tr))
                 {
-                     Loging.Loging.WriteLog("Error:"+tr,true,false);
+                     Loging.Loging.WriteLog("Error: "+tr,true,false);
                 }
                 else
                 {
-                    Loging.Loging.WriteLog("OK:" + tr, false, false);
+                    Loging.Loging.WriteLog("OK: " + tr, false, false);
                 }
                 List<DataRows> dr;
                 dr = q.GetRows();
@@ -52,9 +52,9 @@ namespace Logic
                     string TrName = rows.FieldByName("triggerName");
                    
                         if(!qu.Execute(String.Format(tri,TrName)))
-                                Loging.Loging.WriteLog("Error:" + String.Format(tri, TrName), true, false);
+                                Loging.Loging.WriteLog("Error: " + String.Format(tri, TrName), true, false);
                         else  
-                                Loging.Loging.WriteLog("OK:" + String.Format(tri, TrName), false, false);
+                                Loging.Loging.WriteLog("OK: " + String.Format(tri, TrName), false, false);
                     
                 }
             }

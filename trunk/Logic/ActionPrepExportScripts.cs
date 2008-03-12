@@ -60,7 +60,7 @@ namespace Logic
                     }
                     if(!qu.Execute("delete from " + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error:delete from" + info.tableName, true, false);
+                        Loging.Loging.WriteLog("Error:delete from " + info.tableName, true, false);
                     }
                     else
                     {

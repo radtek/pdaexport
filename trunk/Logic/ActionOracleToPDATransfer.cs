@@ -69,8 +69,9 @@ namespace Logic
                             foreach (FieldInfo field in info.fields) 
                             {
                                 ins += field.fieldName + ", ";
-                                temp += "'" + rows.FieldByName(field.fieldName) + "', ";
-                                
+                                if (rows.FieldByName(field.fieldName)!="")
+                                temp += "'" + rows.FieldByName(field.fieldName).Replace(',','.').ToString() + "', ";
+                            else temp += "null, ";
                             }
                             ins = ins.Remove(ins.LastIndexOf(','), 1);
                             temp = temp.Remove(temp.LastIndexOf(','), 1);

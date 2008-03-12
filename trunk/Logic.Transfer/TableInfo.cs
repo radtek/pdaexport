@@ -41,7 +41,7 @@ namespace Logic.Transfer
         {
             List<TableInfo> lt=new List<TableInfo>();
             string sql = "select * from  Transfer2PDA order by {0}";
-            if(wayType==WayType.Export) query.Select(string.Format(sql,"OrderPDA"));
+            if(wayType==WayType.Export) query.Select(string.Format(sql,"OrderBM"));
             else query.Select(string.Format(sql, "OrderBM"));
             List<DataRows> rows = query.GetRows();
             TableInfo ti;

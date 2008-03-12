@@ -38,9 +38,10 @@ namespace Dialogs
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(524, 305);
+            this.button1.Location = new System.Drawing.Point(11, 257);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 23);
+            this.button1.Size = new System.Drawing.Size(74, 19);
             this.button1.TabIndex = 0;
             this.button1.Text = "Прервать";
             this.button1.UseVisualStyleBackColor = true;
@@ -49,9 +50,10 @@ namespace Dialogs
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(524, 305);
+            this.button2.Location = new System.Drawing.Point(400, 257);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
+            this.button2.Size = new System.Drawing.Size(74, 19);
             this.button2.TabIndex = 1;
             this.button2.Text = "Готово";
             this.button2.UseVisualStyleBackColor = true;
@@ -64,25 +66,27 @@ namespace Dialogs
                         | System.Windows.Forms.AnchorStyles.Right)));
             this.listBox1.Enabled = false;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(12, 12);
+            this.listBox1.Location = new System.Drawing.Point(9, 10);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(610, 244);
+            this.listBox1.Size = new System.Drawing.Size(465, 199);
             this.listBox1.TabIndex = 2;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 276);
+            this.progressBar1.Location = new System.Drawing.Point(10, 224);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(609, 23);
+            this.progressBar1.Size = new System.Drawing.Size(457, 19);
             this.progressBar1.TabIndex = 3;
             // 
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(345, 305);
+            this.button3.Location = new System.Drawing.Point(266, 257);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(173, 23);
+            this.button3.Size = new System.Drawing.Size(130, 19);
             this.button3.TabIndex = 4;
             this.button3.Text = "Посмотреть лог";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,9 +95,9 @@ namespace Dialogs
             // 
             // dlgRunning
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 340);
+            this.ClientSize = new System.Drawing.Size(483, 297);
             this.ControlBox = false;
             this.Controls.Add(this.button3);
             this.Controls.Add(this.progressBar1);
@@ -101,6 +105,7 @@ namespace Dialogs
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "dlgRunning";
             this.Text = "dlgRunning";
             this.Shown += new System.EventHandler(this.dlgRunning_Shown);

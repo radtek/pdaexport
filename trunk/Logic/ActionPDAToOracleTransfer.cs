@@ -57,7 +57,7 @@ namespace Logic
                          List<DataRows> dr = q.GetRows();
                          foreach (DataRows rows in dr)
                          {
-                             ins = "insert into" + info.tableName + "(";
+                             ins = "insert into " + info.tableName + "(";
                              foreach (FieldInfo field in info.fields)
                              {
                                  ins += field.fieldName + ", ";
