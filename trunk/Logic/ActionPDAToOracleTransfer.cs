@@ -11,7 +11,7 @@ namespace Logic
     {
         public override string Name()
         {
-            return "Перенос даных";
+            return "Перенос данных";
         }
         private int count = 1; //номер текущей таблицы
         public override event AbstractAction.ExecuteDelegate  OnExecute;
