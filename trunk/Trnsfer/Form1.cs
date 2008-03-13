@@ -362,5 +362,39 @@ namespace Trnsfer
                 button6_Click(sender,e);
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            QuerySelectPDA q=new QuerySelectPDA();
+            QueryExecPDA qe=new QueryExecPDA();
+            string seltyp =
+                "select DATA_TYPE from information_schema.columns where TABLE_NAME='{0}' AND COLUMN_NAME='{1}'";
+            for (int i = 0; i < PDATables.Items.Count; i++)
+            {
+                PDATables.SelectedIndex = i;
+                for (int j = 0; j < PDAFields.Items.Count; j++)
+                {
+                    PDAFields.SelectedIndex = j;
+                    q.Select(string.Format(seltyp,PDATables.SelectedItem,PDAFields.SelectedItem));
+                    List<DataRows> rowtype = q.GetRows();
+                    string type = rowtype[0].FieldByName("DATA_TYPE");
+                    string instype =
+                        "update  TransferFields set DataType={0} where fieldName='{1}' and idTransferTable={2}";
+                    string value="";
+                    switch(type)
+                    {
+                        case "numeric" : value = "1";
+                            break;
+                        case "nvarchar": value = "2";
+                            break;
+                        case "datetime": value = "2";
+                            break;
+
+                    }
+                    qe.Execute(String.Format(instype, value, PDAFields.SelectedItem, textBox1.Text));
+                }
+               
+            }
+        }
     }
 }

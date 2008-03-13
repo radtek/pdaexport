@@ -70,10 +70,6 @@
       <DependentUpon>dlgOracleSetup.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="dlgPDASetup.resx">
-      <DependentUpon>dlgPDASetup.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="dlgRunning.resx">
       <SubType>Designer</SubType>
       <DependentUpon>dlgRunning.cs</DependentUpon>
