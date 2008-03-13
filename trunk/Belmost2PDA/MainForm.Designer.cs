@@ -51,6 +51,8 @@ namespace Belmost2PDA
             this.label2 = new System.Windows.Forms.Label();
             this.tvSelBridges = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button5 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -67,7 +69,7 @@ namespace Belmost2PDA
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(440, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(444, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,12 +147,14 @@ namespace Belmost2PDA
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(9, 24);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(422, 305);
+            this.panel1.Size = new System.Drawing.Size(426, 303);
             this.panel1.TabIndex = 1;
             this.panel1.Visible = false;
             // 
@@ -158,7 +162,7 @@ namespace Belmost2PDA
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(352, 273);
+            this.button4.Location = new System.Drawing.Point(356, 259);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(61, 22);
@@ -191,8 +195,8 @@ namespace Belmost2PDA
             this.splitContainer1.Panel2.Controls.Add(this.button2);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.tvSelBridges);
-            this.splitContainer1.Size = new System.Drawing.Size(417, 254);
-            this.splitContainer1.SplitterDistance = 201;
+            this.splitContainer1.Size = new System.Drawing.Size(421, 252);
+            this.splitContainer1.SplitterDistance = 202;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 3;
             // 
@@ -205,10 +209,10 @@ namespace Belmost2PDA
             this.cbBrType.Items.AddRange(new object[] {
             "По несущим",
             "По приписываемым"});
-            this.cbBrType.Location = new System.Drawing.Point(4, 230);
+            this.cbBrType.Location = new System.Drawing.Point(4, 228);
             this.cbBrType.Margin = new System.Windows.Forms.Padding(2);
             this.cbBrType.Name = "cbBrType";
-            this.cbBrType.Size = new System.Drawing.Size(130, 21);
+            this.cbBrType.Size = new System.Drawing.Size(131, 21);
             this.cbBrType.TabIndex = 3;
             this.cbBrType.SelectedIndexChanged += new System.EventHandler(this.cbBrType_SelectedIndexChanged);
             // 
@@ -216,7 +220,7 @@ namespace Belmost2PDA
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(138, 230);
+            this.button1.Location = new System.Drawing.Point(139, 228);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 20);
@@ -245,7 +249,7 @@ namespace Belmost2PDA
             this.tvBridges.Location = new System.Drawing.Point(7, 24);
             this.tvBridges.Margin = new System.Windows.Forms.Padding(2);
             this.tvBridges.Name = "tvBridges";
-            this.tvBridges.Size = new System.Drawing.Size(190, 191);
+            this.tvBridges.Size = new System.Drawing.Size(191, 189);
             this.tvBridges.TabIndex = 0;
             this.tvBridges.DoubleClick += new System.EventHandler(this.button1_Click);
             // 
@@ -253,7 +257,7 @@ namespace Belmost2PDA
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(149, 230);
+            this.button3.Location = new System.Drawing.Point(152, 228);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(56, 20);
@@ -267,7 +271,7 @@ namespace Belmost2PDA
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(5, 230);
+            this.button2.Location = new System.Drawing.Point(5, 228);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 20);
@@ -296,15 +300,40 @@ namespace Belmost2PDA
             this.tvSelBridges.Location = new System.Drawing.Point(5, 24);
             this.tvSelBridges.Margin = new System.Windows.Forms.Padding(2);
             this.tvSelBridges.Name = "tvSelBridges";
-            this.tvSelBridges.Size = new System.Drawing.Size(201, 191);
+            this.tvSelBridges.Size = new System.Drawing.Size(204, 189);
             this.tvSelBridges.TabIndex = 1;
             this.tvSelBridges.DoubleClick += new System.EventHandler(this.button2_Click);
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(2, 261);
+            this.button5.Margin = new System.Windows.Forms.Padding(2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(56, 20);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "-->>";
+            this.toolTip1.SetToolTip(this.button5, "Выбрать");
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.progressBar1.Location = new System.Drawing.Point(0, 286);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(426, 17);
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 5;
+            this.progressBar1.Visible = false;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(440, 338);
+            this.ClientSize = new System.Drawing.Size(444, 336);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -349,6 +378,8 @@ namespace Belmost2PDA
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ComboBox cbBrType;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 
