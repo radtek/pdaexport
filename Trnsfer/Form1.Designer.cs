@@ -59,10 +59,11 @@ namespace Trnsfer
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -347,6 +348,7 @@ namespace Trnsfer
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
             this.panel2.Controls.Add(this.button7);
@@ -367,6 +369,16 @@ namespace Trnsfer
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(474, 441);
             this.panel2.TabIndex = 31;
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(210, 15);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(125, 23);
+            this.button9.TabIndex = 32;
+            this.button9.Text = "Вашлшэбны гузик";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -401,15 +413,15 @@ namespace Trnsfer
             this.panel3.Size = new System.Drawing.Size(306, 585);
             this.panel3.TabIndex = 32;
             // 
-            // button9
+            // button10
             // 
-            this.button9.Location = new System.Drawing.Point(210, 15);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(125, 23);
-            this.button9.TabIndex = 32;
-            this.button9.Text = "Вашлшэбны гузик";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.button10.Location = new System.Drawing.Point(210, 44);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(125, 23);
+            this.button10.TabIndex = 33;
+            this.button10.Text = "Занести типы";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // Form1
             // 
@@ -469,6 +481,7 @@ namespace Trnsfer
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
     }
 }
 
