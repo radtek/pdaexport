@@ -316,5 +316,29 @@ namespace Belmost2PDA
             dlg.coordinator = coordinator;
             dlg.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            int count = tvBridges.Nodes.Count;
+            progressBar1.Maximum = count;
+            progressBar1.Minimum = 0;
+            progressBar1.Step = 1;
+            progressBar1.Visible = true;
+            for (int i = 0; i < count; i++)
+            {
+                //
+                progressBar1.PerformStep();
+                tvBridges.SelectedNode = tvBridges.Nodes[0];
+                TreeNode newselectednode=tvBridges.SelectedNode;
+                int newcount = tvBridges.SelectedNode.Nodes.Count;
+                for (int j = 0; j < newcount;j++)
+                {
+                    tvBridges.SelectedNode = newselectednode.Nodes[0];
+                    button1_Click(sender,e);
+                    tvSelBridges.Update();
+                }
+            }
+            progressBar1.Visible = false;
+        }
     }
 }
