@@ -20,7 +20,7 @@ namespace Logic
         }
         public override string Name()
         {
-            return "Запись в базу Oracle даных о переносе";
+            return "Запись в базу Oracle данных о переносе";
         }
 
         public override void Run()

@@ -39,9 +39,8 @@ namespace Logic
             if(!ToPDA)
                try
                     {
+                        if(rapi.DevicePresent)
                         rapi.Connect();
-
-
                         rapi.CopyFileToDevice(ConnectionSettings.GetSettings().PDAConnectionString,
                                               ConnectionSettings.GetSettings().PDAConString, true);
                         Loging.Loging.WriteLog("Coping to PDA complete", false, true);
@@ -55,6 +54,7 @@ namespace Logic
             else
                 try
                 {
+                    if(rapi.DevicePresent)
                     rapi.Connect();
                     rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().PDAConnectionString,
                                           ConnectionSettings.GetSettings().PDAConString, true);
