@@ -1,3 +1,4 @@
+using System;
 using System.Data.SqlServerCe;
 
 namespace DataBaseWork
@@ -6,11 +7,19 @@ namespace DataBaseWork
     {
         public override bool Execute(string SQL)
         {
-
+            bool Res = true;
             SqlCeCommand command = new SqlCeCommand(SQL, DataBasePDA.Get());
-            command.ExecuteNonQuery();
-            return true;
-           
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch(Exception ex)
+            {
+                Res = false;
+                pErrorMsg = ex.Message;
+                pErrorCode = -1;
+            }
+            return Res;
         }
     }
 }

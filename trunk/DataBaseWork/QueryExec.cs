@@ -4,7 +4,7 @@ namespace DataBaseWork
 {
     public abstract class QueryExec
     {
-        private readonly int pErrorCode = -1;
+        protected int pErrorCode = -1;
         /// <summary>
         /// Gets the error code.
         /// </summary>
@@ -13,7 +13,8 @@ namespace DataBaseWork
         {
             get { return pErrorCode; }
         }
-        private readonly string pErrorMsg = "No error";
+
+        protected string pErrorMsg = "No error";
         /// <summary>
         /// Gets the error Message.
         /// </summary>
