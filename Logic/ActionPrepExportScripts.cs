@@ -64,7 +64,7 @@ namespace Logic
                     }
                     else
                     {
-                        Loging.Loging.WriteLog("OK:delete from BMEXPORT." + info.tableName, false, false);
+                        Loging.Loging.WriteLog("OK:delete from " + info.tableName, false, false);
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
