@@ -46,8 +46,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="IProp.cs" />
+    <Compile Include="PDAConstr.cs" />
     <Compile Include="PDAField.cs" />
     <Compile Include="PDATable.cs" />
+    <Compile Include="PDAView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
