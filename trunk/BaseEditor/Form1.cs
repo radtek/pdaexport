@@ -33,6 +33,8 @@ namespace BaseEditor
                 DataBasePDA.Get();
                 разорватьСоединениеToolStripMenuItem.Visible = true;
                 установитьСоединениеToolStripMenuItem.Visible = false;
+                ReadStruct();
+                SetStruct();
             }
             catch (Exception ex)
             {
@@ -40,6 +42,30 @@ namespace BaseEditor
                 MessageBox.Show("Соединение не установленно:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        }
+
+        private void SetStruct()
+        {
+            treeView1.Nodes.Clear();
+            TreeNode node1 = new TreeNode("Таблицы");
+            foreach (PDATable table in PDATable.tables)
+            {
+                node1.Nodes.Add(table.GetNode());
+            }
+            treeView1.Nodes.Add(node1);
+            node1 = new TreeNode("Ограничения");
+            foreach (PDAConstr constr in PDAConstr.constr)
+            {
+                node1.Nodes.Add(constr.GetNode());
+            }
+            treeView1.Nodes.Add(node1);
+            node1 = new TreeNode("Отображения");
+            foreach (PDAView view in PDAView.views)
+            {
+                node1.Nodes.Add(view.GetNode());
+            }
+            treeView1.Nodes.Add(node1);
+
         }
 
         private void разорватьСоединениеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,12 +85,36 @@ namespace BaseEditor
         {
 
         }
-        private void ReadStruct()
+        private static void ReadStruct()
         {
-            // poluchit tablici
-            // poluchit polja
-            // poluchit tipy
-            // poluchit kluchi
+            QuerySelectPDA query = new QuerySelectPDA();
+            query.Select(
+                "select  TABLE_NAME, COLUMN_NAME, COLUMN_FLAGS, IS_NULLABLE, DATA_TYPE,  CHARACTER_MAXIMUM_LENGTH, NUMERIC_PRECISION, NUMERIC_SCALE from INFORMATION_SCHEMA.COLUMNS order by TABLE_NAME");
+            List<DataRows> rows = query.GetRows();
+            PDATable.Clear();
+            foreach (DataRows row in rows)
+            {
+                PDATable.Add(row);
+            }
+            // get constrains          
+            query = new QuerySelectPDA();
+            query.Select(
+                "select CONSTRAINT_NAME, CONSTRAINT_TYPE, TABLE_NAME  from INFORMATION_SCHEMA.TABLE_CONSTRAINTS order by TABLE_NAME");
+            rows = query.GetRows();
+            PDAConstr.Clear();
+            foreach (DataRows row in rows)
+            {
+                PDAConstr.Add(row);
+            }
+            // отображения
+            PDAView.Clear();
+            PDAView.Add("INFORMATION_SCHEMA.COLUMNS");
+            PDAView.Add("INFORMATION_SCHEMA.INDEXES");
+            PDAView.Add("INFORMATION_SCHEMA.KEY_COLUMN_USAGE");
+            PDAView.Add("INFORMATION_SCHEMA.PROVIDER_TYPES");
+            PDAView.Add("INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS");
+            PDAView.Add("INFORMATION_SCHEMA.TABLE_CONSTRAINTS");
+            PDAView.Add("INFORMATION_SCHEMA.TABLES");
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -125,6 +175,16 @@ namespace BaseEditor
                     listView2.Items.Add(query.ErrorMsg);   
                 }
             }
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if(treeView1.SelectedNode!=null)
+                if(treeView1.SelectedNode.Tag != null)
+                {
+                   ((IProp)treeView1.SelectedNode.Tag).MakeSQLView(ref listView3);
+                   ((IProp)treeView1.SelectedNode.Tag).PropCreate(ref listView1);
+                }
         }
     }
 }
