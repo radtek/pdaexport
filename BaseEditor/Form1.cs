@@ -81,10 +81,6 @@ namespace BaseEditor
             Close();
         }
 
-        private void выбрToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
         private static void ReadStruct()
         {
             QuerySelectPDA query = new QuerySelectPDA();
