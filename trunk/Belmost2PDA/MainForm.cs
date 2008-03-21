@@ -320,6 +320,9 @@ namespace Belmost2PDA
         private void button5_Click(object sender, EventArgs e)
         {
             int count = tvBridges.Nodes.Count;
+            tvBridges.BeginUpdate();
+            tvSelBridges.BeginUpdate();
+            progressBar1.Value = 0;
             progressBar1.Maximum = count;
             progressBar1.Minimum = 0;
             progressBar1.Step = 1;
@@ -339,6 +342,8 @@ namespace Belmost2PDA
                 }
             }
             progressBar1.Visible = false;
+            tvBridges.EndUpdate();
+            tvSelBridges.EndUpdate();
         }
     }
 }
