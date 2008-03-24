@@ -20,6 +20,17 @@ namespace Loging
           if(e.KeyChar==27) Close();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<string > lst=new List<string>();
+            {
+                
+            }
+            Search form = new Search();
+            form.Show();
+            
+        }
+
        
 
  
