@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using DataBaseWork;
 using Logic.Transfer;
 
@@ -50,6 +51,7 @@ namespace Logic
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
             }
+            //new Thread(Exec).Start();
             Exec();
         }
 

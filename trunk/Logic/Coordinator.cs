@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Logic
 {
@@ -49,24 +50,25 @@ namespace Logic
             int CurrN = 0;
             foreach (AbstractAction runningAction in runningActions)
             {
-                if(!Canceled)
-                {
-                    CurrN++;
-                    currAction = runningAction;
-                    runningAction.Run();
-                    // окончание
-                    if(!Canceled)
+                if (!Canceled)
                     {
-                        // сообщение об окончании
-                        if(OnEndAction!=null)
-                        {
-                            ExecutionActionFinishDelegateArgs args = new ExecutionActionFinishDelegateArgs();
-                            args.Last = CurrN >= runningActions.Count;
-                            OnEndAction(this, args);
-                        }
-                    }
-                }
-            }
+                            CurrN++;
+                            currAction = runningAction;
+                            runningAction.Run();
+                            //окончание
+                            if (!Canceled)
+                            {
+                                // сообщение об окончании
+                                if (OnEndAction != null)
+                                {
+                                    ExecutionActionFinishDelegateArgs args = new ExecutionActionFinishDelegateArgs();
+                                    args.Last = CurrN >= runningActions.Count;
+                                    OnEndAction(this, args);
+                                }
+                            }
+                     }
+           }
+           
         }
 
         public void Cancel()

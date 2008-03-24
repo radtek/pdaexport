@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading;
 using DataBaseWork;
 using Logic.Transfer;
 
@@ -39,6 +40,7 @@ namespace Logic
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
             }
+            //new Thread(Exec).Start();
             Exec();
         }
         public void Exec()
@@ -70,7 +72,7 @@ namespace Logic
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                     args.Pos = count;
                     args.runningAction = this;
-                    args.Name = Name(); 
+                    args.Name = Name();
                     OnExecute(this, args);
                     count++;
                 }
