@@ -51,22 +51,22 @@ namespace Logic
             foreach (AbstractAction runningAction in runningActions)
             {
                 if (!Canceled)
+                {
+                    CurrN++;
+                    currAction = runningAction;
+                    runningAction.Run();
+                    //окончание
+                    if (!Canceled)
                     {
-                            CurrN++;
-                            currAction = runningAction;
-                            runningAction.Run();
-                            //окончание
-                            if (!Canceled)
-                            {
-                                // сообщение об окончании
-                                if (OnEndAction != null)
-                                {
-                                    ExecutionActionFinishDelegateArgs args = new ExecutionActionFinishDelegateArgs();
-                                    args.Last = CurrN >= runningActions.Count;
-                                    OnEndAction(this, args);
-                                }
-                            }
-                     }
+                        // сообщение об окончании
+                        if (OnEndAction != null)
+                        {
+                            ExecutionActionFinishDelegateArgs args = new ExecutionActionFinishDelegateArgs();
+                            args.Last = CurrN >= runningActions.Count;
+                            OnEndAction(this, args);
+                        }
+                    }
+                 }
            }
            
         }

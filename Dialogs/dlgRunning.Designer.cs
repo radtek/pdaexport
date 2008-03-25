@@ -38,10 +38,12 @@ namespace Dialogs
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(49, 257);
+            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(11, 257);
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(66, 19);
+            this.button1.Size = new System.Drawing.Size(66, 22);
             this.button1.TabIndex = 0;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
@@ -50,10 +52,11 @@ namespace Dialogs
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(400, 257);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(393, 257);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(74, 19);
+            this.button2.Size = new System.Drawing.Size(74, 22);
             this.button2.TabIndex = 1;
             this.button2.Text = "Готово";
             this.button2.UseVisualStyleBackColor = true;
@@ -83,10 +86,11 @@ namespace Dialogs
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(266, 257);
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(259, 257);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 19);
+            this.button3.Size = new System.Drawing.Size(130, 22);
             this.button3.TabIndex = 4;
             this.button3.Text = "Посмотреть лог";
             this.button3.UseVisualStyleBackColor = true;
@@ -95,6 +99,7 @@ namespace Dialogs
             // 
             // dlgRunning
             // 
+            this.AcceptButton = this.button2;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
@@ -109,7 +114,8 @@ namespace Dialogs
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "dlgRunning";
-            this.Text = "dlgRunning";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Running";
             this.Shown += new System.EventHandler(this.dlgRunning_Shown);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.dlgRunning_FormClosing);
             this.ResumeLayout(false);

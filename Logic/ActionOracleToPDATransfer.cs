@@ -41,7 +41,6 @@ namespace Logic
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
             }
-            //new Thread(Exec).Start();
             Exec();
         }
 
@@ -58,7 +57,7 @@ namespace Logic
                     QueryExecPDA qu =new QueryExecPDA();
                     if (!q.Select("select * from BMEXPORT." + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error:select * from BMEXPORT." + info.tableName, true, false);
+                        Loging.Loging.WriteLog("Error:select * from BMEXPORT." + info.tableName, true, true);
                     }
                     else
                     {
@@ -80,7 +79,7 @@ namespace Logic
                             ins += ") values (" + temp + ")";
                             if(!qu.Execute(ins))
                             {
-                                Loging.Loging.WriteLog("Error: " + ins, true, false);
+                                Loging.Loging.WriteLog("Error: " + ins, true, true);
                             }
                             else Loging.Loging.WriteLog("OK: " + ins, false, false);
                         }

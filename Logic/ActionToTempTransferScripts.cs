@@ -21,7 +21,7 @@ namespace Logic
         }
         public override string Name()
         {
-            return "Подготока мостов для переноса";
+            return "Подготовка мостов для переноса";
         }
 
         public override void Run()
@@ -51,7 +51,6 @@ namespace Logic
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
             }
-            //new Thread(Exec).Start();
             Exec();
         }
 
@@ -84,7 +83,7 @@ namespace Logic
                         {
                             Loging.Loging.WriteLog("OK: " + s, false, false);
                         }
-                        else Loging.Loging.WriteLog("Error: " + s, true, false);
+                        else Loging.Loging.WriteLog("Error: " + s, true, true);
 
                     }
                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();

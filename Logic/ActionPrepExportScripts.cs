@@ -40,7 +40,6 @@ namespace Logic
             {
                 lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
             }
-            //new Thread(Exec).Start();
             Exec();
         }
         public void Exec()
@@ -54,7 +53,7 @@ namespace Logic
                     QueryExecPDA qu = new QueryExecPDA();
                     if (!q.Execute("delete from BMEXPORT." + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error:delete from BMEXPORT." + info.tableName, true, false);
+                        Loging.Loging.WriteLog("Error:delete from BMEXPORT." + info.tableName, true, true);
                     }
                     else
                     {
@@ -62,7 +61,7 @@ namespace Logic
                     }
                     if(!qu.Execute("delete from " + info.tableName))
                     {
-                        Loging.Loging.WriteLog("Error:delete from " + info.tableName, true, false);
+                        Loging.Loging.WriteLog("Error:delete from " + info.tableName, true, true);
                     }
                     else
                     {

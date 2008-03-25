@@ -13,8 +13,8 @@ namespace Loging
         public LogView()
         {
             InitializeComponent();
+            
         }
-
         private void listBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
           if(e.KeyChar==27) Close();
@@ -22,19 +22,42 @@ namespace Loging
 
         private void button1_Click(object sender, EventArgs e)
         {
-            List<string > lst=new List<string>();
-            {
-                
-            }
-            Search form = new Search();
-            form.Show();
-            
+            int j;
+            j = listBox1.SelectedIndex;
+            Search(textBox1.Text,j);
         }
+        private void Search(string text, int i)
+        {
+            int index = i;
+            //if (index != listBox1.Items.Count - 1)
+                    index++;
+                //else
+                //{
+                //    if(MessageBox.Show("Достигнут конец списка. Слово не найдено. \nПродолжить поиск с начала списка?", "Message",MessageBoxButtons.YesNo)==System.Windows.Forms.DialogResult.Yes)
+                //    {
+                //        index = 0;
+                //        listBox1.SelectedIndex = 0;
+                //    }
+                //}
+                    bool flag = false;
+                    for (int k = index; k < listBox1.Items.Count; k++)
+                    {
+                        if(listBox1.Items[k].ToString().Contains(text))
+                        {
+                            flag = true;
+                            listBox1.SelectedIndex = k;
+                            break;
+                        }
+                    }
+                if(flag==false)
+                    {
+                        if (MessageBox.Show("Достигнут конец списка. Слово не найдено. \nПродолжить поиск с начала списка?", "Message", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                        {
+                            listBox1.SelectedIndex = -1;
+                            Search(text,0);
+                        }
+                    }
 
-       
-
- 
-
-       
-    }
+         }
+     }
 }
