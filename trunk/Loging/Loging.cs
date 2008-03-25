@@ -136,6 +136,7 @@ namespace Loging
         {
             LogView form=new LogView();
             ListBox lb = form.listBox1;
+            lb.BeginUpdate();
             foreach (LogItem item in Log)
             {
                 //if (item.Report)
@@ -148,6 +149,7 @@ namespace Loging
                 }
                 
             }
+            lb.EndUpdate();
             form.ShowDialog();
             
         }

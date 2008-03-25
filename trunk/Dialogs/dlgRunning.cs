@@ -18,35 +18,35 @@ namespace Dialogs
         private event DataUpdateHandler DataUpdateEvent;
         private delegate void DataUpdate(bool last);
         private event DataUpdate ListUpdateEvent;
-        private delegate void ButtonUpdate();
         private event DataUpdate Buttons;
         
         public dlgRunning()
         {
             InitializeComponent();
             DataUpdateEvent+= new DataUpdateHandler(OnExecute);
-            ListUpdateEvent += new DataUpdate(OnEndAction);
+            ListUpdateEvent+= new DataUpdate(OnEndAction);
             Buttons+= new DataUpdate(ButtonsVisible);
             
         }
                
         public Coordinator coordinator;
-        private bool _myVar1;
+        private bool _listbox;
 
-        public bool myVar1
+        public bool listbox
         {
-            get { return _myVar1; }
-            set { _myVar1 = value;
+            get { return _listbox; }
+            set
+            {   _listbox = value;
                 listBox1.Invoke(ListUpdateEvent, value);
                 }
         }
 	
-        private List<int> _myVar;
-        public List<int> myVar
+        private List<int> _progressbar;
+        public List<int> progressbar
         {
-            get { return _myVar; }
-            set 
-            { _myVar=value;
+            get { return _progressbar; }
+            set
+            {  _progressbar = value;
                progressBar1.Invoke(DataUpdateEvent, value);
             }
         }
@@ -68,19 +68,19 @@ namespace Dialogs
             tr.Start();
             
         }
+
         void SneakyRun()
         {
             coordinator.Run();
             Loging.Loging.EndLog();
             this.Invoke(Buttons, true);
-            
         }
 
         void coordinator_OnEndAction(Coordinator c, Coordinator.ExecutionActionFinishDelegateArgs args)
         {
             bool value;
             value = args.Last;
-            myVar1 = value;
+            listbox = value;
             
         }
         void ButtonsVisible(bool Dummy)
@@ -96,18 +96,16 @@ namespace Dialogs
                 listBox1.SelectedIndex++;
             else
             {
-                MessageBox.Show(Text + " завершен");
+                MessageBox.Show(Text + " завершен","Message");
             }
         }
 
         void coordinator_OnExecute(Coordinator c, Coordinator.ExecuteDelegateArgs args)
         {
             List<int> value=new List<int>();
-            //if (myVar[0] > args.Maximum)
-            //     value[0] = 0;
             value.Add(args.Pos);
             value.Add(args.Maximum);
-            myVar = value;
+            progressbar = value;
             
         }
         void OnExecute(List<int> values)
