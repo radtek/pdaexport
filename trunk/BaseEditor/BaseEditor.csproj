@@ -46,11 +46,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IProp.cs" />
-    <Compile Include="PDAConstr.cs" />
-    <Compile Include="PDAField.cs" />
-    <Compile Include="PDATable.cs" />
-    <Compile Include="PDAView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -84,6 +79,14 @@
     <ProjectReference Include="..\Dialogs\Dialogs.csproj">
       <Project>{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}</Project>
       <Name>Dialogs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.PDAStruct\Logic.PDAStruct.csproj">
+      <Project>{3DC45DF7-0EB0-4A77-A9F6-4B6CC0FA70E5}</Project>
+      <Name>Logic.PDAStruct</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic\Logic.csproj">
+      <Project>{9D9DE158-C9EB-43D8-8FB9-8C62B1358A18}</Project>
+      <Name>Logic</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

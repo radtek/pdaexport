@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using DataBaseWork;
 using Dialogs;
+using Logic;
+using Logic.PDAStruct;
 
 namespace BaseEditor
 {
@@ -33,6 +36,8 @@ namespace BaseEditor
                 DataBasePDA.Get();
                 разорватьСоединениеToolStripMenuItem.Visible = true;
                 установитьСоединениеToolStripMenuItem.Visible = false;
+                создатьСкриптНаБазуToolStripMenuItem.Enabled = true;
+                выполнитьСкриптToolStripMenuItem.Enabled = true;
                 ReadStruct();
                 SetStruct();
             }
@@ -73,6 +78,8 @@ namespace BaseEditor
             DataBasePDA.Disconnect();
             разорватьСоединениеToolStripMenuItem.Visible = !true;
             установитьСоединениеToolStripMenuItem.Visible = !false;
+            создатьСкриптНаБазуToolStripMenuItem.Enabled = !true;
+            выполнитьСкриптToolStripMenuItem.Enabled = !true;
         }
 
         private void выходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -181,6 +188,24 @@ namespace BaseEditor
                    ((IProp)treeView1.SelectedNode.Tag).MakeSQLView(ref listView3);
                    ((IProp)treeView1.SelectedNode.Tag).PropCreate(ref listView1);
                 }
+        }
+
+        private void создатьСкриптНаБазуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // make script
+            if (dlg_SaveScript.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(dlg_SaveScript.FileName);
+                Coordinator coordinator = new Coordinator();
+                // add actions
+                // example:coordinator.AddAction(new ActionPrepExportScripts());
+                // make dialog
+                dlgRunning dlg = new dlgRunning();
+                dlg.Text = "Экспорт сруктуры";
+                dlg.coordinator = coordinator;
+                dlg.ShowDialog();
+                writer.Close();
+            }
         }
     }
 }
