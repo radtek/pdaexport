@@ -29,17 +29,8 @@ namespace Loging
         private void Search(string text, int i)
         {
             int index = i;
-            //if (index != listBox1.Items.Count - 1)
-                    index++;
-                //else
-                //{
-                //    if(MessageBox.Show("Достигнут конец списка. Слово не найдено. \nПродолжить поиск с начала списка?", "Message",MessageBoxButtons.YesNo)==System.Windows.Forms.DialogResult.Yes)
-                //    {
-                //        index = 0;
-                //        listBox1.SelectedIndex = 0;
-                //    }
-                //}
-                    bool flag = false;
+            index++;
+            bool flag = false;
                     for (int k = index; k < listBox1.Items.Count; k++)
                     {
                         if(listBox1.Items[k].ToString().Contains(text))
