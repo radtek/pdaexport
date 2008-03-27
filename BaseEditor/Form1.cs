@@ -198,6 +198,9 @@ namespace BaseEditor
                 StreamWriter writer = new StreamWriter(dlg_SaveScript.FileName);
                 Coordinator coordinator = new Coordinator();
                 // add actions
+                coordinator.AddAction(new ActionWriteCreateTableScript(writer, PDATable.tables));
+                coordinator.AddAction(new ActionWriteInsertScript(writer, PDATable.tables));
+                //
                 // example:coordinator.AddAction(new ActionPrepExportScripts());
                 // make dialog
                 dlgRunning dlg = new dlgRunning();
@@ -206,6 +209,11 @@ namespace BaseEditor
                 dlg.ShowDialog();
                 writer.Close();
             }
+        }
+
+        private void выполнитьСкриптToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

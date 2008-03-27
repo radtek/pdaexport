@@ -150,6 +150,7 @@
             this.выполнитьСкриптToolStripMenuItem.Name = "выполнитьСкриптToolStripMenuItem";
             this.выполнитьСкриптToolStripMenuItem.Size = new System.Drawing.Size(228, 22);
             this.выполнитьСкриптToolStripMenuItem.Text = "Выполнить скрипт из файла";
+            this.выполнитьСкриптToolStripMenuItem.Click += new System.EventHandler(this.выполнитьСкриптToolStripMenuItem_Click);
             // 
             // tabControl1
             // 
