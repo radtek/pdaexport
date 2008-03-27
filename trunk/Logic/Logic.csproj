@@ -50,6 +50,8 @@
     <Compile Include="ActionSetBrReadOnly.cs" />
     <Compile Include="ActionSwitchTriggers.cs" />
     <Compile Include="ActionToTempTransferScripts.cs" />
+    <Compile Include="ActionWriteCreateTableScript.cs" />
+    <Compile Include="ActionWriteInsertScript.cs" />
     <Compile Include="Coordinator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +59,10 @@
     <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
       <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
       <Name>DataBaseWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logic.PDAStruct\Logic.PDAStruct.csproj">
+      <Project>{3DC45DF7-0EB0-4A77-A9F6-4B6CC0FA70E5}</Project>
+      <Name>Logic.PDAStruct</Name>
     </ProjectReference>
     <ProjectReference Include="..\Logic.Transfer\Logic.Transfer.csproj">
       <Project>{471A8B0A-E63A-4D15-BA51-147C6B383D2F}</Project>
