@@ -49,7 +49,7 @@ namespace Logic
                     string Values = "  ";
                     foreach (PDAField field in table.fields)
                     {
-                        string val =  "'" + row.FieldByName(field.Name) + "'";
+                        string val =  "'" + row.FieldByName(field.Name).Replace("'", "''") + "'";
                         if(val == "''")
                             if((field.DataType == "numeric")||(field.DataType == "datetime"))
                                 val = "NULL";
@@ -64,6 +64,7 @@ namespace Logic
                     writer.WriteLine("GO");
 
                     }
+                Loging.Loging.WriteLog("TABLE: " + table.Name + " exported " + rows.Count + " rows", false, true);
                 Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                 args.Maximum = tables.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)
                 args.Pos = count;

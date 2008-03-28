@@ -55,6 +55,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.listView2 = new System.Windows.Forms.ListView();
             this.dlg_SaveScript = new System.Windows.Forms.SaveFileDialog();
+            this.dlg_OpenScript = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -340,8 +341,16 @@
             // 
             // dlg_SaveScript
             // 
+            this.dlg_SaveScript.DefaultExt = "sql";
             this.dlg_SaveScript.Filter = "скрипт|*.sql";
             this.dlg_SaveScript.Title = "Файл скрипта";
+            // 
+            // dlg_OpenScript
+            // 
+            this.dlg_OpenScript.DefaultExt = "sql";
+            this.dlg_OpenScript.FileName = "openFileDialog1";
+            this.dlg_OpenScript.Filter = "скрипт|*.sql";
+            this.dlg_OpenScript.Title = "Файл скрипта";
             // 
             // Form1
             // 
@@ -402,6 +411,7 @@
         private System.Windows.Forms.ListView listView3;
         private System.Windows.Forms.ColumnHeader Nullable;
         private System.Windows.Forms.SaveFileDialog dlg_SaveScript;
+        private System.Windows.Forms.OpenFileDialog dlg_OpenScript;
     }
 }
 
