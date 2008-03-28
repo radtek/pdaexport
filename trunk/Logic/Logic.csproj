@@ -47,10 +47,12 @@
     <Compile Include="ActionOracleToPDATransfer.cs" />
     <Compile Include="ActionPDAToOracleTransfer.cs" />
     <Compile Include="ActionPrepExportScripts.cs" />
+    <Compile Include="ActionRunScriptFromStream.cs" />
     <Compile Include="ActionSetBrReadOnly.cs" />
     <Compile Include="ActionSwitchTriggers.cs" />
     <Compile Include="ActionToTempTransferScripts.cs" />
     <Compile Include="ActionWriteCreateTableScript.cs" />
+    <Compile Include="ActionWriteDropScript.cs" />
     <Compile Include="ActionWriteInsertScript.cs" />
     <Compile Include="Coordinator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

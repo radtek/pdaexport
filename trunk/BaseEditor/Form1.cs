@@ -198,6 +198,7 @@ namespace BaseEditor
                 StreamWriter writer = new StreamWriter(dlg_SaveScript.FileName);
                 Coordinator coordinator = new Coordinator();
                 // add actions
+                coordinator.AddAction(new ActionWriteDropScript(writer, PDATable.tables));
                 coordinator.AddAction(new ActionWriteCreateTableScript(writer, PDATable.tables));
                 coordinator.AddAction(new ActionWriteInsertScript(writer, PDATable.tables));
                 //
@@ -213,7 +214,20 @@ namespace BaseEditor
 
         private void выполнитьСкриптToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // run script
+            if (dlg_OpenScript.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                Coordinator coordinator = new Coordinator();
+                // add actions
+                coordinator.AddAction(new ActionRunScriptFromStream(dlg_OpenScript.FileName));
+                //
+                // example:coordinator.AddAction(new ActionPrepExportScripts());
+                // make dialog
+                dlgRunning dlg = new dlgRunning();
+                dlg.Text = "Выполние";
+                dlg.coordinator = coordinator;
+                dlg.ShowDialog();
+            }
         }
     }
 }

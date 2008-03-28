@@ -27,7 +27,7 @@ namespace Logic
             int count = 1;
             foreach (PDATable table in tables)
             {
-                writer.WriteLine("CREATE TABLE " + table.Name + " {");
+                writer.WriteLine("CREATE TABLE " + table.Name + " (");
                 int i = 1;
                 int Count = table.fields.Count;
                 bool HasPK = false;
@@ -45,7 +45,7 @@ namespace Logic
 
                     }
                 }
-                writer.WriteLine("}");
+                writer.WriteLine(")");
                 writer.WriteLine("GO");
                 if(HasPK)
                 {
