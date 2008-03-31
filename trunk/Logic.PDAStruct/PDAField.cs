@@ -14,6 +14,8 @@ namespace Logic.PDAStruct
         public string SLen, PLen, DLen;
         public string FullDataType;
         public bool IsPK;
+        QuerySelectPDA q = new QuerySelectPDA();
+        
         public PDAField(DataRows row)
         {
             Name = row.FieldByName("COLUMN_NAME");
@@ -36,8 +38,15 @@ namespace Logic.PDAStruct
                 else
                     FullDataType = DataType;
             }
-            IsPK = row.FieldByName("COLUMN_FLAGS").ToUpper() == "26";
-        }
+            List<DataRows> lst;
+            q.Select(
+                "SELECT a.Column_name FROM INFORMATION_SCHEMA.KEY_COLUMN_USAGE a, INFORMATION_SCHEMA.TABLE_CONSTRAINTS b WHERE (a.CONSTRAINT_NAME = b.CONSTRAINT_NAME) AND (a.TABLE_NAME = '"+ row.FieldByName("TABLE_NAME")+"') AND COLUMN_NAME='"+Name+"' ORDER BY a.TABLE_NAME");
+            lst = q.GetRows();
+            if(lst.Count>0)
+            {
+                IsPK = true;
+            }
+     }
         
         public TreeNode GetNode()
         {

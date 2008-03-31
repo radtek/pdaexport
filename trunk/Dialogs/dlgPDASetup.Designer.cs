@@ -50,6 +50,7 @@ namespace Dialogs
             // 
             // button1
             // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(297, 6);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(56, 23);
@@ -61,6 +62,7 @@ namespace Dialogs
             // button2
             // 
             this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Location = new System.Drawing.Point(347, 89);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(56, 23);
@@ -72,9 +74,10 @@ namespace Dialogs
             // button3
             // 
             this.button3.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Location = new System.Drawing.Point(12, 89);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(55, 23);
+            this.button3.Size = new System.Drawing.Size(62, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,6 +94,7 @@ namespace Dialogs
             // 
             // button6
             // 
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Location = new System.Drawing.Point(110, 60);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(110, 23);
@@ -106,6 +110,7 @@ namespace Dialogs
             // 
             // button7
             // 
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Location = new System.Drawing.Point(359, 6);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(44, 23);
@@ -116,6 +121,7 @@ namespace Dialogs
             // 
             // button5
             // 
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Location = new System.Drawing.Point(12, 60);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(92, 23);

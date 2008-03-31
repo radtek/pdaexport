@@ -20,7 +20,7 @@ namespace BaseEditor
             InitializeComponent();
             ConnectionSettings.Load(Application.StartupPath + "\\" + "conninfo.xml");
         }
-
+        
         private void настройкаСоединенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new dlgPDASetup().ShowDialog();
@@ -40,6 +40,7 @@ namespace BaseEditor
                 выполнитьСкриптToolStripMenuItem.Enabled = true;
                 ReadStruct();
                 SetStruct();
+             
             }
             catch (Exception ex)
             {
@@ -87,7 +88,7 @@ namespace BaseEditor
             DataBasePDA.Disconnect();
             Close();
         }
-
+        
         private static void ReadStruct()
         {
             QuerySelectPDA query = new QuerySelectPDA();
@@ -118,6 +119,7 @@ namespace BaseEditor
             PDAView.Add("INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS");
             PDAView.Add("INFORMATION_SCHEMA.TABLE_CONSTRAINTS");
             PDAView.Add("INFORMATION_SCHEMA.TABLES");
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -186,8 +188,19 @@ namespace BaseEditor
                 if(treeView1.SelectedNode.Tag != null)
                 {
                    ((IProp)treeView1.SelectedNode.Tag).MakeSQLView(ref listView3);
+                   
+                  
+                   foreach (ListViewItem item in listView3.Items)
+                    {
+                        foreach (ListViewItem.ListViewSubItem o in item.SubItems)
+                        {
+                               PDATable.lst.Add(o.Text);
+                        } 
+                       
+                    }
                    ((IProp)treeView1.SelectedNode.Tag).PropCreate(ref listView1);
                 }
+            
         }
 
         private void создатьСкриптНаБазуToolStripMenuItem_Click(object sender, EventArgs e)
@@ -205,7 +218,7 @@ namespace BaseEditor
                 // example:coordinator.AddAction(new ActionPrepExportScripts());
                 // make dialog
                 dlgRunning dlg = new dlgRunning();
-                dlg.Text = "Экспорт сруктуры";
+                dlg.Text = "Экспорт структуры";
                 dlg.coordinator = coordinator;
                 dlg.ShowDialog();
                 writer.Close();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
@@ -50,5 +51,17 @@ namespace Loging
                     }
 
          }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string path = @"C:\PDAlog.txt";
+            using( StreamWriter writer = new StreamWriter(path, false))
+            for (int k = 0; k < listBox1.Items.Count; k++)
+            {
+                writer.WriteLine(listBox1.Items[k].ToString());
+            }
+            
+            MessageBox.Show("Лог сохранен в файл \n"+path, "Message", MessageBoxButtons.OK);
+        }
      }
 }
