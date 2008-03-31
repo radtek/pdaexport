@@ -17,7 +17,7 @@ namespace Logic.PDAStruct
         {
             tables.Clear();
         }
-
+        public static List<string> lst = new List<string>();
         public static void Add(DataRows row)
         {
             foreach (PDATable table in tables)
