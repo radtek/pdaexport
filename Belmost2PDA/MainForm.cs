@@ -200,7 +200,6 @@ namespace Belmost2PDA
                 AddBridge(tvSelBridges, ID, RdName, BrName);
                 DelBridge(tvBridges, ID);
                 RemoveEmptyRD(tvBridges);
-
             }
         }
 
