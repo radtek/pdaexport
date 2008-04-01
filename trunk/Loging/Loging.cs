@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Loging
@@ -12,7 +13,7 @@ namespace Loging
     public class Loging
     {
         /// <summary>
-        /// Определение инетерфейса для работы с логом
+        /// Определение интерфейса для работы с логом
         /// </summary>
         public static void StartLog()
         {
@@ -45,6 +46,11 @@ namespace Loging
         {
             Init();
             return _instance._WasError();
+        }
+        public static void ToFile()
+        {
+            Init();
+            _instance._ToFile();
         }
         /// <summary>
         /// далее реализационные методы
@@ -139,7 +145,7 @@ namespace Loging
             lb.BeginUpdate();
             foreach (LogItem item in Log)
             {
-                //if (item.Report)
+                if (item.Report)
                 {
                     if (!item.Error)
                     {
@@ -152,6 +158,27 @@ namespace Loging
             lb.EndUpdate();
             form.ShowDialog();
             
+        }
+
+        public void _ToFile()
+        {
+            SaveFileDialog sv = new SaveFileDialog();
+            sv.InitialDirectory = @"C:\";
+            sv.DefaultExt = "txt";
+            sv.Filter = "Text File|*.txt";
+            if (sv.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(sv.FileName, false))
+                foreach (LogItem item in Log)
+                {
+                    if (!item.Error)
+                    {
+                       writer.WriteLine(DateTime.Now + " : " + item.Text);
+                    }
+                    else writer.WriteLine(DateTime.Now + " Ошибка : " + item.Text);
+                }
+              MessageBox.Show("Лог сохранен в файл \n" + sv.FileName, "Message", MessageBoxButtons.OK);
+            }
         }
 
         /// <summary>
