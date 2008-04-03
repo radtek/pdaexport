@@ -26,14 +26,7 @@ namespace Logic
             ///         переносимой таблицы - форму добавлять не надо:) )
             ///     -   не забыть лог
             ///     -   не забыть Running 
-            if (MainParams.GetParam(MainParams.ParamName.isLight) == "0")
-            {
-                lst = TableInfo.LoadTables(TableInfo.WayType.AllImport);
-            }
-            else
-            {
-                lst = TableInfo.LoadTables(TableInfo.WayType.LightImport);
-            }
+            lst = TableInfo.LoadTables(TableInfo.WayType.Export);
             Exec();
         }
          public void Exec()

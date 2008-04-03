@@ -58,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAO.Bridges\DAO.Bridges.csproj">
+      <Project>{454AC97C-EE71-4F44-B386-F1B8D6ED076C}</Project>
+      <Name>DAO.Bridges</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
       <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
       <Name>DataBaseWork</Name>

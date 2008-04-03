@@ -13,7 +13,7 @@ namespace Logic.Transfer
         /// </summary>
         public enum WayType
         {
-            LightImport, AllImport, Export
+            LightImport, AllImport, Export, ExportClear
         }
         /// <summary>
         /// Тип запроса - для индекса ассоциативного списка
@@ -41,6 +41,20 @@ namespace Logic.Transfer
         {
             List<TableInfo> lt=new List<TableInfo>();
             string sql = "select * from  Transfer2PDA order by {0}";
+            switch(wayType)
+            {
+                case WayType.AllImport:
+                case WayType.LightImport:
+                    query.Select(string.Format(sql, "OrderBM"));
+                    break;
+                case WayType.Export:
+                    query.Select(string.Format(sql, "OrderPDA"));
+                    break;
+                case WayType.ExportClear:
+                    query.Select(string.Format(sql, "OrderPDA desc"));
+                    break;
+
+            }
             if(wayType==WayType.Export) query.Select(string.Format(sql,"OrderBM"));
             else query.Select(string.Format(sql, "OrderBM"));
             List<DataRows> rows = query.GetRows();

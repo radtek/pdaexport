@@ -78,12 +78,13 @@ namespace PDA2Belmost
         private void button4_Click(object sender, EventArgs e)
         {
             // получение списка мостов
+            List<BridgeData> list = new BridgesReader(true).Load();
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
             coordinator.AddAction(new ActionDeploy(false));
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
-            coordinator.AddAction(new ActionClearOracleBr());
+            coordinator.AddAction(new ActionClearOracleBr(list));
             coordinator.AddAction(new ActionPDAToOracleTransfer());
             coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
             coordinator.AddAction(new ActionFinishImportScripts());
