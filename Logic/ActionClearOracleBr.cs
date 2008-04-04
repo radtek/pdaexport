@@ -50,11 +50,14 @@ namespace Logic
                             del.Add(string.Format(delete, bridges[i].IDBR));
                     foreach (string s in del)
                     {
-                        if (q.Execute(s))
+                        if(Running)
                         {
-                            Loging.Loging.WriteLog("OK: " + s, false, false);
+                            if (q.Execute(s))
+                            {
+                                Loging.Loging.WriteLog("OK: " + s, false, false);
+                            }
                         }
-                        else Loging.Loging.WriteLog("Error: " + s, true, true);
+                        else Loging.Loging.WriteLog("Error: " + s, true, true);}
                     }
                      Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.runningAction = this;
