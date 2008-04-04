@@ -121,7 +121,7 @@ namespace Loging
         /// </summary>
         /// <returns></returns>
         public string[] _GetLog()
-        {
+        { 
             string[] fields = new string[Log.Count];
             int i = 0;
             foreach (LogItem item in Log)
@@ -145,6 +145,8 @@ namespace Loging
             lb.BeginUpdate();
             foreach (LogItem item in Log)
             {
+                DateTime d = DateTime.Now;
+              
                 if (item.Report)
                 {
                     if (!item.Error)
@@ -163,7 +165,7 @@ namespace Loging
         public void _ToFile()
         {
             SaveFileDialog sv = new SaveFileDialog();
-            sv.InitialDirectory = @"C:\";
+            sv.InitialDirectory = @"C:\"; 
             sv.DefaultExt = "txt";
             sv.Filter = "Text File|*.txt";
             if (sv.ShowDialog() == DialogResult.OK)
