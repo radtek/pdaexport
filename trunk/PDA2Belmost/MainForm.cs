@@ -65,7 +65,7 @@ namespace PDA2Belmost
             {
                 DataBaseOracle.Disconnect();
                 DataBasePDA.Disconnect();
-                MessageBox.Show("Соединение не установленно:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Соединение не установлено:\n" + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             // все ок
@@ -82,7 +82,7 @@ namespace PDA2Belmost
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
-            coordinator.AddAction(new ActionDeploy(false));
+            coordinator.AddAction(new ActionDeploy(true));
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
             coordinator.AddAction(new ActionClearOracleBr(list));
             coordinator.AddAction(new ActionPDAToOracleTransfer());

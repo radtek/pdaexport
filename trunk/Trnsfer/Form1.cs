@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms;
 using DataBaseWork;
-using Dialogs;
 
 namespace Trnsfer
 {
@@ -353,11 +354,22 @@ namespace Trnsfer
             {
                 PDATables.SelectedIndex = i;
                 if (PDATables.SelectedItem.Equals("BRGEN"))
+                { 
                     SelectText.Text = "select * from BRGEN where idBr={0}";
+                    ClearText.Text = "delete from BrGen where idbr={0}";
+                }
                 else if (PDAFields.Items.Contains("IDBR"))
+                {
                     SelectText.Text = "select * from " + PDATables.SelectedItem +
                                       " where idBr in (select idbr from BMEXPORT.BRGEN)";
-                else SelectText.Text = "select * from " + PDATables.SelectedItem;
+                    ClearText.Text = "delete  from " + PDATables.SelectedItem +
+                                      " where idBr ={0}";
+                }
+                else
+                {
+                     SelectText.Text = "select * from " + PDATables.SelectedItem;
+                     ClearText.Text = "";
+                }
                 button6_Click(sender,e);
             }
         }
@@ -394,12 +406,6 @@ namespace Trnsfer
                 }
                
             }
-        }
-
-        private void pDABaseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            dlgPDASetup dlg=new dlgPDASetup();
-            dlg.ShowDialog();
         }
     }
 }
