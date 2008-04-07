@@ -35,7 +35,6 @@ namespace Logic
              foreach (TableInfo info in lst)
              {
                  string ins = "";
-                 string temp = "";
                  if (Running)
                  {
                      QuerySelectPDA q = new QuerySelectPDA();
@@ -50,6 +49,7 @@ namespace Logic
                          List<DataRows> dr = q.GetRows();
                          foreach (DataRows rows in dr)
                          {
+                             string temp = "";
                              ins = "insert into " + info.tableName + "(";
                              foreach (FieldInfo field in info.fields)
                              {

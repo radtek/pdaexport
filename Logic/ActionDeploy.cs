@@ -5,7 +5,7 @@ namespace Logic
 {
     public class ActionDeploy:AbstractAction
     {
-        string Text = "Установка базы на КПК";
+        string Text = "Копирование базы с КПК";
         bool ToPDA = true;
         /// <summary>
         ///  Копирование базы на КПК
@@ -21,7 +21,7 @@ namespace Logic
         {
             ToPDA = toPDA;
             if (!toPDA)
-                Text = "Копирование базы с КПК";
+                Text = "Установка базы на КПК";
         }
         public override void Run()
         {
