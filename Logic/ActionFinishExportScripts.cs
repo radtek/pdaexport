@@ -23,8 +23,8 @@ namespace Logic
             ///     -   expState = done если нет в логе ошибок (Logging.WasError)
             /// event в самом конце (Max = 1 Pos = 1)
             /// Running не обрабатываеться
-   
-            MainParams.SetParam(MainParams.ParamName.expDate,DateTime.Now.ToString());
+
+            MainParams.SetParam(MainParams.ParamName.expDate, DateTime.Now.ToShortDateString());
             if(!Loging.Loging.WasError())
                 MainParams.SetParam(MainParams.ParamName.expState,"done");
             Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();

@@ -64,9 +64,12 @@ namespace Trnsfer
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pDABaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PDATables
@@ -339,7 +342,7 @@ namespace Trnsfer
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(12, 459);
+            this.panel1.Location = new System.Drawing.Point(12, 479);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(474, 157);
             this.panel1.TabIndex = 30;
@@ -365,9 +368,9 @@ namespace Trnsfer
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.OraFields);
-            this.panel2.Location = new System.Drawing.Point(12, 12);
+            this.panel2.Location = new System.Drawing.Point(12, 27);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 441);
+            this.panel2.Size = new System.Drawing.Size(474, 446);
             this.panel2.TabIndex = 31;
             // 
             // button9
@@ -423,15 +426,33 @@ namespace Trnsfer
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pDABaseToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(802, 24);
+            this.menuStrip1.TabIndex = 33;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pDABaseToolStripMenuItem
+            // 
+            this.pDABaseToolStripMenuItem.Name = "pDABaseToolStripMenuItem";
+            this.pDABaseToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.pDABaseToolStripMenuItem.Text = "PDABase";
+            this.pDABaseToolStripMenuItem.Click += new System.EventHandler(this.pDABaseToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 618);
+            this.ClientSize = new System.Drawing.Size(802, 637);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
@@ -440,7 +461,10 @@ namespace Trnsfer
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -482,6 +506,8 @@ namespace Trnsfer
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pDABaseToolStripMenuItem;
     }
 }
 

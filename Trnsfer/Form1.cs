@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using DataBaseWork;
+using Dialogs;
 
 namespace Trnsfer
 {
@@ -395,6 +394,12 @@ namespace Trnsfer
                 }
                
             }
+        }
+
+        private void pDABaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dlgPDASetup dlg=new dlgPDASetup();
+            dlg.ShowDialog();
         }
     }
 }
