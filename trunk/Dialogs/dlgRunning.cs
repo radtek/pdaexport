@@ -1,13 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Logic;
-using Loging;
 
 namespace Dialogs
 {
@@ -23,9 +18,9 @@ namespace Dialogs
         public dlgRunning()
         {
             InitializeComponent();
-            DataUpdateEvent+= new DataUpdateHandler(OnExecute);
-            ListUpdateEvent+= new DataUpdate(OnEndAction);
-            Buttons+= new DataUpdate(ButtonsVisible);
+            DataUpdateEvent+= OnExecute;
+            ListUpdateEvent+= OnEndAction;
+            Buttons+= ButtonsVisible;
             
         }
                
@@ -54,8 +49,8 @@ namespace Dialogs
         private void dlgRunning_Shown(object sender, EventArgs e)
         {
             // настройка на прослушивание координатора
-            coordinator.OnExecute += new Coordinator.ExecuteDelegate(coordinator_OnExecute);
-            coordinator.OnEndAction += new Coordinator.ExecutionActionFinishDelegate(coordinator_OnEndAction);
+            coordinator.OnExecute += coordinator_OnExecute;
+            coordinator.OnEndAction += coordinator_OnEndAction;
             // получение списка работ
             string[] list = coordinator.GetActions();
             listBox1.Items.Clear();
@@ -63,7 +58,7 @@ namespace Dialogs
             if (listBox1.Items.Count > 0)
                 listBox1.SelectedIndex = 0;
             Loging.Loging.StartLog();
-            tr = new Thread(new ThreadStart(SneakyRun));
+            tr = new Thread(SneakyRun);
             tr.IsBackground = true;
             tr.Start();
             
@@ -73,7 +68,7 @@ namespace Dialogs
         {
             coordinator.Run();
             Loging.Loging.EndLog();
-            this.Invoke(Buttons, true);
+            Invoke(Buttons, true);
         }
 
         void coordinator_OnEndAction(Coordinator c, Coordinator.ExecutionActionFinishDelegateArgs args)

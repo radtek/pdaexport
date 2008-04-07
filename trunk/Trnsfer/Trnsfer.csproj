@@ -67,6 +67,10 @@
       <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
       <Name>DataBaseWork</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Dialogs\Dialogs.csproj">
+      <Project>{6F4AA476-B4A0-44DE-976E-A3E4CD2D31A4}</Project>
+      <Name>Dialogs</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
