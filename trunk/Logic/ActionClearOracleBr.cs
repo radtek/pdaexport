@@ -46,9 +46,10 @@ namespace Logic
                     QueryExecOracle q = new QueryExecOracle();
                     string delete = info.sqlText[TableInfo.QryType.Clear];
                     List<string> del = new List<string>();
-                    if(delete.Trim() != "") // Проверка на пустой запрос
+                    if(delete.Trim() != ""||delete.Contains("{0}")) // Проверка на пустой запрос
                        for (int i = 0; i < bridges.Count;i++ )
                             del.Add(string.Format(delete, bridges[i].IDBR));
+                    //  else del.Add(delete);
                     foreach (string s in del)
                     {
                         if(Running)
