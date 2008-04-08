@@ -55,8 +55,8 @@ namespace Logic.Transfer
                     break;
 
             }
-            if(wayType==WayType.Export) query.Select(string.Format(sql,"OrderBM"));
-            else query.Select(string.Format(sql, "OrderBM"));
+            //if(wayType==WayType.Export) query.Select(string.Format(sql,"OrderPDA"));
+            //else query.Select(string.Format(sql, "OrderBM"));
             List<DataRows> rows = query.GetRows();
             TableInfo ti;
             foreach (DataRows row in rows)
