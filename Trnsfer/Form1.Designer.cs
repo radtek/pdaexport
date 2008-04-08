@@ -59,11 +59,11 @@ namespace Trnsfer
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button10 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.pDABaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
@@ -373,6 +373,16 @@ namespace Trnsfer
             this.panel2.Size = new System.Drawing.Size(474, 446);
             this.panel2.TabIndex = 31;
             // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(210, 44);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(125, 23);
+            this.button10.TabIndex = 33;
+            this.button10.Text = "Занести типы";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(210, 15);
@@ -415,16 +425,6 @@ namespace Trnsfer
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(306, 585);
             this.panel3.TabIndex = 32;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(210, 44);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(125, 23);
-            this.button10.TabIndex = 33;
-            this.button10.Text = "Занести типы";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // menuStrip1
             // 
