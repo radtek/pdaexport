@@ -46,13 +46,22 @@ namespace Logic
                     QueryExecOracle q = new QueryExecOracle();
                     string delete = info.sqlText[TableInfo.QryType.Clear];
                     List<string> del = new List<string>();
-                    if(delete.Trim() != ""||delete.Contains("{0}")) // Проверка на пустой запрос
-                       for (int i = 0; i < bridges.Count;i++ )
-                            del.Add(string.Format(delete, bridges[i].IDBR));
-                    //  else del.Add(delete);
+                    if(delete.Trim() != "") // Проверка на пустой запрос
+                        if (delete.Contains("{0}"))
+                        {
+                            for (int i = 0; i < bridges.Count; i++)
+                                del.Add(string.Format(delete, bridges[i].IDBR));
+                        }
+                        else
+                        {
+                            if(delete.Contains("{1}"))
+                                del.Add(string.Format(delete, "", MainParams.GetParam(MainParams.ParamName.idGu)));
+                        }
+
+                            //  else del.Add(delete);
                     foreach (string s in del)
                     {
-                        if(Running)
+                        if (Running)
                         {
                             if (q.Execute(s))
                             {
@@ -61,7 +70,7 @@ namespace Logic
                         }
                         else Loging.Loging.WriteLog("Error: " + s, true, true);
                     }
-                     Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
+                    Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
                     args.runningAction = this;
                     args.Name = Name();
                     args.Maximum = lst.Count;//передавать в args кол-во таблиц и номер текущей (для прогресс бара)

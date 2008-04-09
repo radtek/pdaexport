@@ -71,7 +71,7 @@ namespace Logic
                             sel.Add(string.Format(select, i));
                         }
                     }
-                    else sel.Add(select);
+                    else sel.Add(string.Format(select, "", MainParams.GetParam(MainParams.ParamName.idGu)));
                     List<string> ins = new List<string>();
                     foreach (string s in sel)
                     {
