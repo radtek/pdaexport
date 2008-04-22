@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-//using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using DAO.Bridges;
 using DataBaseWork;
 using Logic.Transfer;
+//using System.Linq;
 
 namespace Logic
 {
     public class ActionClearOracleBr:AbstractAction
     {
-        private List<BridgeData> bridges = null;
-        public override event AbstractAction.ExecuteDelegate  OnExecute;
+        private readonly List<BridgeData> bridges = null;
+        public override event ExecuteDelegate  OnExecute;
         List<TableInfo> lst;
         private int count = 1;//номер текущей таблицы
         public ActionClearOracleBr(List<BridgeData> list)
@@ -79,8 +77,10 @@ namespace Logic
                     count++;
                 }
                 else break;
-                }
+               
+
             }
         }
     }
+ }
 

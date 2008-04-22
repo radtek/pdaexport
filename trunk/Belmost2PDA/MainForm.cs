@@ -303,6 +303,7 @@ namespace Belmost2PDA
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
+            coordinator.AddAction(new ActionDeploy(true));
             coordinator.AddAction(new ActionPrepExportScripts());
             coordinator.AddAction(new ActionToTempTransferScripts(SelectedID));
             coordinator.AddAction(new ActionOracleToPDATransfer());
