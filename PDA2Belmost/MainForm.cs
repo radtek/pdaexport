@@ -82,7 +82,7 @@ namespace PDA2Belmost
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
-            //coordinator.AddAction(new ActionDeploy(true));
+            coordinator.AddAction(new ActionDeploy(true));
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
             coordinator.AddAction(new ActionClearOracleBr(list));
             coordinator.AddAction(new ActionPDAToOracleTransfer());
