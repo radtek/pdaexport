@@ -42,6 +42,7 @@
     <Compile Include="AbstractAction.cs" />
     <Compile Include="ActionClearOracleBr.cs" />
     <Compile Include="ActionDeploy.cs" />
+    <Compile Include="ActionDoFinally.cs" />
     <Compile Include="ActionFinishExportScripts.cs" />
     <Compile Include="ActionFinishImportScripts.cs" />
     <Compile Include="ActionOracleToPDATransfer.cs" />
@@ -50,11 +51,14 @@
     <Compile Include="ActionRunScriptFromStream.cs" />
     <Compile Include="ActionSetBrReadOnly.cs" />
     <Compile Include="ActionSwitchTriggers.cs" />
+    <Compile Include="ActionToggleUsersOff.cs" />
     <Compile Include="ActionToTempTransferScripts.cs" />
+    <Compile Include="ActionViewSessions.cs" />
     <Compile Include="ActionWriteCreateTableScript.cs" />
     <Compile Include="ActionWriteDropScript.cs" />
     <Compile Include="ActionWriteInsertScript.cs" />
     <Compile Include="Coordinator.cs" />
+    <Compile Include="FinallyStack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

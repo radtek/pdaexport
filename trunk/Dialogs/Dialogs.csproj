@@ -63,6 +63,12 @@
     <Compile Include="dlgRunning.Designer.cs">
       <DependentUpon>dlgRunning.cs</DependentUpon>
     </Compile>
+    <Compile Include="dlgSessions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgSessions.Designer.cs">
+      <DependentUpon>dlgSessions.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -73,6 +79,10 @@
     <EmbeddedResource Include="dlgRunning.resx">
       <SubType>Designer</SubType>
       <DependentUpon>dlgRunning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dlgSessions.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgSessions.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
