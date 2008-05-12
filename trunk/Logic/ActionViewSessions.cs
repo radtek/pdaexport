@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Forms;
 
 namespace Logic
 {
@@ -10,6 +11,11 @@ namespace Logic
     /// </summary>
     public class ActionViewSessions:AbstractAction
     {
+        public ActionViewSessions(Form sessions)
+        {
+            throw new NotImplementedException();
+        }
+
         public override string Name()
         {
             return "Список подключениний к базе (сессий)";
