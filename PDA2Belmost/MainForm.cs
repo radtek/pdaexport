@@ -83,18 +83,21 @@ namespace PDA2Belmost
             Coordinator coordinator = new Coordinator();
             // setup actions
             coordinator.AddAction(new ActionDeploy(true));
+            coordinator.AddAction(new ActionViewSessions());
+            coordinator.AddAction(new ActionToggleUsersOff());
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
             coordinator.AddAction(new ActionClearOracleBr(list));
             coordinator.AddAction(new ActionPDAToOracleTransfer());
             coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
             coordinator.AddAction(new ActionFinishImportScripts());
             coordinator.AddAction(new ActionSetBrReadOnly(null, false));
-            
+            coordinator.AddAction(new ActionDoFinally());
             // make dialog
             dlgRunning dlg = new dlgRunning();
             dlg.Text = "Импорт";
             dlg.coordinator = coordinator;
             dlg.ShowDialog();
+            FinallyStack.Run(); // завершающие скрипты должны выполниться все равно
         }
     }
 }
