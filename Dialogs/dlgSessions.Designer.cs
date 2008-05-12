@@ -33,6 +33,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.Пользователь = new System.Windows.Forms.ColumnHeader();
+            this.Статус = new System.Windows.Forms.ColumnHeader();
+            this.Программа = new System.Windows.Forms.ColumnHeader();
+            this.Comp = new System.Windows.Forms.ColumnHeader();
             this.SuspendLayout();
             // 
             // label1
@@ -46,11 +50,18 @@
             // 
             // listView1
             // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Пользователь,
+            this.Статус,
+            this.Программа,
+            this.Comp});
+            this.listView1.GridLines = true;
             this.listView1.Location = new System.Drawing.Point(12, 36);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(498, 265);
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
             // 
             // button1
             // 
@@ -82,6 +93,26 @@
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // Пользователь
+            // 
+            this.Пользователь.Text = "Пользователь";
+            this.Пользователь.Width = 77;
+            // 
+            // Статус
+            // 
+            this.Статус.Text = "Статус";
+            this.Статус.Width = 82;
+            // 
+            // Программа
+            // 
+            this.Программа.Text = "Программа";
+            this.Программа.Width = 99;
+            // 
+            // Comp
+            // 
+            this.Comp.Text = "Компьютер";
+            this.Comp.Width = 199;
+            // 
             // dlgSessions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,5 +140,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ColumnHeader Пользователь;
+        private System.Windows.Forms.ColumnHeader Статус;
+        private System.Windows.Forms.ColumnHeader Программа;
+        private System.Windows.Forms.ColumnHeader Comp;
     }
 }

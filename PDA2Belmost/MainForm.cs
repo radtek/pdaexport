@@ -26,7 +26,7 @@ namespace PDA2Belmost
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+          
         }
         readonly List<int> SelectedID = new List<int>();
         private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
@@ -77,6 +77,7 @@ namespace PDA2Belmost
  
         private void button4_Click(object sender, EventArgs e)
         {
+
             // получение списка мостов
             List<BridgeData> list = new BridgesReader(true).Load();
             // старт экспорта
@@ -98,6 +99,11 @@ namespace PDA2Belmost
             dlg.coordinator = coordinator;
             dlg.ShowDialog();
             FinallyStack.Run(); // завершающие скрипты должны выполниться все равно
+        }
+
+        private void настройкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
