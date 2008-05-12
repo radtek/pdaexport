@@ -54,8 +54,8 @@ namespace PDA2Belmost
             this.оПрограммеToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(346, 26);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(260, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,13 +67,13 @@ namespace PDA2Belmost
             this.toolStripMenuItem1,
             this.выходToolStripMenuItem});
             this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
             this.экспортToolStripMenuItem.Text = "Импорт";
             // 
             // установкаСоединениеяToolStripMenuItem
             // 
             this.установкаСоединениеяToolStripMenuItem.Name = "установкаСоединениеяToolStripMenuItem";
-            this.установкаСоединениеяToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.установкаСоединениеяToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.установкаСоединениеяToolStripMenuItem.Text = "Установка соединениея";
             this.установкаСоединениеяToolStripMenuItem.Click += new System.EventHandler(this.установкаСоединениеяToolStripMenuItem_Click);
             // 
@@ -81,19 +81,19 @@ namespace PDA2Belmost
             // 
             this.экспортToolStripMenuItem1.Enabled = false;
             this.экспортToolStripMenuItem1.Name = "экспортToolStripMenuItem1";
-            this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(254, 22);
+            this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(208, 22);
             this.экспортToolStripMenuItem1.Text = "Импорт";
             this.экспортToolStripMenuItem1.Click += new System.EventHandler(this.button4_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(251, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(205, 6);
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(254, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(208, 22);
             this.выходToolStripMenuItem.Text = "Выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -103,38 +103,39 @@ namespace PDA2Belmost
             this.соединениеСOracleToolStripMenuItem,
             this.соединениеСКПКToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
             this.настройкиToolStripMenuItem.Visible = false;
+            this.настройкиToolStripMenuItem.Click += new System.EventHandler(this.настройкиToolStripMenuItem_Click);
             // 
             // соединениеСOracleToolStripMenuItem
             // 
             this.соединениеСOracleToolStripMenuItem.Name = "соединениеСOracleToolStripMenuItem";
-            this.соединениеСOracleToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.соединениеСOracleToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.соединениеСOracleToolStripMenuItem.Text = "Соединение с Oracle";
             this.соединениеСOracleToolStripMenuItem.Click += new System.EventHandler(this.соединениеСOracleToolStripMenuItem_Click);
             // 
             // соединениеСКПКToolStripMenuItem
             // 
             this.соединениеСКПКToolStripMenuItem.Name = "соединениеСКПКToolStripMenuItem";
-            this.соединениеСКПКToolStripMenuItem.Size = new System.Drawing.Size(230, 22);
+            this.соединениеСКПКToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.соединениеСКПКToolStripMenuItem.Text = "Соединение с КПК";
             this.соединениеСКПКToolStripMenuItem.Click += new System.EventHandler(this.соединениеСКПКToolStripMenuItem_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(83, 20);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
             // button4
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(3, 11);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Location = new System.Drawing.Point(2, 9);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(316, 27);
+            this.button4.Size = new System.Drawing.Size(237, 22);
             this.button4.TabIndex = 3;
             this.button4.Text = "Экспорт";
             this.toolTip1.SetToolTip(this.button4, "Экспорт");
@@ -144,21 +145,22 @@ namespace PDA2Belmost
             // panel1
             // 
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Location = new System.Drawing.Point(12, 29);
+            this.panel1.Location = new System.Drawing.Point(9, 24);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(322, 52);
+            this.panel1.Size = new System.Drawing.Size(242, 42);
             this.panel1.TabIndex = 4;
             this.panel1.Visible = false;
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 93);
+            this.ClientSize = new System.Drawing.Size(260, 76);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MainForm";
             this.Text = "Импорт данных из КПК";
             this.Load += new System.EventHandler(this.MainForm_Load);
