@@ -7,13 +7,14 @@ namespace Logic
 {
     /// <summary>
     ///  Отображает диалог dlgSessions. Если в диалоге нажали отмену 
-    ///  то дальше процесс не идет (срабоатывает отмена для всего поцесса)
+    ///  то дальше процесс не идет (срабатывает отмена для всего процесса)
     /// </summary>
     public class ActionViewSessions:AbstractAction
     {
+        Form f;
         public ActionViewSessions(Form sessions)
         {
-            throw new NotImplementedException();
+            f = sessions;
         }
 
         public override string Name()
@@ -23,7 +24,10 @@ namespace Logic
 
         public override void Run()
         {
-            throw new NotImplementedException();
+            if (f.ShowDialog() != DialogResult.OK)
+            {
+                Coordinator.Canceled = true;
+            }
         }
     }
 }
