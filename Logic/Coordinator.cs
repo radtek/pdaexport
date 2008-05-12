@@ -26,8 +26,7 @@ namespace Logic
             public AbstractAction runningAction;
         }
         public readonly List<AbstractAction>  runningActions = new List<AbstractAction>();
-        public bool Canceled = false;
-
+        public static bool Canceled = false;
         public void AddAction(AbstractAction newAction)
         {
             runningActions.Add(newAction);
