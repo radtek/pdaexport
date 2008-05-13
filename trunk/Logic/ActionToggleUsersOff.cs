@@ -44,9 +44,10 @@ namespace Logic
                     userInfo.offGU = int.Parse(rows.FieldByName("offGu"));
                     userInfo.offText = rows.FieldByName("offText");
                     FinallyStack.Add(RestoreUser, userInfo);
-                    string running = "update UserBM set offGU=1, offText='Идет импорт' where idGU=" + userInfo.idGU;
-                    qe.Execute(running);
                 }
+                string running = "update UserBM set offGU=1, offText='Идет импорт'";
+                qe.Execute(running);
+                // Удалять все сеансы кроме SYSTEM
             }
         }
 
