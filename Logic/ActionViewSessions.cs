@@ -11,7 +11,7 @@ namespace Logic
     /// </summary>
     public class ActionViewSessions:AbstractAction
     {
-        Form f;
+        readonly Form f;
         public ActionViewSessions(Form sessions)
         {
             f = sessions;

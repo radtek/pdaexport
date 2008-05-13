@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.Пользователь = new System.Windows.Forms.ColumnHeader();
             this.Статус = new System.Windows.Forms.ColumnHeader();
             this.Программа = new System.Windows.Forms.ColumnHeader();
             this.Comp = new System.Windows.Forms.ColumnHeader();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +62,26 @@
             this.listView1.TabIndex = 1;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // Пользователь
+            // 
+            this.Пользователь.Text = "Пользователь";
+            this.Пользователь.Width = 98;
+            // 
+            // Статус
+            // 
+            this.Статус.Text = "Статус";
+            this.Статус.Width = 82;
+            // 
+            // Программа
+            // 
+            this.Программа.Text = "Программа";
+            this.Программа.Width = 99;
+            // 
+            // Comp
+            // 
+            this.Comp.Text = "Компьютер";
+            this.Comp.Width = 199;
             // 
             // button1
             // 
@@ -92,26 +112,6 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Отмена";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // Пользователь
-            // 
-            this.Пользователь.Text = "Пользователь";
-            this.Пользователь.Width = 77;
-            // 
-            // Статус
-            // 
-            this.Статус.Text = "Статус";
-            this.Статус.Width = 82;
-            // 
-            // Программа
-            // 
-            this.Программа.Text = "Программа";
-            this.Программа.Width = 99;
-            // 
-            // Comp
-            // 
-            this.Comp.Text = "Компьютер";
-            this.Comp.Width = 199;
             // 
             // dlgSessions
             // 

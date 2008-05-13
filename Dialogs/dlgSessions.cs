@@ -38,7 +38,15 @@ namespace Dialogs
         private void button2_Click(object sender, EventArgs e)
         {
             if (listView1.Items.Count > 1)
-               button2.DialogResult=MessageBox.Show("Все соединения с базой будут принудительно разорваны. Продолжить?", "Warning", MessageBoxButtons.OKCancel);
+            {
+                if (MessageBox.Show("Все соединения с базой будут принудительно разорваны. Продолжить?", "Warning",
+                                    MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    this.DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                this.DialogResult = DialogResult.OK;
+            }
         }
     }
 }
