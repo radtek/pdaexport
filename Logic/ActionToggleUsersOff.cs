@@ -28,7 +28,7 @@ namespace Logic
         {
             /// это пример использования
             /// Считали данные из таблицы
-            /// Форомируем для каждого изменения соответствующую  отмену
+            /// Формируем для каждого изменения соответствующую  отмену
             // заполняем
             if (Running)
             {
@@ -48,6 +48,20 @@ namespace Logic
                 string running = "update UserBM set offGU=1, offText='Идет импорт'";
                 qe.Execute(running);
                 // Удалять все сеансы кроме SYSTEM
+                string showsessions = "SELECT s.sid,s.serial#,s.osuser,s.program FROM v$session s";
+                q.Select(showsessions);
+                lst = q.GetRows();
+                foreach (DataRows rows in lst)
+                {
+                    if(rows.FieldByName("osuser")!="SYSTEM")
+                    {
+                        string kill = "ALTER SYSTEM KILL SESSION '"+rows.FieldByName("sid")+","+rows.FieldByName("serial#")+"' IMMEDIATE";
+                        qe.Execute(kill);
+                    }
+                }
+                //Реконнект
+                DataBaseOracle.Disconnect();
+                DataBaseOracle.Get();
             }
         }
 
