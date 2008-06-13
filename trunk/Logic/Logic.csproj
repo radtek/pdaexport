@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstractAction.cs" />
+    <Compile Include="ActionClearLog.cs" />
     <Compile Include="ActionClearOracleBr.cs" />
     <Compile Include="ActionDeploy.cs" />
     <Compile Include="ActionDoFinally.cs" />

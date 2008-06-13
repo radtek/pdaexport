@@ -305,6 +305,7 @@ namespace Belmost2PDA
             // setup actions
             coordinator.AddAction(new ActionDeploy(true));
             coordinator.AddAction(new ActionPrepExportScripts());
+            coordinator.AddAction(new ActionClearLog());
             coordinator.AddAction(new ActionToTempTransferScripts(SelectedID));
             coordinator.AddAction(new ActionOracleToPDATransfer());
             coordinator.AddAction(new ActionFinishExportScripts());
