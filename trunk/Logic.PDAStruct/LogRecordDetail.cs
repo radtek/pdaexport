@@ -1,4 +1,7 @@
-﻿namespace Logic.PDAStruct
+﻿using System.Collections.Generic;
+using DataBaseWork;
+
+namespace Logic.PDAStruct
 {
     public class LogRecordDetail
     {
@@ -12,9 +15,22 @@
         /// Сохраняет запись в таблицу BrLogDet
         /// </summary>
         /// <param name="id">Идентификатор FK на BrLog</param>
-        public void Load(string id)
+        public static List<LogRecordDetail> Load(string id)
         { 
-
+            QuerySelectPDA q=new QuerySelectPDA();
+            List<LogRecordDetail> list=new List<LogRecordDetail>();
+            q.Select("select * from LogRecordDetail where idlog=" + id);
+            List<DataRows> rows = q.GetRows();
+            foreach (DataRows row in rows)
+            {
+                LogRecordDetail lrd=new LogRecordDetail();
+                lrd.fieldName = row.FieldByName("fieldName");
+                lrd.fieldDescr = row.FieldByName("fieldDescr");
+                lrd.valueOld = row.FieldByName("valueOld");
+                lrd.valueNew = row.FieldByName("valueNew");
+                list.Add(lrd);
+            }
+            return list;
         }
 
     }
