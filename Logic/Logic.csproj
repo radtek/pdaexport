@@ -55,6 +55,7 @@
     <Compile Include="ActionSwitchTriggers.cs" />
     <Compile Include="ActionToggleUsersOff.cs" />
     <Compile Include="ActionToTempTransferScripts.cs" />
+    <Compile Include="ActionViewLog.cs" />
     <Compile Include="ActionViewSessions.cs" />
     <Compile Include="ActionWriteCreateTableScript.cs" />
     <Compile Include="ActionWriteDropScript.cs" />

@@ -39,6 +39,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IProp.cs" />
+    <Compile Include="LogRecord.cs" />
+    <Compile Include="LogRecordDetail.cs" />
     <Compile Include="PDAConstr.cs" />
     <Compile Include="PDAField.cs" />
     <Compile Include="PDATable.cs" />
