@@ -84,6 +84,7 @@ namespace PDA2Belmost
             Coordinator coordinator = new Coordinator();
             // setup actions
             //coordinator.AddAction(new ActionDeploy(true));
+            coordinator.AddAction(new ActionViewLog(new dlgLog()));
             coordinator.AddAction(new ActionViewSessions(new dlgSessions()));
             //coordinator.AddAction(new ActionToggleUsersOff());
             //coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));

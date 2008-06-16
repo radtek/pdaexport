@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dlgLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dlgLog.Designer.cs">
+      <DependentUpon>dlgLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="dlgOracleSetup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="dlgLog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>dlgLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dlgOracleSetup.resx">
       <DependentUpon>dlgOracleSetup.cs</DependentUpon>
       <SubType>Designer</SubType>
