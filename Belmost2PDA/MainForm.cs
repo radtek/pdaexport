@@ -23,6 +23,7 @@ namespace Belmost2PDA
                 if (Args[0].ToUpper() == "/SETUP")
                     настройкиToolStripMenuItem.Visible = true;
             }
+          
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace Belmost2PDA
             установкаСоединениеяToolStripMenuItem.Enabled = false;
             экспортToolStripMenuItem1.Enabled = true;
             // load Bridges
-            cbBrType.SelectedIndex = 0;
+            cbBrType.SelectedIndex = 1;
             // show
             panel1.Visible = true;
         }
@@ -87,7 +88,7 @@ namespace Belmost2PDA
         private List<RoadData> roadCash = new List<RoadData>();
         private void cbBrType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            BridgesReader.BrViewMode mode = BridgesReader.BrViewMode.viewPos;
+            BridgesReader.BrViewMode mode = BridgesReader.BrViewMode.viewRel;
             switch(cbBrType.SelectedIndex)
             {
                 case 0:

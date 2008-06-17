@@ -234,12 +234,14 @@ namespace Belmost2PDA
             this.cbBrType.Items.AddRange(new object[] {
             "По несущим",
             "По приписываемым"});
+           
             this.cbBrType.Location = new System.Drawing.Point(4, 228);
             this.cbBrType.Margin = new System.Windows.Forms.Padding(2);
             this.cbBrType.Name = "cbBrType";
             this.cbBrType.Size = new System.Drawing.Size(131, 21);
             this.cbBrType.TabIndex = 3;
             this.cbBrType.SelectedIndexChanged += new System.EventHandler(this.cbBrType_SelectedIndexChanged);
+           
             // 
             // button1
             // 
