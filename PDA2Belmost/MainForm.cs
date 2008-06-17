@@ -83,15 +83,15 @@ namespace PDA2Belmost
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
-            //coordinator.AddAction(new ActionDeploy(true));
-            coordinator.AddAction(new ActionViewLog(new dlgLog()));
+            coordinator.AddAction(new ActionDeploy(true));
+            //coordinator.AddAction(new ActionViewLog(new dlgLog()));
             coordinator.AddAction(new ActionViewSessions(new dlgSessions()));
-            //coordinator.AddAction(new ActionToggleUsersOff());
-            //coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
-            //coordinator.AddAction(new ActionClearOracleBr(list));
-            //coordinator.AddAction(new ActionPDAToOracleTransfer());
-            //coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
-            //coordinator.AddAction(new ActionFinishImportScripts());
+            coordinator.AddAction(new ActionToggleUsersOff());
+            coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
+            coordinator.AddAction(new ActionClearOracleBr(list));
+            coordinator.AddAction(new ActionPDAToOracleTransfer());
+            coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
+            coordinator.AddAction(new ActionFinishImportScripts());
             coordinator.AddAction(new ActionSetBrReadOnly(null, false));
             coordinator.AddAction(new ActionDoFinally());
             // make dialog
