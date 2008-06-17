@@ -399,7 +399,7 @@ namespace Trnsfer
                             break;
                         case "nvarchar": value = "2";
                             break;
-                        case "datetime": value = "2";
+                        case "datetime": value = "3";
                             break;
 
                     }

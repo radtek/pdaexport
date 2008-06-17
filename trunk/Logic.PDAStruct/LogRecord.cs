@@ -22,7 +22,7 @@ namespace Logic.PDAStruct
         public string tableName;
         public string tableDescr;
         public string runDate;
-        public List<LogRecordDetail> detailRecords = new List<LogRecordDetail>();
+        public List<LogRecordDetail> detailRecords;// = new List<LogRecordDetail>();
         // ---
         /// <summary>
         /// Получает данные из базу. 
