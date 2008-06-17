@@ -20,7 +20,7 @@ namespace Logic
             ///     -   impDate = текущая дата и время
             ///     -   impState = done если нет в логе ошибок (Logging.WasError)
             /// event в самом конце (Max = 1 Pos = 1)
-            /// Running не обрабатываеться
+            /// Running не обрабатывается
             MainParams.SetParam(MainParams.ParamName.impDate, DateTime.Now.ToShortDateString());
             if (!Loging.Loging.WasError())
                 MainParams.SetParam(MainParams.ParamName.impState, "done");
