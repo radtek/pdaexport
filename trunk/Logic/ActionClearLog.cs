@@ -12,8 +12,8 @@ namespace Logic
     {
         public override event ExecuteDelegate OnExecute;
         public QueryExecPDA q=new QueryExecPDA();
-        private readonly string clearBrLog = "delete * from BrLog";
-        private readonly string clearBrLogDet = "delete * from BrLogDet";
+        private readonly string clearBrLog = "delete  from BrLog";
+        private readonly string clearBrLogDet = "delete  from BrLogDet";
         public override string Name()
         {
             return "Очистка лога";
