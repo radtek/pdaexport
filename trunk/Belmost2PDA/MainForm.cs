@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Data.OracleClient;
 using System.Windows.Forms;
+using DAO.Bridges;
 using DataBaseWork;
 using Dialogs;
-using DAO.Bridges;
 using Logic;
 
 namespace Belmost2PDA

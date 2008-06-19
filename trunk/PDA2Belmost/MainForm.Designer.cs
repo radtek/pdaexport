@@ -133,12 +133,12 @@ namespace PDA2Belmost
             // 
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Location = new System.Drawing.Point(2, 9);
-            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(237, 22);
             this.button4.TabIndex = 3;
-            this.button4.Text = "Экспорт";
-            this.toolTip1.SetToolTip(this.button4, "Экспорт");
+            this.button4.Text = "Импорт";
+            this.toolTip1.SetToolTip(this.button4, "Импорт");
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -146,7 +146,7 @@ namespace PDA2Belmost
             // 
             this.panel1.Controls.Add(this.button4);
             this.panel1.Location = new System.Drawing.Point(9, 24);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(242, 42);
             this.panel1.TabIndex = 4;
@@ -160,7 +160,7 @@ namespace PDA2Belmost
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Импорт данных из КПК";
             this.Load += new System.EventHandler(this.MainForm_Load);
