@@ -60,7 +60,7 @@ namespace Belmost2PDA
             {
                 DataBaseOracle.Get();
                 // соединение с КПК
-                DataBasePDA.Get();
+                //DataBasePDA.Get();
             }
             catch(Exception ex)
             {

@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using DataBaseWork;
 using OpenNETCF.Desktop.Communication;
 namespace Logic
@@ -44,6 +45,7 @@ namespace Logic
                         rapi.CopyFileToDevice(ConnectionSettings.GetSettings().PDAConnectionString,
                                               ConnectionSettings.GetSettings().PDAConString, true);
                         Loging.Loging.WriteLog("Coping to PDA complete", false, true);
+                        File.Delete(ConnectionSettings.GetSettings().PDAConnectionString);
                         
                     }
                     catch (Exception e)
@@ -62,7 +64,22 @@ namespace Logic
                 }
                 catch (Exception e)
                 {
-                    Loging.Loging.WriteLog("Coping from PDA failed: " + e.Message, false, true);
+                    if (e.Message == "Could not open remote file ")
+                    {
+                        if (ConnectionSettings.GetSettings().PDAConString == "\\Storage Card\\BelmostPDA.sdf")
+                        {
+                            ConnectionSettings.GetSettings().PDAConString = "\\Sd Card\\BelmostPDA.sdf";
+                        }
+                        else ConnectionSettings.GetSettings().PDAConString = "\\Storage Card\\BelmostPDA.sdf";
+                        rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().PDAConnectionString,
+                                                ConnectionSettings.GetSettings().PDAConString, true);
+                        Loging.Loging.WriteLog("Coping  from PDA complete", false, true);
+                    }
+                    else
+                    {
+                        Loging.Loging.WriteLog("Coping from PDA failed: " + e.Message, false, true);
+                        Coordinator.Canceled = true;
+                    }
                 }
             Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
             args.Maximum = 1;

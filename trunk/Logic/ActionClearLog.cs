@@ -23,16 +23,16 @@ namespace Logic
         {
             if (Running)
             {
-                if(q.Execute(clearBrLog))
-                {
-                    Loging.Loging.WriteLog("OK: " + clearBrLog, false, false);
-                }
-                else Loging.Loging.WriteLog("Error: " + clearBrLog, true, true);
                 if (q.Execute(clearBrLogDet))
                 {
                     Loging.Loging.WriteLog("OK: " + clearBrLogDet, false, false);
                 }
                 else Loging.Loging.WriteLog("Error: " + clearBrLogDet, true, true);
+                if (q.Execute(clearBrLog))
+                {
+                    Loging.Loging.WriteLog("OK: " + clearBrLog, false, false);
+                }
+                else Loging.Loging.WriteLog("Error: " + clearBrLog, true, true);
             }
             Coordinator.ExecuteDelegateArgs args = new Coordinator.ExecuteDelegateArgs();
             args.Maximum = 1;

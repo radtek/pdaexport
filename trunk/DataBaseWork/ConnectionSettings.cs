@@ -9,7 +9,7 @@ namespace DataBaseWork
     {
         public string OracleConnectionString = "";
         public string PDAConnectionString = "";
-        public string PDAConString = "\\Program Files\\Belmost4PDA.Forms\\BelmostPDA.sdf"; //Base on PDA
+        public string PDAConString = "\\Storage Card\\BelmostPDA.sdf"; //Base on PDA
         private static ConnectionSettings _instance = null;
         private static string Filename = "";
 
