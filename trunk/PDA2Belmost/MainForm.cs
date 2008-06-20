@@ -59,7 +59,7 @@ namespace PDA2Belmost
             {
                 DataBaseOracle.Get();
                 // соединение с КПК
-                DataBasePDA.Get();
+              //  DataBasePDA.Get();
             }
             catch(Exception ex)
             {
@@ -79,7 +79,7 @@ namespace PDA2Belmost
         {
 
             // получение списка мостов
-            List<BridgeData> list = new BridgesReader(true).Load();
+            //List<BridgeData> list = new BridgesReader(true).Load();
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
@@ -88,7 +88,7 @@ namespace PDA2Belmost
             coordinator.AddAction(new ActionViewSessions(new dlgSessions()));
             coordinator.AddAction(new ActionToggleUsersOff());
             coordinator.AddAction(new ActionSwitchTriggers(false, "Выключение триггеров"));
-            coordinator.AddAction(new ActionClearOracleBr(list));
+            coordinator.AddAction(new ActionClearOracleBr());
             coordinator.AddAction(new ActionPDAToOracleTransfer());
             coordinator.AddAction(new ActionSwitchTriggers(true, "Включение триггеров"));
             coordinator.AddAction(new ActionFinishImportScripts());
