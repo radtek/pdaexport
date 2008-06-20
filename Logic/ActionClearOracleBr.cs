@@ -8,13 +8,14 @@ namespace Logic
 {
     public class ActionClearOracleBr:AbstractAction
     {
-        private readonly List<BridgeData> bridges = null;
+        private  List<BridgeData> bridges = null;
         public override event ExecuteDelegate  OnExecute;
         List<TableInfo> lst;
         private int count = 1;//номер текущей таблицы
-        public ActionClearOracleBr(List<BridgeData> list)
+        public ActionClearOracleBr()
         {
-            bridges = list;
+           // bridges = list;
+           
         }
 
         public override string Name()
@@ -30,6 +31,7 @@ namespace Logic
             ///     -   прогресс бар вести по таблицам. 
             ///     -   не забыть лог
             ///     -   не забыть Running 
+            bridges = new BridgesReader(true).Load();
             lst = TableInfo.LoadTables(TableInfo.WayType.ExportClear);
             Exec();
         }

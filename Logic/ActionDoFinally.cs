@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using DataBaseWork;
 
 namespace Logic
 {
@@ -16,7 +18,9 @@ namespace Logic
 
         public override void Run()
         {
-            FinallyStack.Run();
+           DataBasePDA.Disconnect();
+           File.Delete(ConnectionSettings.GetSettings().PDAConnectionString);
+           FinallyStack.Run();
         }
     }
 }
