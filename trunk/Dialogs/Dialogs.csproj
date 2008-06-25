@@ -96,6 +96,10 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DAO.Bridges\DAO.Bridges.csproj">
+      <Project>{454AC97C-EE71-4F44-B386-F1B8D6ED076C}</Project>
+      <Name>DAO.Bridges</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
       <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
       <Name>DataBaseWork</Name>
@@ -107,6 +111,10 @@
     <ProjectReference Include="..\Loging\Loging.csproj">
       <Project>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</Project>
       <Name>Loging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShowLog\ShowLog.csproj">
+      <Project>{5EB30FC3-7F88-4D90-9337-B4C739AFFA60}</Project>
+      <Name>ShowLog</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

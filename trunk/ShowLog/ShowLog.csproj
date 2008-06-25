@@ -4,11 +4,13 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9D9DE158-C9EB-43D8-8FB9-8C62B1358A18}</ProjectGuid>
+    <ProjectGuid>{5EB30FC3-7F88-4D90-9337-B4C739AFFA60}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Logic</RootNamespace>
-    <AssemblyName>Logic</AssemblyName>
+    <RootNamespace>ShowLog</RootNamespace>
+    <AssemblyName>ShowLog</AssemblyName>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,41 +30,37 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2956.30840, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\OpenNETCF\OpenNETCF.Desktop.Communication.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstractAction.cs" />
-    <Compile Include="ActionClearLog.cs" />
-    <Compile Include="ActionClearOracleBr.cs" />
-    <Compile Include="ActionDeploy.cs" />
-    <Compile Include="ActionDoFinally.cs" />
-    <Compile Include="ActionFinishExportScripts.cs" />
-    <Compile Include="ActionFinishImportScripts.cs" />
-    <Compile Include="ActionOracleToPDATransfer.cs" />
-    <Compile Include="ActionPDAToOracleTransfer.cs" />
-    <Compile Include="ActionPrepExportScripts.cs" />
-    <Compile Include="ActionRunScriptFromStream.cs" />
-    <Compile Include="ActionSetBrReadOnly.cs" />
-    <Compile Include="ActionSwitchTriggers.cs" />
-    <Compile Include="ActionToggleUsersOff.cs" />
-    <Compile Include="ActionToTempTransferScripts.cs" />
-    <Compile Include="ActionViewLog.cs" />
-    <Compile Include="ActionViewSessions.cs" />
-    <Compile Include="ActionWriteCreateTableScript.cs" />
-    <Compile Include="ActionWriteDropScript.cs" />
-    <Compile Include="ActionWriteInsertScript.cs" />
-    <Compile Include="Coordinator.cs" />
-    <Compile Include="FinallyStack.cs" />
+    <Compile Include="BrLog.cs" />
+    <Compile Include="BrLogDet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TreeViewWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Constants\Constants.csproj">
@@ -76,18 +74,6 @@
     <ProjectReference Include="..\DataBaseWork\DataBaseWork.csproj">
       <Project>{A40A0521-3960-404E-85A7-1C798AEFE5A9}</Project>
       <Name>DataBaseWork</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.PDAStruct\Logic.PDAStruct.csproj">
-      <Project>{3DC45DF7-0EB0-4A77-A9F6-4B6CC0FA70E5}</Project>
-      <Name>Logic.PDAStruct</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Logic.Transfer\Logic.Transfer.csproj">
-      <Project>{471A8B0A-E63A-4D15-BA51-147C6B383D2F}</Project>
-      <Name>Logic.Transfer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Loging\Loging.csproj">
-      <Project>{3D6EBDC0-A314-4A4A-92D8-24846F494AB5}</Project>
-      <Name>Loging</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
