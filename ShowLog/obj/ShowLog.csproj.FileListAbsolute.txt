@@ -1,0 +1,15 @@
+D:\My Projects\PdaExport-Google\ShowLog\obj\Debug\ResolveAssemblyReference.cache
+D:\My Projects\PdaExport-Google\ShowLog\obj\Debug\ShowLog.Properties.Resources.resources
+D:\My Projects\PdaExport-Google\ShowLog\obj\Debug\ShowLog.csproj.GenerateResource.Cache
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\ShowLog.dll
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\ShowLog.pdb
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\Constants.dll
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\DAO.Bridges.dll
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\DataBaseWork.dll
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\System.Data.SqlServerCe.dll
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\System.Data.SqlServerCe.xml
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\DataBaseWork.pdb
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\DAO.Bridges.pdb
+D:\My Projects\PdaExport-Google\ShowLog\bin\Debug\Constants.pdb
+D:\My Projects\PdaExport-Google\ShowLog\obj\Debug\ShowLog.dll
+D:\My Projects\PdaExport-Google\ShowLog\obj\Debug\ShowLog.pdb
