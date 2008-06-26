@@ -126,5 +126,33 @@ namespace ShowLog
                 listv.Items.Add(item);
             }
         }
+        public static void DataGridWork(DataGridView grid, List<object> lst)
+        {
+            foreach (BrLogDet det in lst)
+            {
+                string[] str = new string[] { det.ValueNew, det.ValueOld, det.FieldName, det.FieldDescr };
+                grid.Rows.Add(str);
+            }
+            ///2 method
+            ///but namecolumn==prop.Name
+            //grid.DataSource = lst; 
+
+            ///3 method
+            //foreach (BrLogDet det in lst)
+            //{
+            //    DataGridViewRow r = new DataGridViewRow();
+            //    DataGridViewTextBoxCell[] c = new DataGridViewTextBoxCell[4];
+            //    for (int i = 0; i < c.Length;i++ )
+            //    {
+            //        c[i]=new DataGridViewTextBoxCell();
+            //    }
+            //    c[0].Value = det.ValueNew;
+            //    c[1].Value = det.ValueOld;
+            //    c[2].Value = det.FieldName;
+            //    c[3].Value = det.FieldDescr;
+            //    r.Cells.AddRange(c);
+            //    grid.Rows.Add(r);
+            //}
+        }
     }
 }

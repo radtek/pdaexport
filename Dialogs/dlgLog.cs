@@ -36,16 +36,26 @@ namespace Dialogs
         }
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            listView1.Items.Clear();
-            if (!e.Node.Tag.ToString().Contains("IDBR"))
+            //listview
+            //listView1.Items.Clear();
+            //if (!e.Node.Tag.ToString().Contains("IDBR"))
+            //{
+            //    lst = TreeViewWork.AddLog(e.Node.Tag.ToString(),"",false);
+            //    TreeViewWork.ListViewWork(listView1, lst);
+            //}
+
+            //gridview
+            if(!e.Node.Tag.ToString().Contains("IDBR"))
             {
-                lst = TreeViewWork.AddLog(e.Node.Tag.ToString(),"",false);
-                TreeViewWork.ListViewWork(listView1, lst);
+                dataGridView1.Rows.Clear();
+                lst = TreeViewWork.AddLog(e.Node.Tag.ToString(), "", false);
+                TreeViewWork.DataGridWork(dataGridView1,lst);
             }
         }
 
         private void comboBox2_SelectionChangeCommitted(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             BridgesReader reader = new BridgesReader(true);
             roadCash = reader.Load(mode);
             TreeViewWork.SetBrTree(treeView1, roadCash,comboBox2.SelectedItem.ToString());
