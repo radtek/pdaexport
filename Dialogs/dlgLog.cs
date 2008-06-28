@@ -43,11 +43,10 @@ namespace Dialogs
             //    lst = TreeViewWork.AddLog(e.Node.Tag.ToString(),"",false);
             //    TreeViewWork.ListViewWork(listView1, lst);
             //}
-
+            dataGridView1.Rows.Clear();
             //gridview
             if(!e.Node.Tag.ToString().Contains("IDBR"))
             {
-                dataGridView1.Rows.Clear();
                 lst = TreeViewWork.AddLog(e.Node.Tag.ToString(), "", false);
                 TreeViewWork.DataGridWork(dataGridView1,lst);
             }
