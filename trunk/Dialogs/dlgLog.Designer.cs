@@ -207,6 +207,7 @@
             this.Controls.Add(this.panel3);
             this.Name = "dlgLog";
             this.Text = "Просмотр изменений";
+            this.Load += new System.EventHandler(this.dlgLog_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

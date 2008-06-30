@@ -15,7 +15,7 @@ namespace Dialogs
         public dlgLog()
         {
             InitializeComponent();
-            comboBox1.SelectedIndex = 1;
+            //comboBox1.SelectedIndex = 1;
             comboBox2.Text = "По дате";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -23,11 +23,12 @@ namespace Dialogs
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    mode = BridgesReader.BrViewMode.viewPos;
+                    mode = BridgesReader.BrViewMode.viewPosPDA;
                     break;
                 case 1:
-                    mode = BridgesReader.BrViewMode.viewRel;
+                    mode = BridgesReader.BrViewMode.ViewRelPDA;
                     break;
+                default: break;
             }
             // get data
             BridgesReader reader = new BridgesReader(true);
@@ -58,6 +59,11 @@ namespace Dialogs
             BridgesReader reader = new BridgesReader(true);
             roadCash = reader.Load(mode);
             TreeViewWork.SetBrTree(treeView1, roadCash,comboBox2.SelectedItem.ToString());
+        }
+
+        private void dlgLog_Load(object sender, EventArgs e)
+        {
+
         }
     
     }
