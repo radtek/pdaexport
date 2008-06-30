@@ -12,7 +12,9 @@ namespace DAO.Bridges
         public enum BrViewMode
         {
             viewRel,
-            viewPos
+            viewPos,
+            viewPosPDA,
+            ViewRelPDA
         } ;
 
         #endregion
@@ -71,6 +73,12 @@ namespace DAO.Bridges
                     break;
                 case BrViewMode.viewRel:
                     query.Select(SQLSelectBridgesMode.SelectRel);
+                    break;
+                case BrViewMode.viewPosPDA:
+                    query.Select(SQLSelectBridgesMode.SelectPosPDA);
+                    break;
+                case BrViewMode.ViewRelPDA:
+                    query.Select(SQLSelectBridgesMode.SelectRelPDA);
                     break;
             }
             List<DataRows> rows = query.GetRows();

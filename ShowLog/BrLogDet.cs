@@ -34,7 +34,7 @@ namespace ShowLog
             get { return _ValueNew; }
             set { _ValueNew = value; }
         }
-	
+
         //public string FieldName;
         //public string FieldDescr;
         //public string ValueOld;

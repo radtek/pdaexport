@@ -130,7 +130,7 @@ namespace ShowLog
         {
             foreach (BrLogDet det in lst)
             {
-                string[] str = new string[] { det.ValueNew, det.ValueOld, det.FieldName, det.FieldDescr };
+                string[] str = new string[] { det.FieldName, det.FieldDescr, det.ValueOld, det.ValueNew};
                 grid.Rows.Add(str);
             }
             ///2 method

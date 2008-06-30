@@ -83,7 +83,7 @@ namespace PDA2Belmost
             // старт экспорта
             Coordinator coordinator = new Coordinator();
             // setup actions
-            //coordinator.AddAction(new ActionDeploy(true));
+            coordinator.AddAction(new ActionDeploy(true));
             coordinator.AddAction(new ActionViewLog(new dlgLog()));
             coordinator.AddAction(new ActionViewSessions(new dlgSessions()));
             coordinator.AddAction(new ActionToggleUsersOff());
