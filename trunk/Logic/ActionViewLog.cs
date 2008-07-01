@@ -8,7 +8,6 @@ namespace Logic
     public class ActionViewLog:ActionViewSessions
     {
         private readonly Form f;
-        //private readonly Control combo;
         public ActionViewLog(Form dlgLog):base(dlgLog)
         {
             f = dlgLog;
@@ -24,8 +23,7 @@ namespace Logic
             {
                 if (o.Name.ToUpper() == "PANEL3")
                 {
-                    Panel p = new Panel();
-                    p = ((Panel) o);
+                    Panel p = ((Panel) o);
                     foreach (Control control in p.Controls)
                     {
                         if(control.Name.ToUpper()=="COMBOBOX1")
