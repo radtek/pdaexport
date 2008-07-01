@@ -62,7 +62,7 @@ namespace Dialogs
 
         private void dlgLog_Load(object sender, EventArgs e)
         {
-
+            comboBox1.SelectedIndex = 1;
         }
     
     }
