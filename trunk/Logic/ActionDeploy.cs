@@ -71,9 +71,17 @@ namespace Logic
                             ConnectionSettings.GetSettings().PDAConString = "\\Sd Card\\BelmostPDA.sdf";
                         }
                         else ConnectionSettings.GetSettings().PDAConString = "\\Storage Card\\BelmostPDA.sdf";
-                        rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().PDAConnectionString,
+                        try
+                        {
+                             rapi.CopyFileFromDevice(ConnectionSettings.GetSettings().PDAConnectionString,
                                                 ConnectionSettings.GetSettings().PDAConString, true);
-                        Loging.Loging.WriteLog("Coping  from PDA complete", false, true);
+                             Loging.Loging.WriteLog("Coping  from PDA complete", false, true);
+                        }
+                        catch(Exception ex)
+                        {
+                            Loging.Loging.WriteLog("Coping from PDA failed: " + ex.Message, false, true);
+                            Coordinator.Canceled = true;
+                        }
                     }
                     else
                     {

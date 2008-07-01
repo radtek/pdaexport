@@ -35,6 +35,7 @@ namespace ShowLog
             {
                 TreeNode node = new TreeNode(roadData.Name);
                 node.Tag = -1;
+                TreeNode trn = null;
                 foreach (BridgeData bridgeData in roadData.Bridges)
                 {
                     if (!SelectedID.Contains(bridgeData.IDBR))
@@ -45,7 +46,8 @@ namespace ShowLog
                         //AddLog here
                         List<object> lst = AddLog(bridgeData.IDBR.ToString(), Ord, true);
                         if (lst.Count > 0)
-                            subnode.ForeColor = Color.Red;
+                        { subnode.ForeColor = Color.Red;
+                            trn = node; } 
                         foreach (BrLog log in lst)
                         {
                             TreeNode subsubnode = new TreeNode(log.RunDate + ": " + log.LogType + ": " + log.TableDescr + "(" + log.TableName + ") ");
@@ -55,6 +57,7 @@ namespace ShowLog
                     }
                 }
                 tree.Nodes.Add(node);
+                if(trn!=null) trn.ExpandAll();
             }
             tree.EndUpdate();
             RemoveEmptyRD(tree);
