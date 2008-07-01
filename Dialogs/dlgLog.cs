@@ -15,7 +15,6 @@ namespace Dialogs
         public dlgLog()
         {
             InitializeComponent();
-            //comboBox1.SelectedIndex = 1;
             comboBox2.Text = "По дате";
         }
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
