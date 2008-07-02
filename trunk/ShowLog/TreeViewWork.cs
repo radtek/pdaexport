@@ -50,7 +50,32 @@ namespace ShowLog
                             trn = node; } 
                         foreach (BrLog log in lst)
                         {
-                            TreeNode subsubnode = new TreeNode(log.RunDate + ": " + log.LogType + ": " + log.TableDescr + "(" + log.TableName + ") ");
+                            string info;
+                            switch(log.LogType.ToUpper())
+                            {
+                                case "UPDATE":
+                                    info = "Изменение";
+                                    break;
+                                case "DELETE":
+                                    info = "Удаление";
+                                    break;
+                                case "INSERT":
+                                    info = "Вставка";
+                                    break;
+                                case "BRELMINSER":
+                                    info = "Вставка элемента";
+                                    break;
+                                case "BRELMDELETE":
+                                    info = "Удаление элемента";
+                                    break;
+                                case "BRDEFUPDATE":
+                                    info = "Изменение дефекта";
+                                    break;
+                                default:
+                                    info = " ";
+                                    break;
+                            }
+                            TreeNode subsubnode = new TreeNode(log.RunDate + ": " + info + ": " + log.TableDescr + "(" + log.TableName + ") ");
                             subsubnode.Tag = log.IdLog;
                             subnode.Nodes.Add(subsubnode);
                         }
