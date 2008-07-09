@@ -155,6 +155,7 @@
             this.Column4});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(404, 323);
             this.dataGridView1.TabIndex = 0;
@@ -163,21 +164,25 @@
             // 
             this.Column1.HeaderText = "Имя поля";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Описание поля";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Старое значение";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Новое значение";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // splitContainer1
             // 
