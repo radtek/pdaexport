@@ -110,7 +110,7 @@ namespace ShowLog
         {
             List<object> result = new List<object>();
             QuerySelectPDA q = new QuerySelectPDA();
-            string BrLog = "Select * from BrLog where idBr=" + id + " Order by " + Order;
+            string BrLog = "Select a.* from BrLog a where a.idBr=" + id + " Order by " + Order;
             string BrLogDet = "Select * from BrLogDet where idlog=" + id + " Order by IdLogDet";
             if (Dummy)
             {
@@ -124,6 +124,12 @@ namespace ShowLog
                     log.TableDescr = rows.FieldByName("TableDescr");
                     log.RunDate = rows.FieldByName("Rundate");
                     log.IdLog = rows.FieldByName("idLog");
+                    //log.ValueOld = rows.FieldByName("ValueOld");
+                    //log.ValueNew = rows.FieldByName("ValueNew");
+                    //
+                    //log.FieldName = rows.FieldByName("FieldName");
+                    //log.FieldDescr = rows.FieldByName("FieldDescr");
+                    //if (log.ValueOld.TrimEnd(',', '0') != log.ValueNew.TrimEnd(',', '0'))
                     result.Add(log);
                 }
             }
@@ -138,7 +144,8 @@ namespace ShowLog
                     log.FieldDescr = rows.FieldByName("FieldDescr");
                     log.ValueOld = rows.FieldByName("ValueOld");
                     log.ValueNew = rows.FieldByName("ValueNew");
-                    result.Add(log);
+                    if (log.ValueOld.TrimEnd(',', '0') != log.ValueNew.TrimEnd(',', '0'))
+                    { result.Add(log); }
                 }
             }
             return result;

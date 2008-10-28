@@ -54,7 +54,7 @@ namespace Logic
                              foreach (FieldInfo field in info.fields)
                              {
                                  ins += field.fieldName + ", ";
-                                 temp += "'" + rows.FieldByName(field.fieldName) + "', ";
+                                 temp += "'" + rows.FieldByName(field.fieldName).Replace("'","''") + "', ";
 
                              }
                              ins = ins.Remove(ins.LastIndexOf(','), 1);

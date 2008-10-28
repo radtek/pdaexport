@@ -71,7 +71,7 @@ namespace Logic
                             {
                                 ins += field.fieldName + ", ";
                                 if (rows.FieldByName(field.fieldName)!="")
-                                temp += "'" + rows.FieldByName(field.fieldName).Replace(',','.').ToString() + "', ";
+                                temp += "'" + rows.FieldByName(field.fieldName).Replace(',','.').Replace("'","''").ToString() + "', ";
                                 else temp += "null, ";
                             }
                             ins = ins.Remove(ins.LastIndexOf(','), 1);
